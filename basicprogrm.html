@@ -1,0 +1,4490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Programming Constructs</title>
+</head>
+<body>
+    <div class="code">
+        <div>
+          <h2 name="code1">1.Write a C++ program to print ‘Hello World!’ on screen</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+		#include< iostream >
+		using namespace std;
+
+		////main definition////
+		int main()
+		{
+			cout<< "\nHello World";
+			return 0;
+		}
+		</pre>
+	   </div>
+	<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+	Hello World
+	</pre>
+	</div>
+	</div>
+	<div class="code">
+        <div>
+          <h2 name="code2">2.Write a C++ program to print the sum of two numbers</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+	//sum of two numbers//
+	#include< iostream >
+	using namespace std;
+
+	/////main definition///////
+	int main()
+	{
+		int a,b,sum;
+		cout<< "Enter the value of a: ";
+		cin>> a;
+		cout<< "Enter the value of b: ";
+		cin>> b;
+		sum=a+b;
+		cout<< "Sum of integers:"<< a<< "+"<< b << "="<< sum;
+		return 0;
+	}
+	</pre>
+	</div>
+	<div style="background:black; color:white">
+
+	<h2>output</h2>
+	<pre>
+	Enter the value of a: 12
+	Enter the value of b: 13
+	Sum of integers:12+13=25
+	</pre>
+	</div>
+	</div>
+	<div class="code">
+        <div>
+          <h2 name="code3">3.Write a C++ program that takes two numbers and display the product of two numbers</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+	#include< iostream >
+	#include< conio.h >
+	using namespace std;
+
+	//////main definition///////
+	int main()
+	{
+		int a,b,mul;
+		cout<< "Enter the value of a: ";
+		cin>> a;
+		cout<< "\nEnter the value of b: ";
+		cin>> b;
+		mul=a*b;
+		cout<< "The multiplication of a and b is : "<< mul;
+		return 0;
+	}
+	</pre>
+	</div>
+	<div style="background:black; color:white">
+
+	<h2>output</h2>
+	<pre>
+	Enter the value of a: 2
+
+	Enter the value of b: 3
+	The multiplication of a and b is : 6
+	</pre>
+	</div>
+	</div>
+	<div class="code">
+        <div>
+          <h2 name="code4">4.Write a C++ program to print the sum, multiply, subtract, divide and remainder of two numbers</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+	#include< iostream >
+	#include< conio.h >
+	using namespace std;
+
+	/////main definition///////
+	int main()
+	{
+		int a=3,b=5;
+		int sum=a+b;
+		int mul=a*b;
+		int dif=a-b;
+		float div=a/b;
+		float mod=a%b;
+		cout<< "sum:"<< a<< "+"<< b<< "="<< sum<< endl;
+		cout<< "multiplication:"<< a<< "*"<< b<< "="<< mul<< endl;
+		cout<< "difference:"<< a<< "-"<< b<< "="<< dif<< endl;
+		cout<< "division:"<< a<< "/"<< b<< "="<< div<< endl;
+		cout<< "Modulus"<< a<< "%"<< b<< "="<< mod<< endl;
+		return 0;
+	}
+	</pre>
+	</div>
+	<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+	sum:3+5=8
+	multiplication:3*5=15
+	difference:3-5=-2
+	division:3/5=0
+	Modulus3%5=3
+	</pre>
+	</div>
+	</div>
+	<div class="code">
+        <div>
+          <h2 name="code5">5.Write a C++ program that takes five numbers as input to calculate and print the average of the numbers</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+		#include< iostream >
+	#include< conio.h >
+	using namespace std;
+
+	//////main definition///////
+	int main()
+	{
+		int n1,n2,n3,n4,n5,avg;
+		cout<< "Enter 1st number: ";
+		cin>> n1;
+		cout<< "\nEnter 2nd number: ";
+		cin>> n2;
+		cout<< "\nEnter 3rd number: ";
+		cin>> n3;
+		cout<< "\nEnter 4th number: ";
+		cin>> n4;
+		cout<< "\nEnter 5th number: ";
+		cin>> n5;
+		avg=(n1+n2+n3+n4+n5)/5;
+		cout<< "\nThe average of numbers: "<< avg;
+		return 0;
+	}
+	</pre>
+	</div>
+	<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+	Enter 1st number: 2
+
+	Enter 2nd number: 3
+
+	Enter 3rd number: 4
+
+	Enter 4th number: 5
+
+	Enter 5th number: 6
+
+	The average of numbers: 4	
+	</pre>
+	</div>
+	</div>
+	<div class="code">
+        <div>
+          <h2 name="code6">6.Write a C++ program to swap two variables</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+		///swap two variable//
+		#include< iostream >
+		#include< conio.h >
+		using namespace std;
+
+		void swap(int* a,int* b)
+		{
+			int temp= *a;
+			*a= *b;
+			*b=temp;
+		}
+
+		/////main definition/////
+		int main()
+		{
+			int x,y;
+			cout<< "\nEnter the value of x: ";
+			cin>> x;
+			cout<< "\nEnter the value of y: ";
+			cin>> y;
+			cout<< "\nThe value of x is: "<<x<<"\nThe value of y is: "<< y<< endl;
+			swap(&x,&y);
+			cout<< "\nThe value of x is: "<<x<<"\nThe value of y is: "<< y<< endl;
+			return 0;
+		}
+		</pre>
+	</div>
+	<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+		Enter the value of x: 3
+
+		Enter the value of y: 4
+
+		The value of x is: 3
+		The value of y is: 4
+
+		The value of x is: 4
+		The value of y is: 3
+	</pre>
+	</div>
+	</div>
+	<div class="code">
+        <div>
+          <h2 name="code7">7. Write a C++ program to convert a decimal number to binary numbers.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+	#include< iostream >
+	#include< conio.h >
+	using namespace std;
+
+	void decimalToBinary(int n)
+	{
+		int binaryNum[32];
+		//counter for binary array
+		int i=0;
+		while(n > 0)
+	{
+		//storing remainder in binary array//
+		binaryNum[i]=n%2;
+		n=n/2;
+		i++;
+	}
+	//printing binary array in reverse order
+	for(int j=i-1;j >=0;j--)
+		cout<< binaryNum[j];
+	}
+	////main definition////
+	int main()
+	{
+		int n=17;
+		decimalToBinary(n);
+		return 0;
+	}
+	</pre>
+	</div>
+	<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+	10001
+	</pre>
+	</div>
+	</div>
+	<div class="code">
+        <div>
+          <h2 name="code8">8.Write a C++ program to convert a binary number to decimal number.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+		#include< iostream >
+		#include< conio.h >
+		#include< math.h >
+		using namespace std;
+		int main()
+		{
+			int i,rem,count=0;
+			long int b,n=0;
+			cout<< "\nEnter binary  number:";
+			cin>> b;
+			while(b > 0)
+			{
+				rem=b%10;
+				n=n+rem*pow(2,count);
+				count=count+1;
+				b=b/10;
+			}
+		cout<< "Decimal Equivalent="<< n;
+		return 0;
+		}
+	</pre>
+	</div>
+	<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+	Enter binary  number:10001
+	Decimal Equivalent=17
+	</pre>
+	</div>
+	</div>
+	<div class="code">
+        <div>
+          <h2 name="code9">9.Write a C++ program to check whether C++ is installed on your computer or not.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+	If C++ is installed on your computer and properly configured in Dev-C++, the program will compile and run successfully, and you'll see the message 	"C++ is installed on this computer!" printed in the output window.
+	If there are any issues with the compilation or execution, it might indicate that C++ is not installed on your computer.
+	#include < iostream >
+	using namespace std;
+
+	int main()
+	{
+    		cout << "C++ is installed on this computer!" << endl;
+    		return 0;
+	}
+	</pre>
+	</div>
+	<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+	C++ is installed on this computer!
+	</pre>
+	</div>
+	</div>
+	<div class="code">
+        <div>
+          <h2 name="code10">10.Write a C++ program and compute the sum of the digits of an integer.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+	//sum of digits of an integer//
+	#include< iostream >
+	#include< conio.h >
+	using namespace std;
+
+	int main()
+	{
+		int sum=0,d;
+		long n,t;
+		cout<< "\nEnter any positive integer number";
+		cin>> n;
+		t=n;
+		while(t > 0)
+	{
+		d=t%10;
+		t/=10;
+		sum+=d;
+	}
+	cout<< "\nSum of digits of"<< n<< "="<< sum;
+	return 0;
+	}
+	</pre>
+	</div>
+	<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+	Enter any positive integer number12
+
+	Sum of digits of12=3
+	</pre>
+	</div>
+	</div>
+	<div class="code">
+        <div>
+          <h2 name="code11">11.Write a C++ program to compare two numbers.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+		#include<iostream>
+		#include<conio.h>
+		using namespace std;
+
+		///main definition///
+		int main()
+		{
+			int num1,num2;
+			cout<< "compare first number with second number"<< endl;
+			cout<< "---------------------------------------"<< endl;
+			cout<< "input the first integer : ";
+			cin>> num1;
+			cout<< "input the second integer : ";
+			cin>> num2;
+			if(num1==num2)
+				cout<< num1<< "=="<< num2<< endl;
+			if(num1!=num2)
+				cout<< num1<< "!="<< num2<< endl;
+			if(num1<num2)
+				cout<< num1<< "<"<< num2<< endl;
+			if(num1<=num2)
+				cout<< num1<< "<="<< num2<< endl;
+			if(num1>=num2)
+				cout<< num1<< ">="<< num2<< endl;
+			return 0;
+		}
+	</pre>
+	</div>
+	<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+	compare first number with second number
+	---------------------------------------
+	input the first integer : 23
+	input the second integer : 43
+	23!=43
+	23<43
+	23<=43
+	</pre>
+	</div>
+	</div>
+	<div class="code">
+        <div>
+          <h2 name="code12">12. Write a C++ program to count the letters, spaces, numbers and other characters of an input string.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+	#include< iostream >
+	#include< conio.h >
+	#include< string.h >
+	#include< stdio.h >
+	using namespace std;
+
+	int main()
+	{
+		char str[100];
+		int i;
+		int Alphabet=0,num=0,other=0,space=0;
+		cout<< "Enter the string"<< endl;
+		gets(str);
+		for(i=0;str[i]!='\0';i++)
+		{
+	      		if((str[i]>='A' && str[i]<='Z') || (str[i]>='a' && str[i]<='z'))
+	      		{
+		 		Alphabet++; //check alphabet
+	      		}
+	      		else if(str[i]>='0' && str[i]<='9')
+	      		{
+		  		num++; //check number
+	      		}
+	      		else if(str[i]==' ')
+	      		{
+		  		space++; //check blank space
+	      		}
+	     		else
+	      		{
+		  		other++;  //check other symbols
+	      		}
+	      }
+	      cout<< "\nAlphabet letters : "<< Alphabet<< endl;
+	      cout<< "numbers : "<< num<< endl;
+	      cout<< "spaces : "<< space<< endl;
+	      cout<< "other symbols : "<< other<< endl;
+	      return 0;
+
+	}
+	</pre>
+	</div>
+	<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+
+	Enter the string
+	we are preparing website of c++
+
+	Alphabet letters : 24
+	numbers : 0
+	spaces : 5
+	other symbols : 2
+	</pre>
+	</div>
+	</div>
+	<div class="code">
+        <div>
+          <h2 name="code13">13.Write a C++ program to print the ascii value of a given character.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+	//program to print the ASCII value of  a character//
+	#include< iostream >
+	#include< conio.h >
+	using namespace std;
+
+	//main definition//
+	int main()
+	{
+		char character;
+		cout<< "Enter a character"<< endl;
+		cin>> character;
+		int asciivalue =(int)character;
+		cout<< "The ASCII value of character"<< character << " is :"<< asciivalue<< endl;
+		return 0;
+	}
+	</pre>
+	</div>
+	<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+	Enter a character
+	a
+	The ASCII value of character is :97
+	</pre>
+	</div>
+	</div>
+	<div class="code">
+        <div>
+          <h2 name="code14">14.Write a C++ program that accepts an integer (n) and computes the value of n+nn+nnn.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+	#include< iostream >
+	#include< conio.h >
+	using namespace std;
+
+	//main definition//
+	int main()
+	{
+		int n;
+		cout<< "Enter the value of n : "<< endl;
+		cin>> n;
+		int s=n+n*n+n*n*n;
+		cout<< "the value of n+nn+nnn is : "<< s<< endl;
+		return 0;
+	}
+	</pre>
+	</div>
+	<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+
+	Enter the value of n :
+       	2
+the value of n+nn+nnn is : 14
+	</pre>
+	</div>
+	</div>
+	<div class="code">
+        <div>
+          <h2 name="code15">15Write a C++ program to display the system time.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+		#include< iostream >
+#include< conio.h >
+using namespace std;
+
+//main definition
+int main()
+{
+	cout<<"Current time : "<<__TIME__;
+	return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+	Current time : 03:53:25
+	</pre>
+	</div>
+	</div>
+<div class="code">
+        <div>
+          <h2 name="code16">16.Write a C++ program to print the odd numbers from 1 to 20.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+void oddNumbers(int n);
+void oddNumbers(int n)
+{
+	int i;
+	for(i=1;i<=n;i++)
+	{
+	//condition to check ODD NUMBER
+	if(i%2!=0)
+	    cout<< i<< " ";
+	}
+	cout<< "\n";
+}
+
+//main definition//
+int main()
+{
+	int n=20;
+	cout<< "ODD NUMBERS are ....\n";
+	oddNumbers(n);
+	return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+ODD NUMBERS are ....
+1 3 5 7 9 11 13 15 17 19
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code17">17.Write a C++ program to print the even numbers from 1 to 20.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< conio.h >
+using namespace std;
+
+void evenNUmber(int n);
+void evenNUmber(int n)
+{
+	int i;
+	for(i=1;i<=n;i++)
+	{
+	//condition to check EVEN NUMBER
+	if(i%2==0)
+		cout<< i<< " ";
+	}
+	cout<< "\n";
+}
+//main definition//
+int main()
+{
+	int n=20;
+	cout<< "EVEN NUMBERS are...\n";
+	evenNUmber(n);
+	return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+EVEN NUMBERS are...
+2 4 6 8 10 12 14 16 18 20
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code18">18.Write a C++ program to convert a string to an integer</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include < iostream >
+#include <conio.h>
+using namespace std;
+
+bool isNumeric(const char* str) {
+    while (*str != '\0') {
+        if (!isdigit(*str)) {
+            return false;
+        }
+        str++;
+    }
+    return true;
+}
+
+int stringToInteger(const char* str) {
+    int result = 0;
+    int sign = 1;
+
+    // Skip leading whitespace
+    while (*str == ' ') {
+        str++;
+    }
+
+    // Handle sign
+    if (*str == '+' || *str == '-') {
+        sign = (*str++ == '-') ? -1 : 1;
+    }
+
+    // Convert digits to integer
+    while (*str != '\0') {
+        if (isdigit(*str)) {
+            result = result * 10 + (*str - '0');
+            str++;
+        } else {
+            // Invalid character found
+            return 0;
+        }
+    }
+
+    return result * sign;
+}
+
+int main() {
+    char str[20]; // assuming the string has maximum length of 19 characters
+    int num;
+
+    // Input a string
+    cout << "Enter a string representing an integer: ";
+    gets(str);
+
+    // Check if the input string is numeric
+    if (!isNumeric(str)) {
+        cout << "Invalid input! Please enter a valid integer." << endl;
+        return 1;
+    }
+
+    // Convert the string to an integer
+    num = stringToInteger(str);
+
+    // Output the converted integer
+    cout << "The integer value: " << num << endl;
+
+    return 0;
+}
+
+
+
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter a string representing an integer: 35653
+The integer value: 35653
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code19">19. Write a C++ program to convert seconds to hour, minute and seconds</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< conio.h >
+using namespace std;
+
+int main()
+{
+	int h,m,s,ts;
+	cout<< "enter the time in seconds : "<< endl;
+	cin>> ts;
+	h=ts/3600;
+	m=(ts%3600)/60;
+	s=(ts%3600)%60;
+	cout<< "hours= "<< h<< endl;
+	cout<< "minutes= "<< m<< endl;
+	cout<< "seconds= "<< s<< endl;
+	cout<< h<< "::"<< m<< "::"<< s;
+	return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+enter the time in seconds :
+8100
+hours= 2
+minutes= 15
+seconds= 0
+2::15::0
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code20">20.Write a C++ program to compute the sum of the first 100 prime numbers</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include <iostream>
+using namespace std;
+
+bool isPrime(int n) {
+    if (n <= 1)
+        return false;
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0)
+            return false;
+    }
+    return true;
+}
+
+int main() {
+    int count = 0;
+    long long sum = 0;
+    int num = 2; // Start checking from 2
+    while (count < 100) {
+        if (isPrime(num)) {
+            sum += num;
+            count++;
+        }
+        num++;
+    }
+    cout << "The sum of the first 100 prime numbers is: " << sum << endl;
+    return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+The sum of the first 100 prime numbers is: 24133
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code21">21.Write a C++ program to compute the square root of an given integer.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< conio.h >
+#include< math.h >
+using namespace std;
+
+//main definition
+int main()
+{
+ int n;
+   cout<< "Enter the number : ";
+   cin>> n;
+   cout<< "Square root of "<< n<<" : "<< sqrt(n);
+   return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the number : 9
+Square root of 9 : 3
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code22">22.Write a C++ program to check if a positive number is a palindrome or not.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+//check wether if a positive no is a palindrom or not
+#include< iostream >
+#include< conio.h >
+using namespace std;
+
+int main()
+{
+	int n,num,rev=0,rem;
+	cout<< "Enter a number: "<< endl;
+	cin>> num;
+	n=num;
+	while(n>0)
+	{
+		rem=n%10;
+		n=n/10;
+		rev=(rev*10)+rem;
+	}
+	cout<< "\nReversed number is : "<< rev;
+	if(num==rev)
+		cout<< "\nNumber "<< num<< " is palindrom"<< endl;
+	else
+		cout<< "\nNumber "<< num<< " is not palindrom";
+	return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter a number:
+1221
+
+Reversed number is : 1221
+Number 1221 is palindrom
+	
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code23">23.Write a C++ program to add two numbers without using any arithmetic operators.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< conio.h >
+using namespace std;
+
+//main definition
+int main()
+{
+   int a,b;
+   cout<< "Enter the number A and B : ";
+   cin>> a>> b;
+   for(int i=0;i< b;i++,a++);
+   cout<< "Sum of A and B without arthmetic operators : "<< a;
+   return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the number A and B : 12 13
+Sum of A and B without arthmetic operators : 25
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code24">24.Write a C++ program to add all the digits of a given positive integer.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< conio.h >
+using namespace std;
+
+int main()
+{
+	int sum=0,d;
+	int n,t;
+	cout<< "Enter any positive integer number"<< endl;
+	cin>> n;
+	t=n;
+	while(t>0)
+	{
+		d=t%10;
+		t/=10;
+		sum+=d;
+	}
+	cout<< "sum of digits of"<< n<< "="<< sum;
+	return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+
+Enter any positive integer number
+23
+sum of digits of23=5
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code25">25. C++ program to find area of circle.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+
+//find the area of a circle//
+#include< iostream >
+#include< conio.h >
+using namespace std;
+
+//main definition//
+int main()
+{
+	int rad;
+	float area;
+	float pi=3.14;
+	cout<< "-------area of a circle---------"<< endl;
+	cout<< "Enter the radius of a circle in cm "<< endl;
+	cin>> rad;
+	area=(pi*rad*rad);
+	cout<< "The area of a circle is "<< area <<"cm square";
+	return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+-------area of a circle---------
+Enter the radius of a circle in cm
+7
+The area of a circle is 153.86 cm square
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code26">26.C++ Program to find area of rectangle.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+////program to find area of rectangle//
+#include< iostream >
+#include< conio.h >
+using namespace std;
+
+//main definiton//
+int main()
+{
+	int l,b;
+	float a;
+	cout<< "------area of rectandle---------"<< endl;
+	cout<<"Enter the length of rectangle in cm: "<< endl;
+	cin>> l;
+	cout<< "Enter the bredth of rectangle in cm: "<< endl;
+	cin>> b;
+	a=l*b;
+	cout<< "The area of rectangle is : "<< a << "cm square";
+	return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+------area of rectandle---------
+Enter the length of rectangle in cm :
+4
+Enter the bredth of rectangle in cm :
+5
+The area of rectangle is : 20 cm square
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code27">27.C++ Program to find area of triangle.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+//find the area of triangle//
+#include< iostream >
+#include< conio.h >
+using namespace std;
+
+//main definition//
+int main()
+{
+	int b,h;
+	cout<< "-------area of triangle--------"<< endl;
+	cout<< "Enter the base of triangle in cm"<< endl;
+	cin>> b;
+	cout<< "Enter the height of triangle in cm"<< endl;
+	cin>> h;
+	float area=0.5*b*h;
+	cout<< "The area of triangle is : "<< area << "cm square";
+	return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+-------area of triangle--------
+Enter the base of triangle in cm
+4
+Enter the height of triangle in cm
+2
+The area of triangle is : 4cm square
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code28">28. C++ Program to find area of equilateral triangle.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< conio.h >
+#include< math.h >
+using namespace std;
+
+//main definition
+int main()
+{
+float s;
+cout<< "Enter the size of equilateral  triangle: ";
+cin>> s;
+cout<< "Area : "<< (sqrt(3)/4)*(s*s);
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the size of equilateral  triangle: 4
+Area : 6.9282
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code29">29.C++ Program to find area of rhombus.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< conio.h >
+using namespace std;
+
+//main definition
+int main()
+{
+float d1,d2;
+cout<< "Enter the diagonals  of Rhombus in cm: ";
+cin>>d1>>d2;
+cout<< "Area : "<< (float)((d1*d2)/2) << "cm square";
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the diagonals  of Rhombus in cm: 2 4
+Area : 4cm square
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code30">30. C++ Program to find area of parallelogram.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< conio.h >
+using namespace std;
+
+//main definition
+int main()
+{
+float b,h;
+cout<< "Enter the Base and height of Parallelogram in cm: ";
+cin>> b>> h;
+cout<< "Area : "<< b*h <<"cm square";
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the Base and height of Parallelogram in cm: 5 6
+Area : 30cm square
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code31">31. C++ Program to find area of Prism.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< conio.h >
+using namespace std;
+
+//main definition
+int main()
+{
+float s1,s2,s3,l,h,b;
+cout<< "Enter the sides of the triangle in prism : ";
+cin>> s1>> s2>> s3;
+cout<< "Enter the height,length,base of the prism : ";
+cin>> h>> l>> b;
+cout<< "Total Surface Area : "<< (s1+s2+s3)*l+(b*h);
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the sides of the triangle in prism : 3 3 4
+Enter the height,length,base of the prism : 3 4 5
+Total Surface Area : 55
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code32">32.C++ Program to find volume of sphere.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< conio.h >
+using namespace std;
+
+//main definition
+int main()
+{
+float r;
+double pi=3.14159265358979323846;
+cout<< "Enter the radius of sphere in cm : ";
+cin>> r;
+cout<< "Volume : "<< (4.0/3.0)*pi*r*r*r << " cm cube";
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the radius of sphere in cm : 2
+Volume : 33.5103 cm cube
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code33">33.C++ Program to find volume of cylinder.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< conio.h >
+using namespace std;
+
+//main definition
+int main()
+{
+float r,h;
+cout<<"Enter the radius and height of Cylinder in cm : ";
+cin>> r>> h; 
+cout<<"Volume : "<< (22.0/7.0)*(r*r)*h << "cm cube";
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the radius and height of Cylinder in cm : 2 4
+Volume : 50.2857 cm cube
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code34">34.C++ Program to find volume of cuboid.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< conio.h >
+using namespace std;
+
+//main definition
+int main()
+{
+int l,b,h;
+float vol;
+cout<< "Enter the length of cuboid:";
+cin>> l;
+cout<< "\nEnter the breadth of cuboid:";
+cin>> b;
+cout<< "\nEnter the height of cuboid:";
+cin>> h;
+vol=(l*b*h);
+cout<< "\nVolume of cuboid is "<< vol << "cm cube" << endl;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the length of cuboid:2
+
+Enter the breadth of cuboid:4
+
+Enter the height of cuboid:5
+
+Volume of cuboid is 40cm cube
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code35">35.C++ Program to find volume of cone.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+
+#include< iostream >
+#include< conio.h >
+using namespace std;
+
+//main definition
+int main()
+{
+float r,h;
+cout<< "Enter the  radius, height of cone in cm: ";
+cin>> r>> h;
+cout<< "Volume : "<<(1.0/3.0)*(22.0/7.0)*(r*r*h) << "cm cube";
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the  radius, height of cone in cm: 2
+4
+Volume : 16.7619cm cube
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code36">36.C++ program to find surface area of cuboid.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< conio.h >
+using namespace std;
+
+//main defintion
+int main()
+{
+float l,w,h;
+cout<< "Enter the  lenght,width,height of cuboid : ";
+cin>> l>> w>> h;
+cout<< "Total surface area : "<<2*(h*l+h*w+l*w) << "cm square";
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+
+Enter the  lenght,width,height of cuboid : 2 4 5
+Total surface area : 76cm square
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code37">37.C++ program to find surface area of cylinder.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< conio.h >
+using namespace std;
+
+//main definition
+int main()
+{
+float r,h;
+cout<< "Enter the  radius,height of cylinder in cm : ";
+cin>>r>>h;
+cout<< "Total surface area : "<< 2*(22.0/7.0)*r*(r+h) << "cm square";
+
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+
+Enter the  radius,height of cylinder in cm : 2 4
+Total surface area : 75.4286cm square
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code38">38.C++ program to find surface area of cube.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< conio.h >
+using namespace std;
+
+//main definition
+int main()
+{
+float s;
+float ta,la;
+cout<< "Enter the side of cube :";
+cin>> s;
+ta=(6*s*s);
+la=(4*s*s);
+cout<< "Total Surface area of a cube "<< ta<< " cm square" << endl;
+cout<< "Curved Surface area of cube "<< la<< " cm square" << endl;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the side of cube :4
+Total Surface area of a cube 96 cm square
+Curved Surface area of cube 64 cm square
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code39">39.C++ program to calculate average marks.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< conio.h >
+using namespace std;
+
+//main definition
+int main()
+{
+int n,a=0;
+cout<< "Enter the no. of subjects : ";
+cin>> n;
+cout<< "Enter the marks of "<< n<< " subjects : ";
+for(int i=0;i< n;i++){
+    int temp;
+    cin>> temp;
+    a=a+temp;
+}
+cout<< "Average marks : "<< (float)a/n;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the no. of subjects : 4
+Enter the marks of 4 subjects : 50 50 50 50
+Average marks : 50
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code40">40.C++ program to check vowel or consonant.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< conio.h >
+#include< ctype.h >
+using namespace std;
+
+//main definition
+int main()
+{
+char ch;
+cout<< "Enter the character : ";
+cin>> ch;
+if (isalpha(ch)){
+    if(ch=='a'||ch=='A'||ch=='e'||ch=='E'||ch=='i'||ch=='I'||ch=='o'||ch=='O'||ch=='u'||ch=='U'){
+       cout<< "Vowel";}
+    else{
+        cout<< "Consonant ";
+    }
+}
+else{
+    cout<< "Not an alphabet ";
+	}
+	return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+
+Enter the character : i
+Vowel
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code41">41.C++ program to sum of N numbers.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< conio.h >
+using namespace std;
+
+//main definition
+int main()
+{
+int n,s=0;
+cout<< "Enter the no. of numbers you want to add : ";
+cin>> n;
+cout<< "Enter the  "<< n<< " numbers : ";
+for(int i=0;i< n;i++){
+    int temp;
+    cin>> temp;
+    s=s+temp;
+}
+cout<< "Sum of "<< n<< " numbers : "<< s;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the no. of numbers you want to add : 10
+Enter the  10 numbers : 1 2 3 4 5 6 7 8 9 10
+Sum of 10 numbers : 55
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code42">42.C++ program to find factorial of any number.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+//factorial of a given number
+#include< iostream >
+#include< conio.h >
+using namespace std;
+
+int fact(int n)
+{
+	if(n==0)
+		return 1;
+	else
+		return(n*fact(n-1));
+}
+
+int main()
+{
+	int fact(int);
+	int num;
+	cout<< "\nEnter the number : ";
+	cin>> num;
+	cout<< "\nThe factorial of "<< num<< "="<< fact(num);
+	return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the number : 5
+
+The factorial of 5=120
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code43">43.C++ Program to calculate electricity bill.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include < iostream >
+using namespace std;
+
+int main() {
+    // Constants for rates
+    const double baseRate = 10.0; // Base rate
+    const double unitRate = 2.5; // Rate per unit
+
+    // Variables to store user input
+    double units;
+
+    // Prompt user for input
+    cout << "Enter the number of units consumed: ";
+    cin >> units;
+
+    // Calculate total bill
+    double totalBill = baseRate + (units * unitRate);
+
+    // Display the bill
+    cout << "Electricity Bill = Rs" << totalBill << endl;
+
+    return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the number of units consumed: 16
+Electricity Bill = Rs50
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code44">44.C++ Program To Calculate CGPA Percentage.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< conio.h >
+using namespace std;
+
+//main definition
+int main()
+{
+int n,temp,s=0;
+cout<< "Marks should be out of 100 of each subject "<< endl;
+cout<< "Enter the no. of subjects : ";
+cin>> n;
+cout<< "Enter the marks of "<< n<<" subjects : ";
+for(int i=0;i<n;i++){
+   cin>> temp;
+   s=s+temp;
+}
+cout<< "CGPA : "<< (float)(s/n)/9.5;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Marks should be out of 100 of each subject
+Enter the no. of subjects : 5
+Enter the marks of 5 subjects : 90 99 98 97 96
+CGPA : 10.1053
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code45">45.C++ Program to calculate compound interest.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+
+#include< iostream >
+#include< conio.h >
+#include< math.h >
+using namespace std;
+
+//main definition
+int main()
+{
+float p,r,t,si,ci;
+cout<< "\nEnter the value of  Principle ,Rate ,Time:";
+cin>> p>> r>> t;
+si=(p*r*t)/100;
+ci=p*pow((1+r/100),t)-p;
+cout<< "\nSimple interset is="<< si;
+cout<< "\nCompound interset is="<< ci;
+return 0;
+}
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the value of  Principle ,Rate ,Time:2000 2 30
+
+Simple interset is=1200
+Compound interset is=1622.72
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code46">46.C++ Program To Calculate Batting Average.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+int main()
+{
+int s,o;
+cout<< "Enter the runs scored by batsman : ";
+cin>> s;
+cout<< "Enter the no. of times he got out : ";
+cin>> o;
+cout<< "Batting average : "<< (float)s/o;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the runs scored by batsman : 6
+Enter the no. of times he got out : 3
+Batting average : 2
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code47">47.C++ Program to Calculate Commission Percentage.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+int main()
+{
+int c,s;
+cout<< "Enter the commission : ";
+cin>> c;
+cout<< "Enter the total sales : ";
+cin>> s;
+cout<< "Commission Rate : "<< (float)c/s*100<< "%";
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the commission : 45
+Enter the total sales : 90
+Commission Rate : 50%
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code48">48. C++ Program To Find Distance Between Two Points.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< math.h >
+using namespace std;
+
+int main()
+{
+float x1,x2,y1,y2,d;
+cout<< "Enter the x1,x2 points : ";
+cin>> x1>> x2;
+cout<< "Enter the y1,y2 points : ";
+cin>> y1>> y2;
+d=sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
+cout<< "Distance : "<< d;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the x1,x2 points : 5 7
+Enter the y1,y2 points : 3 5
+Distance : 2.82843
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code49">49.C++ Program To Calculate Power Of Number.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+float n,p,r=1;
+cout<< "Enter the number : ";
+cin>> n;
+cout<< "Enter power : ";
+cin>> p;
+if(p>0){
+    for(int i=0;i< p;i++){
+        r=r*n;
+    }
+    cout<< "Result of "<< n<< "^"<< p<< " : "<< r;}
+else if(p==0){
+    cout<< "Result of "<< n<< "^"<< p<< " : "<< r;}
+else{
+    for(int i=0;i< -p;i++){
+        r=r*(1.0/n);
+    }
+    cout<< "Result of "<< n<< "^"<< p<< " : "<< r;
+}
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the number : 66
+Enter power : 2
+Result of 66^2 : 4356
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code50">50.Write a C++ program to take three numbers from the user and print the greatest number.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+float a,b,c;
+cout<< "Enter the no. A,B and C : ";
+cin>> a>> b>> c;
+if(a>b){
+    if(a>=c)
+	{
+    if (a!=c){
+    	cout<< "A is Greatest";
+    }
+    else{
+        cout<< "Both A and C are Greater";
+    }}
+    else{
+        cout<< "C is Greatest "; 
+    }
+}
+else if(b>=c){
+    if(a==b){
+        cout<< "A and B are Greater";
+    }
+    else if (b!=c){
+    cout<< "B is Greatest";
+    }
+    else{
+        cout<< "Both B and C are Greater";
+    }
+}
+else if(c>b){
+    cout<< "C is Greatest";
+}
+else{
+    cout<< "All are equal ";
+}
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the no. A,B and C : 4 5 4
+B is Greatest
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code51">51. Write a C++ program to find the number of days in a month.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+int mo[12]={31,28,31,30,31,30,31,31,30,31,30,31};
+int mn;
+cout<< "Enter the no. of month : ";
+cin>> mn;
+cout<< "No. of days in this month : "<< mo[mn-1];
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the no. of month : 9
+No. of days in this month : 30
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code52">52.Write a C++ program to test a number is positive or negative.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+int n;
+cout<< "Enter the number : ";
+cin>> n;
+if(n>0){
+  cout<< "Positive ";
+}
+else if(n==0){
+    cout<< "Its 0 ";
+}
+else{
+    cout<< "Negative";
+}
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the number : 6
+Positive 
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code53">53.Write a C++ Program to accept number of week’s day (1-7) and print name of the day.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+
+#include< iostream >
+using namespace std;
+int main()
+{
+	int n;
+	cout<< "Enter the number of week's day (1-7) : ";
+	cin>> n;
+	switch (n){
+	case 1:
+  	cout<< "Monday";
+  	break;
+	case 2:
+  	cout<< "Tuesday";
+  	break;
+	case 3:
+  	cout<< "Wednesday";
+  	break;
+	case 4:
+  	cout<< "Thursday";
+  	break;
+	case 5:
+  	cout<< "Friday";
+  	break;
+	case 6:
+  	cout<< "Saturday";
+  	break;
+	case 7:
+  	cout<< "Sunday";
+  	break;
+	default :
+  	cout<< "Not a valid number for week's day ";
+	}
+	return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the number of week's day (1-7) : 6
+Saturday
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code54">54.Write a C++ program that takes a year from user and print whether that year is a leap year or not.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+
+#include< iostream >
+using namespace std;
+
+//main definition
+int main()
+{
+	int y;
+	cout<< "Enter the year : ";
+	cin>>y;
+	if(y%4==0 && y%100!=0 || y%400==0){
+    	cout<< "Leap year ";
+	}
+	else{
+    	cout<< "Not a leap year ";
+	}
+	return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the year : 2004
+Leap year
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code55">55.Write a C++ program to input 5 numbers from keyboard and find their sum and average.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+int main()
+{
+int s=0,temp;
+cout<< "Enter 5 numbers : ";
+for(int i=0;i< 5;i++){
+  cin>> temp;
+  s=s+temp;
+}
+cout<< "Sum of 5 numbers : "<< s<< endl;
+cout<< "Average of 5 numbers : "<< (float)s/5;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter 5 numbers : 4 5 6 7 8
+Sum of 5 numbers : 30
+Average of 5 numbers : 6
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code56">56.Write a program in C++ to display the first 5 natural numbers.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+//main definition
+int main()
+{
+	cout<< "First 5 natural numbers : "<< endl;
+	for(int i=1;i< 6;i++){
+  	cout<< i<< endl;
+	}
+	return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+First 5 natural numbers : 
+1
+2
+3
+4
+5
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code57">57.Write a C++ program to check vowel or consonant.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< cctype >
+using namespace std;
+
+int main()
+{
+char ch;
+cout<< "Enter the character : ";
+cin>> ch;
+if (isalpha(ch))
+{
+    if(ch=='a'||ch=='A'||ch=='e'||ch=='E'||ch=='i'||ch=='I'||ch=='o'||ch=='O'||ch=='u'||ch=='U'){
+       cout<< "Vowel";
+	}
+    else{
+        cout<< "Consonant ";
+    }
+}
+else{
+    cout<< "Not an alphabet ";
+}
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the character : tikal
+Consonant 
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code58">58.Write a C++ program to display the cube of the number upto given an integer.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+float n,r=1;
+cout<< "Enter the number : ";
+cin>> n;
+for(int i=0;i< 3;i++){
+        r=r*n;
+    }
+    cout<< "Cube of "<< n<<" : "<< r;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the number : 8
+Cube of 8 : 512
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code59">59.Write a C++ program to display the n terms of odd natural number and their sum.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+float n,s=0,c=0;
+cout<< "Enter the number of number of odd terms : ";
+cin>> n;
+cout<< " Terms of odd natural no. : "<< endl;
+for(int i=1;c< n;i++){
+  if(i&1==1){
+    cout<< i<< endl;
+    c++;
+    s+=i; 
+  } 
+    }
+    cout<< "Sum of "<< n<< " odd terms : "<< s;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the number of number of odd terms : 3 5 7
+ Terms of odd natural no. : 
+1
+3
+5
+Sum of 3 odd terms : 9
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code60">60.Write a C++ program to display the multiplication table of a given integer.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+	int n;
+	cout<< "Enter the number ";
+	cin>> n;
+	cout<< "Multiplication table of "<< n<< " : "<< endl;
+	for(int i=1;i<11;i++){
+        cout<< n<< " X "<< i<<" = "<< n*i<< endl;
+}
+	return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the number 7
+Multiplication table of 7 : 
+7 X 1 = 7
+7 X 2 = 14
+7 X 3 = 21
+7 X 4 = 28
+7 X 5 = 35
+7 X 6 = 42
+7 X 7 = 49
+7 X 8 = 56
+7 X 9 = 63
+7 X 10 = 70
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code61">61.Write a C++ program that reads an integer and check whether it is negative, zero, or positive.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+int n;
+cout<< "Enter the number : ";
+cin>> n;
+if(n>0){
+  cout<< "Positive ";
+}
+else if(n==0){
+    cout<< "Its 0 ";
+}
+else{
+    cout<< "Negative";
+}
+return 0;
+}
+</pre>
+</div>
+
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the number : 8
+Positive 
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code62">62.Write a C++ program that reads an positive integer and count the number of digits.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+int n,c=0;
+cout<< "Enter the number ";
+cin>> n;
+while(n!=0){
+  c++;
+  n/=10;
+}
+cout<< "Number of digits in the number : "<< c;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the number 89
+Number of digits in the number : 2
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code63">63. Write a C++ program that accepts three numbers and check All numbers are equal or not.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+
+#include< iostream >
+using namespace std;
+
+int main(){
+int a,b,c;
+cout<< "Enter the numbers A,B and C : ";
+cin>> a>> b>> c;
+if(a==b && a==c){
+  cout<< "All are equal ";
+}
+else{
+  cout<< "All not are eqaul ";
+}
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the numbers A,B and C : 4 6 9
+All not are eqaul 
+
+</pre
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code64">64.Write a C++ program that accepts three numbers from the user and check if numbers are in "increasing” or “decreasing” order.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+int main()
+{
+int a,b,c;
+cout<< "Enter the numbers A,B and C : ";
+cin>> a>> b>> c;
+if(a>b){
+  if(a>c){
+    cout<< "Decreasing order";
+  }
+}
+else if(b<c){
+  cout<< "Increasing order";
+}
+else{
+  cout<< "Not increasing nor decreasing order";
+}
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the numbers A,B and C : 7 8 9
+Increasing order
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code65">65.Write a C++ program that determines a student’s grade (81-100 : A, 61-80 : B, 41-60 : C, 0-40 : D).</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+int m;
+cout<< "Enter the numbers marks ";
+cin>> m;
+if(m>=81 && m<=100){
+    cout<< "A Grade";
+   } 
+else if(m>=61 && m<=80){
+    cout<< "B Grade";
+   } 
+else if(m>=41 && m<=60){
+    cout<< "C Grade";
+   } 
+else if(m>=0 && m<=40){
+    cout<< "D Grade";
+   }
+else{
+    cout<< "Marks given are out of the range (0-100)";
+   } 
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the numbers marks 78
+B Grade
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code66">66.Write a C++ program to create a simple calculator (1. ADDITION, 2. SUBTRACTION, 3. MULTIPLICATION, 4. DIVISION, 5. EXPONENTIAL, 6. PERCENTAGE, 7. EXIT).</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< math.h >
+using namespace std;
+
+int main()
+{
+int c=0,a,b;
+while(1){
+cout<< endl<< "Enter the choice for the operation in integer you want to perform :"<< endl;
+cout<< "1.ADDITION\t2.SUBTRACTION\n3.MULTIPLICATION  4.DIVISION\n5.EXPONENTIAL\t6.PERCENTAGE\n7.EXIT : ";
+cin>> c;
+if(c==7){
+  cout<< "Exited";
+  break;
+}
+cout<< "Enter A and B : ";
+cin>> a>> b;
+if(c==1){
+  cout<< "Addition : "<< a+b;
+}
+else if(c==2){
+  cout<< "Subtraction (B-A) : "<< b-a;
+}
+else if(c==3){
+  cout<< "Multiplication : "<< a*b;
+}
+else if(c==4){
+  cout<< "Division (B/A) : "<< b/a;
+}
+else if(c==5){
+  cout<< "Exponential (A^B): "<< pow(a,b);
+}
+else if(c==6){
+  cout<< "Percentage (A/B*100) : "<< (float)a/b*100;
+}
+else{
+  cout<< "Invalid Choice";
+  }
+}return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+
+Enter the choice for the operation in integer you want to perform :
+1.ADDITION	2.SUBTRACTION
+3.MULTIPLICATION  4.DIVISION
+5.EXPONENTIAL	6.PERCENTAGE
+7.EXIT : 1
+Enter A and B : 1 2
+Addition : 3
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code67">67.Write a C++ program to concatenate two string.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< string >
+using namespace std;
+
+int main()
+{
+string st1,st2;
+cout<< "Enter the string 1 : ";
+cin>> st1;
+cout<< "Enter the string 2 : ";
+cin>> st2;
+cout<< "After concatenate : "<< st1+st2;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the string 1 : navneet
+Enter the string 2 : kaur
+After concatenate : navneetkaur
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code68">68.Write a C++ program to convert all characters in a string to lowercase.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< string >
+using namespace std;
+
+int main()
+{
+string st1;
+cout<< "Enter the string  : ";
+cin>> st1;
+for(int i=0;i< st1.length();i++){
+    if(st1[i]>=65 && st1[i]<=90){
+    st1[i]=st1[i]+32;
+    }
+}
+cout<< "All character in lowercase : "<< st1;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the string  : navneeT'
+All character in lowercase : navneet' 
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code69">69.Write a C++ program to convert all characters in a string to uppercase.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< string >
+using namespace std;
+
+int main()
+{
+string st1;
+cout<< "Enter the string  : ";
+cin>> st1;
+for(int i=0;i< st1.length();i++){
+    if(st1[i]>=97 && st1[i]<=125){
+    st1[i]=st1[i]-32;
+    }
+}
+cout<< "All character in uppercase : "<< st1;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the string  : navneet
+All character in uppercase : NAVNEET
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code70">70.Write a C++ program to trim a string (remove whitespaces).</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< string >
+using namespace std;
+
+int main()
+{
+string st1="Hiii  hlo    hii hlo";
+cout<< "String before trim : "<< st1<< endl;
+int len=st1.length();
+for(int i=0;i< len;i++){
+    if(st1[i]==' '){
+        for(int j=i;j< len;j++){
+        st1[j]=st1[j+1];
+        }
+    }
+    if(st1[i]==' '){
+        i--;
+    }
+}
+cout<< "String after trim : "<< st1;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+String before trim : Hiii  hlo    hii hlo
+String after trim : Hiiihlohiihlo
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code71">71.Write a C++ program to get a substring of a given string between two specified positions.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+
+#include< iostream >
+#include< string >
+using namespace std;
+
+int main()
+{
+string st,subst="";
+int strt,end;
+cout<< "Enter the string  : ";
+cin>> st;
+cout<< "Enter the  starting and ending position for substring : ";
+cin>> strt >> end;
+if(strt>=0 && end<=st.length())
+{
+  for(int i=strt-1;i< end;i++){
+    subst+=st[i];
+  }
+  cout<< "Substring : "<< subst;
+  }
+  else{
+    cout<< "Invalid Range ";
+  }
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the string  : navneet
+Enter the  starting and ending position for substring : 1 3
+Substring : nav
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code72">72.Write a C++ program to replace all the ‘d’ characters with ‘f’ characters.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< string >
+using namespace std;
+
+int main()
+{
+string st;
+cout<< "Enter the string  : ";
+cin>> st;
+  for(int i=0;i< st.length();i++){
+    if(st[i]=='d'){
+        st[i]='f';
+    }
+  }
+cout<< "Replacing all 'd' with 'f' : "<< st;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the string  : doctor
+Replacing all 'd' with 'f' : foctor
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code73">73.Write a C++ program to get the length of a given string.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< string >
+using namespace std;
+int main()
+{
+string st;
+cout<< "Enter the string : ";
+cin>> st;
+int i=0;
+while(st[i]!='\0'){
+    i++;
+}
+cout<< "Lenght of the string : "<< i;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the string : tikal
+Lenght of the string : 5
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code74">74.Write a C++ program to print current date and time in the specified format.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include < iostream >
+#include < time.h >
+using namespace std;
+
+int main() {
+    // Get the current time
+    time_t current_time;
+    struct tm *local_time;
+
+    time(&current_time);
+    local_time = localtime(&current_time);
+
+    // Print date and time in the specified format
+    cout << "Current date and time: ";
+    cout << (local_time->tm_year + 1900) << "-" << (local_time->tm_mon + 1) << "-" << local_time->tm_mday << " ";
+    cout << local_time->tm_hour << ":" << local_time->tm_min << ":" << local_time->tm_sec << endl;
+
+    return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Current date and time: 2024-4-7 6:32:31
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code75">75. Write a C++ program to get the character at the given index within the String.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include < iostream >
+#include < conio.h >
+#include < string.h >
+using namespace std;
+
+int main() {
+    char str[100];
+    int index;
+
+    // Input string
+    cout << "Enter a string: ";
+    gets(str);
+
+    // Input index
+    cout << "Enter an index: ";
+    cin >> index;
+
+    // Check if index is valid
+    if (index >= 0 && index < strlen(str)) {
+        // Print the character at the given index
+        cout << "Character at index " << index << ": " << str[index] << endl;
+    } else {
+        cout << "Invalid index!" << endl;
+    }
+
+    return 0;
+}
+
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter a string: navneet
+Enter an index: 4
+Character at index 4: e
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code76">76.Write a C++ program to remove a particular character from a string.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+
+#include < iostream >
+#include < conio.h >
+#include < string.h >
+using namespace std;
+
+int main() {
+    char str[100];
+    char charToRemove;
+    cout << "Enter a string: ";
+    gets(str);
+    cout << "Enter the character to remove: ";
+    cin >> charToRemove;
+    int len = strlen(str);
+    int j = 0;
+    for (int i = 0; i < len; i++) {
+        if (str[i] != charToRemove) {
+            str[j++] = str[i];
+        }
+    }
+    str[j] = '\0'; 
+    cout << "String after removing '" << charToRemove << "': " << str << endl;
+
+    return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter a string: navneet sdhiman
+Enter the character to remove: s
+String after removing 's': navneet dhiman
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code77">77.Write a C++ program to reverse a String.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< string >
+using namespace std;
+
+int main()
+{
+string st="HELLO WORLD";
+char temp;
+cout<< "String : "<< st;
+int len=st.length()-1;
+for(int i=0;i< (len+1)/2;i++){ 
+     temp=st[i];
+     st[i]=st[len-i];
+     st[len-i]=temp;
+}
+cout<< endl<< "Reverse of string : "<< st;
+return 0;
+}
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+String : HELLO WORLD
+Reverse of string : DLROW OLLEH
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code78">78.Write a C++ program to remove html tags from a string.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include < iostream >
+#include < conio.h >
+#include < string.h >
+using namespace std;
+
+void removeHtmlTags(char* html, char* result) {
+    int resultIndex = 0;
+    bool insideTag = false;
+
+    for (int i = 0; html[i] != '\0'; ++i) {
+        if (html[i] == '<') {
+            insideTag = true;
+        } else if (html[i] == '>') {
+            insideTag = false;
+        } else if (!insideTag) {
+            result[resultIndex++] = html[i];
+        }
+    }
+    result[resultIndex] = '\0';
+}
+
+int main() {
+    char htmlString[1000];
+    char plainText[1000];
+
+    // Input HTML string
+    cout << "Enter an HTML string: ";
+    gets(htmlString);
+
+    // Remove HTML tags
+    removeHtmlTags(htmlString, plainText);
+
+    // Output the plain text
+    cout << "Plain text after removing HTML tags: " << plainText << endl;
+    return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter an HTML string: <body>   this is my website </body>
+Plain text after removing HTML tags:    this is my website
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code79">79.Write a C++ program to count total number of lines from a string.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< string >
+using namespace std;
+
+int main()
+{
+string st="hii hello hii \nThis that there\nthan their that";
+cout<< "String : "<< endl<< st;
+int c=0;
+for(int i=0;i< st.length();i++){ 
+     if(st[i]=='\n'){
+        c++;
+     }
+}
+cout<< endl<< "Total number of lines : "<< c+1;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+String : 
+hii hello hii 
+This that there
+than their that
+Total number of lines : 3
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code80">80. Write a C++ Program to Accept the Marks of a Student and find Total Marks and Percentage.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+int n,a=0;
+cout<< "Enter the no. of subjects : ";
+cin>> n;
+cout<< "Marks should be out of 100"<< endl;
+cout<< "Enter the marks of "<< n<< " subjects : ";
+for(int i=0;i< n;i++){
+    int temp;
+    cin>> temp;
+    a=a+temp;
+}
+cout<< "Total marks of student : "<< a<< endl;
+cout<< "Percentage : "<< (float)a/n<< "%";
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the no. of subjects : 3
+Marks should be out of 100
+Enter the marks of 3 subjects : 56 78 0
+Total marks of student : 134
+Percentage : 44.6667%
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code81">81.Write a C++ program to print numbers from 1 to 10 using loop.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+int main()
+{
+cout<< "1 to 10 numbers : "<< endl;
+for(int i=1;i< 11;i++){
+    cout<< i<< endl;
+}
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+1 to 10 numbers : 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code82">82.Write a C++ program to calculate the sum of first 10 natural number using loop.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+int s=0;
+for(int i=1;i< 11;i++){
+    s+=i;
+}
+cout<< "Sum of first 10 natural numbers : "<< s;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Sum of first 10 natural numbers : 55
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code83">83. Write a C++ program to print multiplication table of given number.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+int main()
+{
+int n;
+cout<< "Enter the number ";
+cin>> n;
+cout<< "Multiplication table of "<<n<<" : "<< endl;
+for(int i=1;i<11;i++){
+  cout<< n<< " X "<< i<< " = "<< n*i<< endl;
+}
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the number 9
+Multiplication table of 9 : 
+9 X 1 = 9
+9 X 2 = 18
+9 X 3 = 27
+9 X 4 = 36
+9 X 5 = 45
+9 X 6 = 54
+9 X 7 = 63
+9 X 8 = 72
+9 X 9 = 81
+9 X 10 = 90
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code84">84.Write a C++ program to find the factorial value of any number entered through the keyboard.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+int n,f=1;
+cout<< "Enter the number you want factorial : ";
+cin>> n;
+if(n>0){
+for(int i=1;i< n+1;i++){
+   f=f*i;
+}
+cout<< "Factorial of "<< n<< " : "<< f;}
+else if(n==0){
+    cout<< "Factorial of "<< n<<" : "<< 1;
+}
+else{
+    cout<< "Not define";
+}
+return 0;
+}
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the number you want factorial : 0
+Factorial of 0 : 1
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code85">85.Write a C++ program that prompts the user to input an integer and then outputs the number with the digits reversed order.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+int n;
+cout<< "Enter the number ";
+cin>> n;
+cout<< "Number in reverse order : ";
+while(n!=0){
+    cout<< n%10;
+    n=n/10;
+}
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the number 5678
+Number in reverse order : 8765
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code86">86. Write a C++ program that reads a set of integers, and then prints the sum of the even and odd integers using loop.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+int n,e=0,o=0;
+cout<< "Enter the number of integers you want to add: ";
+cin>> n;
+cout<< "Enter "<< n<< " integers : ";
+int temp;
+for(int i=0;i< n;i++){
+    cin>> temp;
+    if(temp&1==1){
+        o+=temp;
+    }
+    else{
+        e+=temp;
+    }
+}
+cout<< "Sum of odd integers : "<< o<< endl;
+cout<< "Sum of even integers : "<< e;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the number of integers you want to add: 6
+Enter 6 integers : 1 4 5 6 7 8
+Sum of odd integers : 13
+Sum of even integers : 18
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code87">87. Write a C++ program to check whether the number is a prime number or not.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+int n,c=0;
+cout<< "Enter the number : ";
+cin>> n;
+for(int j=2;j< n;j++){
+    if(n%j==0){
+         c=1;        
+       }
+    }
+    if(c==0){
+        cout<< "Prime No. ";
+    }
+    else{
+        cout<< "Not a prime no.";
+    }
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the number : 7
+Prime No. 
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code88">88.Write a C++ program to calculate HCF of Two given numbers using loop.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+int a,b,r;
+cout<< "Enter the number A and B : ";
+cin>> a>> b;
+if(a>b){
+    r=b;
+   }
+   else{
+    r=a;
+}
+while(r>0){
+  if(a%r==0 && b%r==0){
+    break;
+  }
+  r--;
+}
+cout<< "HCf of "<< a<< " and "<< b<< " : "<< r;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the number A and B : 6 9
+HCf of 6 and 9 : 3
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code89">89.Write a C++ program to enter the numbers till the user wants and at the end it should display the count of positive, negative and zeros.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+int h,temp,n=0,p=0,z=0;
+cout<< "Enter the times you want input integers: ";
+cin>> h;
+cout<< "Enter the integers : ";
+for(int i=0;i< h;i++){
+    cin>> temp;
+    if(temp > 0){
+       p++;
+    }
+    else if(temp < 0){
+        n++;
+    }
+    else{
+        z++;
+    }
+}
+cout<< "Number of Positive integer given : "<< p<< endl;
+cout<< "Number of Negative integer given : "<< n<< endl;
+cout<< "Number of Zeroes given : "<< z<< endl;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the times you want input integers: 4
+Enter the integers : 11
+12
+34
+56
+Number of Positive integer given : 4
+Number of Negative integer given : 0
+Number of Zeroes given : 0
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code90">90.Write a C++ program to enter the numbers till the user wants and at the end the program should display the largest and smallest numbers entered.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+int h,temp,g,s;
+cout<< "Enter the times you want input integers: ";
+cin>> h;
+cout<< "Enter the integers : ";
+cin>> temp;
+g=temp;
+s=temp;
+for(int i=0;i< h-1;i++){
+    cin>> temp;
+    if(g< temp){
+       g=temp;
+    }
+    if(s> temp){
+        s=temp;
+    }
+}
+cout<< "Largest Number entered : "<< g<< endl;
+cout<< "Smallest Number entered : "<< s;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the times you want input integers: 3
+Enter the integers : 45
+56
+34
+Largest Number entered : 56
+Smallest Number entered : 34
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code91">91.Write a C++ program to print out all Armstrong numbers between 1 to 600 using loop.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< math.h >
+using namespace std;
+int main()
+{
+int len,temp=0,a;
+cout<< "Armstrong numbers between 1 to 600 : "<< endl;
+for(int i=1;i< 601;i++){
+    a=0;
+    len=0;
+    temp=i;
+    while(temp!=0){
+        len++;
+        temp=temp/10;
+    }
+    temp=i;
+    while(temp!=0){
+       int inte;
+       inte=pow(temp%10,len);
+       a=a+inte;
+       temp=temp/10;
+    }
+    if(a==i){
+        cout<< i<< endl;
+    }
+  
+}
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Armstrong numbers between 1 to 600 : 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+153
+370
+371
+407
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code92">92.Write a C++ program to count total number of notes in entered amount using loop.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+int a,an=0,nc=0;
+cout<< "Enter the amount :  ";
+cin>> a;
+while(a!=an){
+    if(an+2000<=a){
+        an+=2000;
+        nc++;
+    }
+    else if(an+500<=a){
+        an+=500;
+        nc++;
+    }
+    else if(an+200<=a){
+        an+=200;
+        nc++;
+    }
+    else if(an+100<=a){
+        an+=100;
+        nc++;
+    }
+    else if(an+50<=a){
+        an+=50;
+        nc++;
+    }
+     else if(an+20<=a){
+        an+=20;
+        nc++;
+    } 
+    else if(an+10<=a){
+        an+=10;
+        nc++;
+    }
+    else if(an+5<=a){
+        an+=5;
+        nc++;
+    }
+    else if(an+2<=a){
+        an+=2;
+        nc++;
+    }
+    else{
+        an++;
+        nc++;
+    }
+}
+cout<< "Total no. of notes for this amount : "<< nc;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the amount :  500
+Total no. of notes for this amount : 1
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code93">93.Write a C++ program to print Fibonacci series of n terms where n is input by user using loop.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+int n;
+cout<< "Enter the no. of terms for series :  ";
+cin>> n;
+cout<< "Fibonacci series of "<< n<< " terms : "<< endl;
+if(n<=1){
+    if(n==0){
+        cout<< 0;
+    }
+    else{
+        cout<< 0<< endl<< 1;
+    }
+}
+else{
+    int temp,x=0,y=1;
+    cout<< 0<< endl<< 1<< endl;
+    for(int i=2;i< n;i++){
+        temp=x+y;
+        x=y;
+        y=temp;
+        cout<< temp<< endl;
+    }
+}
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the no. of terms for series :  4
+Fibonacci series of 4 terms : 
+0
+1
+1
+2
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code94">94. Write a C++ program to calculate the sum of following series where n is input by user.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code95">95.Write a C++ method to compute the average of three numbers.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+float a,b,c;
+cout<< "Enter three numbers : ";
+cin>> a>> b>> c;
+cout<< "Average of three numbers : "<< (a+b+c)/3;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter three numbers : 6  8 9
+Average of three numbers : 7.66667
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code96">96.Write a C++ method to find the smallest number among three numbers.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+int main(){
+float a,b,c;
+cout<< "Enter three numbers A,B and C : ";
+cin>> a>> b>> c;
+if(a< b){
+    if(a< c){
+        cout<< "A is smallest";
+    }
+    else{
+        cout<< "C is smallest";
+    }
+}
+else if(c< b){
+     cout<< "C is smallest ";
+}
+else if(b==a && b==c){
+    cout<< "All three are equal ";
+}
+else{
+    cout<< "B is smallest";
+}
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter three numbers A,B and C : 90 87 65
+C is smallest 
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code97">97. Write a C++ method to check whether an year entered by the user is a leap year or not.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+int y;
+cout<< "Enter the year : ";
+cin>> y;
+if(y%4==0 && y%100!=0 || y%400==0){
+    cout<< "Leap year ";
+}
+else{
+    cout<< "Not a leap year ";
+}
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the year : 2007
+Not a leap year
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code98">98.Write a C++ program to accept a float value of number and return a rounded float value.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< cmath >
+using namespace std;
+
+int main()
+{
+float f;
+cout<< "Enter the float value : ";
+cin>> f;
+cout<< "Rounded float value : "<< round(f);
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the float value : 56.66
+Rounded float value : 57
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code99">99.Write a C++ method to compute the sum of the digits in an integer.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+int a,s=0;
+cout<< "Enter the number : ";
+cin>> a;
+int r;
+while(a!=0){
+r=a%10;
+s+=r;
+a/=10;}
+cout<< "Sum of digits of an integer : "<< s;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the number : 654
+Sum of digits of an integer : 15
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code100">100.Write a C++ method to calculate the area of a triangle.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+float b,h;
+cout<< "Enter the Base and height of triangle : ";
+cin>> b>> h;
+cout<< "Area : "<< (b*h)/2.0;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the Base and height of triangle : 8 6
+Area : 24
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code101">101.Write a C++ method to find the area of a pentagon.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include < iostream >
+#include < conio.h >
+#include < math.h >
+using namespace std;
+
+double areaOfPentagon(double sideLength) {
+    const double pi = 3.14159265358979323846;
+    double cotTheta = 1 / tan(pi / 5); // cotangent of pi/5
+    double area = (5 * pow(sideLength, 2) * cotTheta) / 4;
+    return area;
+}
+
+int main() {
+    double sideLength;
+
+    // Input side length of the pentagon
+    cout << "Enter the side length of the pentagon: ";
+    cin >> sideLength;
+
+    // Calculate and output the area
+    double area = areaOfPentagon(sideLength);
+    cout << "Area of the pentagon: " << area << endl;
+
+    return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the side length of the pentagon: 5
+Area of the pentagon: 43.0119
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code102">102.Write a C++ method to find number is even number or not.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+int main()
+{
+int m;
+cout<< "Enter the number : ";
+cin>> m;
+if((m&1)==0){
+    cout<< "Even number ";
+}
+else{
+    cout<< "Not an even number";
+}
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the number : 64
+Even number 
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code103">103.Write a C++ method to check numbers is palindrome number or no.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+   int n;
+   cout<< "Enter the number : ";
+   cin>> n;
+      int temp=n,p=0;
+      while(n >0){
+        p=p*10+(n%10);
+        n=n/10;
+      }
+      if (temp==p){
+        cout<< "Pallindrome";
+      }
+      else{
+        cout<< "Not a Pallindrome";
+      }
+   return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the number : 76
+Not a Pallindrome
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code104">104.Write a C++ method to displays prime numbers between 1 to 20.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+int main()
+{
+   int c=0;
+   cout<< "Prime numbers between 1 to 20 : "<< endl;
+   for(int i=1;i< 21;i++){
+    c=0;
+    for(int j=2;j< i;j++){
+       if(i%j==0){
+          c=1;        
+       }
+    }
+    if(c==0){
+        cout<< i<< endl;
+    }
+   }
+   return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Prime numbers between 1 to 20 : 
+1
+2
+3
+5
+7
+11
+13
+17
+19
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code105">105.Write a C++ method to find GCD and LCM of Two Numbers.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+int a,b,r;
+cout<< "Enter the number A and B : ";
+cin>> a>> b;
+if(a > b){
+    r=b;
+   }
+   else{
+    r=a;
+}
+while(r > 0){
+  if(a%r==0 && b%r==0){
+    break;
+  }
+  r--;
+}
+cout<< "GCD of "<< a<< " and "<< b<< " : "<< r<< endl;
+cout<< "LCM of "<< a<< " and "<< b<< " : "<< (a*b)/r;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the number A and B : 4 7
+GCD of 4 and 7 : 1
+LCM of 4 and 7 : 28
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code106">106.Write a C++ method to find factorial using recursion.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int facrec(int n) {
+    if(n<=1){
+        return 1;
+    }
+    else{
+        return n*facrec(n-1);
+    }
+}
+int main(){
+int num;
+cout<< "Enter the number for factorial : ";
+cin>> num;
+cout<< "Factorial using recursion : "<< facrec(num);
+return 0; 
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the number for factorial : 6
+Factorial using recursion : 720
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code107">107.Write a C++ program to reverse an integer number.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+int n,r=0,rem;
+cout<< "Enter the number : ";
+cin>> n;
+while(n!=0){
+    rem=n%10;
+    r=r*10+rem;
+    n/=10;
+}
+cout<< "Reverse of integer : "<< r;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the number : 45754355
+Reverse of integer : 55345754
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code108">108.Write a C++ program to round a float number to specified decimals.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< cmath >
+using namespace std;
+
+int main()
+{
+int n;
+float f,r;
+cout<< "Enter the float value : "; 
+cin>> f;
+cout<< "Enter the number of decimal to round up : ";
+cin>> n;
+r=round(f);
+int temp=f,len=0;
+while(temp!=0){
+    len++;
+    temp/=10;
+}
+r=(float)r/pow(10,len-n);
+cout<< "Rounded float value : "<< round(r);
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the float value : 44.89
+Enter the number of decimal to round up : 2
+Rounded float value : 45
+
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code109">109.Write a C++ program to test if a double number is an integer.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+int n;
+float f;
+cout<< "Enter the Double number : "; 
+cin>> f;
+n=f;
+if(n==f){
+    cout<< "Double number is an integer";
+}
+else{
+    cout<< "Double number is not an integer";
+}
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the Double number : 556756
+Double number is an integer
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code110">110.Write a C++ program to round up the result of integer division.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< cmath >
+using namespace std;
+
+int main()
+{
+int a,b;
+cout<< "Enter the number and A and B (B/A) : "; 
+cin>> a>> b;
+cout<< "Rounded result of integer division : "<< round((float)b/a); 
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the number and A and B (B/A) : 4 8
+Rounded result of integer division : 2
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code111">111.Write a C++ program to convert Roman number to an integer number.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+#include< string >
+using namespace std;
+
+int roman(char m)
+{
+    char rom[]="MDCLXVI";
+    for(int i=0;i< 7;i++){
+        if(m==rom[0]){
+            return 1000;
+        }
+        else if(m==rom[1]){
+            return 500;
+        }
+        else if(m==rom[2]){
+            return 100;
+        }
+        else if(m==rom[3]){
+            return 50;
+        }
+        else if(m==rom[4]){
+            return 10;
+        }
+        else if(m==rom[5]){
+            return 5;
+        }
+        else if(m==rom[6]){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    }
+}
+int main(){
+string st;
+int n=0;
+cout<< "Enter the roman number in capital : ";
+cin>> st;
+for(int i=0;i< st.length();i++){
+    int temp=roman(st[i]);
+    if(temp< roman(st[i+1])){
+           n=n-temp;
+    }
+    else{
+        n=n+temp;
+    }
+}
+cout<< "Integer value of the roman number : "<< n;
+return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the roman number in capital : IV
+Integer value of the roman number : 4
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code112">112.Write a C++ program to convert a float value to absolute value.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include< iostream >
+using namespace std;
+
+int main()
+{
+    float f;
+    cout<< "Enter the float value : ";
+    cin>> f;
+    if(f>=0){
+        cout<< "Absolute value : "<< f;
+    }
+    else{
+        cout<< "Absolute value : "<< -f;
+    }
+	return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Enter the float value : 11.31
+Absolute value : 11.31
+</pre>
+</div>
+</div>
+<div class="code">
+        <div>
+          <h2 name="code113">113. Create a class entering the command line arguments from the user and show all the arguments as output.</h2>
+        </div>
+        <div>
+	<h2>source code</h2>
+          <pre>
+#include < iostream >
+using namespace std;
+
+class CommandLineArguments {
+private:
+    static const int MAX_ARGS = 100;
+    int argc;
+    char** argv;
+
+public:
+    CommandLineArguments(int argc, char* argv[]) {
+	argc=argc;
+	argv=argv; 
+    	
+	} 
+
+    void displayArguments() {
+        cout << "Command-line arguments:" << endl;
+        for (int i = 1; i < argc; ++i) {
+            cout << argv[i] << endl;
+        }
+    }
+};
+
+int main(int argc, char* argv[]) {
+    CommandLineArguments cmdArgs(argc, argv);
+    cmdArgs.displayArguments();
+    return 0;
+}
+</pre>
+</div>
+<div style="background:black; color:white">
+	<h2>output</h2>
+	<pre>
+Command-line arguments:
+argument1
+argument2
+argument3
+
+</pre>
+</div>
+</div>
+</body>
+	</html>
+
+	
+
+	
+
+
+	
+	
+
+	
+
+
+	
+	
+
+	
+
+
+
+	
+	
+	
+
+
+	
+	
+
+
+
+
+
+	
+
+	
+
+
+
+
+	
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+

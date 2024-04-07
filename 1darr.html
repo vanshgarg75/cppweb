@@ -1,0 +1,2168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>One Dimensional Array</title>
+    <style>
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+        pre{
+            font:bold;
+            font-size: large;
+        }
+    </style>
+  </head>
+  <body>
+    <h1> Single Dimensional Array</h1>
+    <div class="code">
+    <div class="head">
+    <h2 name="code1">1. Program to copy all elements of one array into another</h2>
+      </div>
+      <div class="left">
+        <h2>source code</h2>
+        <pre>
+    #includei&lt;ostream&gt;
+        using namespace std;
+        int main()
+        {
+            int arr1[5],arr2[5];
+            cout&lt;&lt;"Enter a number:";
+            int i;
+            for(i=0;i&lt;5;i++)
+            {
+                cin&gt;&gt;arr1[i];
+            }
+            for(i=0;i&lt;5;i++)
+            {
+                arr2[i]=arr1[i];
+            }
+            cout&lt;&lt;"Array 2:";
+            for(i=0;i&lt;5;i++)
+            {
+                cout&lt;&lt;arr2[i]&lt;&lt;" ";
+            }
+            return 0;
+        }
+        
+            </pre
+        >
+      </div>
+      <div class="right">
+        <h2>output</h2>
+        <pre>
+ Enter a number:1 2 3 4 5
+        Array 2:1 2 3 4 5
+     </pre
+        >
+      </div>
+    </div>
+    <div class="code">
+      <div class="head" >
+      <h2 name="code2">2. Program to find the frequency of each element in the array</h2>
+      </div>
+      <div class="left">
+        <h2>source code</h2>
+        <pre>
+    #include&lt;iostream&gt;
+        using namespace std;
+        int main()
+        {
+            int arr[8],arr1[8];
+            cout&lt;&lt;"Enter value:";
+            int i;
+            for(i=0;i&lt;8;i++)
+            {
+                cin&gt;&gt;arr[i];
+            }
+            int j;
+            int count=0;
+            for(i=0;i&lt;8;i++)
+            {
+                count=0;
+                for(j=0;j&lt;8;j++)
+                {
+                    if(arr[i]==arr[j])
+                    {
+                        count++;
+                    }
+                }
+                arr1[i]=count;
+            }
+            cout&lt;&lt;"Output:";
+            for(i=0;i&lt;8;i++)
+            {
+                cout&lt;&lt;"Char:"&lt;&lt;arr[i]&lt;&lt;" Frequency:"&lt;&lt;arr1[i]&lt;&lt;endl;
+            }
+        }
+         </pre
+        >
+      </div>
+      <div class="rigth">
+        <h2>output</h2>
+        <pre>
+Enter value:1 2 3 2 4 3 1 5
+        Output:Char:1 Frequency:2
+        Char:2 Frequency:2
+        Char:3 Frequency:2
+        Char:2 Frequency:2
+        Char:4 Frequency:1
+        Char:3 Frequency:2
+        Char:1 Frequency:2
+        Char:5 Frequency:1
+        </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code3">3. Program to left rotate the elements of an array</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+    #include&lt;iostream&gt;
+    using namespace std;
+    int main()
+    {
+        int arr[5];
+        cout&lt;&lt;"Input values:";
+        int i;
+        for(i=0;i&lt;5;i++)
+        {
+            cin>>arr[i];
+        }
+        for(i=0;i&lt;5;i++)
+        {
+            arr[i]=arr[i+1];
+        }
+        arr[i]='\0';
+        cout&lt;&lt;"Output:";
+        for(i=0;i&lt;5;i++)
+        {
+            cout&lt;&lt;arr[i]&lt;&lt;" ";
+        }
+    }
+     </pre
+        >
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+ 
+        Input values:1 2 3 4 5
+        Output:2 3 4 5 0
+     </pre
+        >
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code4">4. Program to print the duplicate elements of an array</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+    #include&lt;iostream&gt;
+        using namespace std;
+        int main()
+        {
+            int a[10];
+            cout&lt;&lt;"Enter numbers:";
+            int i;
+            for(i=0;i&lt;10;i++)
+            {
+                cin>>a[i];
+            }
+            for(i=0;i&lt;10;i++)
+            {
+                for(int j=i+1;j&lt;10;j++)
+                {
+                    if(a[i]==a[j])
+                    {
+                        cout&lt;&lt;"Duplicate:"&lt;&lt;a[j]&lt;&lt;endl;
+                        break;
+                    }
+                }
+            }
+        }
+        
+     </pre
+        >
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+ 
+        Enter numbers:1 2 3 2 3 2 4 4 5 6
+        Duplicate:2
+        Duplicate:3
+        Duplicate:4
+     </pre
+        >
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code5">5. Program to print the elements of an array</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+    #include&lt;iostream&gt;
+        using namespace std;
+        int main()
+        {
+            int arr1[5];
+            cout&lt;&lt;"Enter a number:";
+            int i;
+            for(i=0;i&lt;5;i++)
+            {
+                cin>>arr1[i]; //inputing data
+            }
+            cout&lt;&lt;"Output:"&lt;&lt;endl;
+            for(i=0;i&lt;5;i++)
+            {
+                cout&lt;&lt;arr1[i]&lt;&lt;" ";
+            }
+        }
+        
+     </pre
+        >
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+ 
+        Enter a number:1 2 3 4 5
+        Output:
+        1 2 3 4 5
+     </pre
+        >
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code6">6. Program to print the elements of an array in reverse order</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+    #include&lt;iostream&gt;
+        using namespace std;
+        int main()
+        {
+            int arr[5];
+            cout&lt;&lt;"Enter number:";
+            int i;
+            for(i=0;i&lt;5;i++)
+            {
+                cin&gt;&gt;arr[i];
+            }
+            cout&lt;&lt;"Output:"&lt;&lt;endl;
+            for(i=4;i>=0;i--)
+            {
+                cout&lt;&lt;arr[i]&lt;&lt;" ";
+            }
+        }
+    </pre
+        >
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+ 
+        Enter a number:1 2 3 4 5
+        Output:
+        1 2 3 4 5
+     </pre
+        >
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code7">7. Program to print the elements of an array present on even position</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+    #include&lt;iostream&gt;
+        using namespace std;
+        int main()
+        {
+            int arr1[5];
+            cout&lt;&lt;"Enter a number:";
+            int i;
+            for(i=0;i&lt;5;i++)
+            {
+                cin&gt;&gt;arr1[i]; 
+            }
+            cout&lt;&lt;"Output:"&lt;&lt;endl;
+            for(i=0;i&lt;5;i=i+2)
+            {
+                cout&lt;&lt;arr1[i]&lt;&lt;" ";
+            }
+        }
+    </pre
+        >
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+ 
+        Enter a number:1 2 3 4 5
+        Output:
+        1 3 5
+     </pre
+        >
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code8">8. Program to print the elements of an array present on odd position</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+    #include&lt;iostream&gt;
+        using namespace std;
+        int main()
+        {
+            int arr1[5];
+            cout&lt;&lt;"Enter a number:";
+            int i;
+            for(i=0;i&lt;5;i++)
+            {
+                cin&gt;&gt;arr1[i]; 
+            }
+            cout&lt;&lt;"Output:"&lt;&lt;endl;
+            for(i=1;i&lt;5;i=i+2)
+            {
+                cout&lt;&lt;arr1[i]&lt;&lt;" ";
+            }
+        }
+        
+    </pre
+        >
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+ 
+        Enter a number:1 2 3 4 5
+        Output:
+        2 4
+     </pre
+        >
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code9">9. Program to print the largest element in an array</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+        #include&lt;iostream&gt;
+            using namespace std;
+            int main()
+            {
+                int arr[5];
+                cout&lt;&lt;"Input:";
+                int i;
+                for(i=0;i&lt;5;i++)
+                {
+                    cin&gt;&gt;arr[i];
+                }
+                int maxlength=arr[0];
+                for(i=0;i&lt;5;i++)
+                {
+                    if(maxlength&lt;arr[i])
+                    {
+                        maxlength=arr[i];
+                    }
+                }
+                cout&lt;&lt;"Largest element:"&lt;&lt;maxlength;
+            }
+             
+        </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+ 
+            Input:23 45 65 34 68
+            Largest element:68
+         </pre
+        >
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code10">10. Program to print the smallest element in an array</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+            #include&lt;iostream&gt;
+                using namespace std;
+                int main()
+                {
+                    int arr[5];
+                    cout&lt;&lt;"Input:";
+                    int i;
+                    for(i=0;i&lt;5;i++)
+                    {
+                        cin&gt;&gt;arr[i];
+                    }
+                    int min=arr[0];
+                    for(i=0;i&lt;5;i++)
+                    {
+                        if(min&gt;arr[i])
+                        {
+                            min=arr[i];
+                        }
+                    }
+                    cout&lt;&lt;"Smallest element:"&lt;&lt;min;
+                }
+                
+            </pre
+        >
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+ 
+                Input:2 23 45 1 234
+                Smallest element:1
+             </pre
+        >
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code11">11. Program to print the number of elements present in an array</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+                #include&lt;iostream&gt;
+                    using namespace std;
+                    int main()
+                    {
+                        int arr[100];
+                        int l;
+                        cout&lt;&lt;"Enter number of elements you want print:";
+                        cin>>l;
+                        int i;
+                        cout&lt;&lt;"Input:";
+                        for(i=0;i&lt;l;i++)
+                        {
+                            cin>>arr[i];
+                        }
+                        int count=0;
+                        for(i=0;i&lt;l;i++)
+                        {
+                            arr[i];
+                        }
+                        cout&lt;&lt;"Number of elements:"&lt;&lt;i;
+                    }
+                </pre
+        >
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+ 
+                    Enter number of elements you want print:8
+                    Input:1 2 3 4 5 6 7 8
+                    Number of elements:8
+                 </pre
+        >
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code12">12. Program to print the sum of all the items of the array
+        </h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+                    #include&lt;iostream>
+                        using namespace std;
+                        int main()
+                        {
+                            int arr[10];
+                            cout&lt;&lt;"Input:";
+                            int i;
+                            for(i=0;i&lt;10;i++)
+                            {
+                                cin>>arr[i];
+                            }
+                            int sum=0;
+                            for(i=0;i&lt;10;i++)
+                            {
+                                sum=sum+arr[i];
+                            }
+                            cout&lt;&lt;"Sum:"&lt;&lt;sum;
+                        }
+                        
+                    </pre
+        >
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+ 
+                        Input:12 13 556 67 43 56 7654 34 6 145
+                        Sum:8586  
+                     </pre
+        >
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code13">13. Program to right rotate the elements of an array</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+          #include < iostream >
+using namespace std;
+
+// Function to right rotate the elements of an array by one position
+void rightRotateByOne(int arr[], int size) {
+    int temp = arr[size - 1];
+    for (int i = size - 1; i > 0; i--) {
+        arr[i] = arr[i - 1];
+    }
+    arr[0] = temp;
+}
+
+// Function to perform right rotation of an array by k positions
+void rightRotate(int arr[], int size, int k) {
+    for (int i = 0; i < k; i++) {
+        rightRotateByOne(arr, size);
+    }
+}
+
+// Function to print the elements of an array
+void printArray(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        cout &lt;&lt; arr[i] &lt;&lt; " ";
+    }
+    cout &lt;&lt; endl;
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int k = 2; // Number of positions to rotate
+
+    cout &lt;&lt; "Original Array: ";
+    printArray(arr, size);
+
+    // Right rotate the array by k positions
+    rightRotate(arr, size, k);
+
+    cout &lt;&lt; "Array after right rotation by " &lt;&lt; k &lt;&lt; " positions: ";
+    printArray(arr, size);
+
+    return 0;
+}
+
+        </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+          output:-
+          Original Array: 1 2 3 4 5
+          Array after right rotation by 2 positions: 4 5 1 2 3          
+        </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code14">14. Program to sort the elements of an array in ascending order
+        </h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+          #include < iostream >
+using namespace std;
+
+// Function to sort the elements of an array in ascending order
+void bubbleSortAscending(int arr[], int size) {
+    for (int i = 0; i < size - 1; i++) {
+        for (int j = 0; j < size - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                // Swap elements if they are in the wrong order
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
+
+// Function to print the elements of an array
+void printArray(const int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        cout &lt;&lt; arr[i] &lt;&lt; " ";
+    }
+    cout &lt;&lt; endl;
+}
+
+int main() {
+    int arr[] = {5, 3, 9, 2, 7};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    cout &lt;&lt; "Original Array: ";
+    printArray(arr, size);
+
+    // Call the function to sort the array in ascending order
+    bubbleSortAscending(arr, size);
+
+    cout &lt;&lt; "Array sorted in ascending order: ";
+    printArray(arr, size);
+
+    return 0;
+}
+        </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+          output:-
+          Original Array: 5 3 9 2 7
+          Array sorted in ascending order: 2 3 5 7 9          
+        </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code15">15. Program to sort the elements of an array in descending order
+        </h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+          #include&lt;iostream> 
+using namespace std;
+
+// Function to sort the elements of an array in descending order
+void bubbleSortDescending(int arr[], int size) {
+    for (int i = 0; i < size - 1; i++) {
+        for (int j = 0; j < size - i - 1; j++) {
+            if (arr[j] < arr[j + 1]) {
+                // Swap elements if they are in the wrong order
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
+
+// Function to print the elements of an array
+void printArray(const int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        cout &lt;&lt; arr[i] &lt;&lt; " ";
+    }
+    cout &lt;&lt; endl;
+}
+
+int main() {
+    int arr[] = {5, 3, 9, 2, 7};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    cout &lt;&lt; "Original Array: ";
+    printArray(arr, size);
+
+    // Call the function to sort the array in descending order
+    bubbleSortDescending(arr, size);
+
+    cout &lt;&lt; "Array sorted in descending order: ";
+    printArray(arr, size);
+
+    return 0;
+}
+        </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+          output:-
+          Original Array: 5 3 9 2 7
+          Array sorted in descending order: 9 7 5 3 2
+        </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code16">16. Program to Find 3rd Largest Number in an array
+        </h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+          #include < iostream >
+using namespace std;
+
+// Function to find the third largest number in an array
+int findThirdLargest(const int arr[], int size) {
+    // If the array has less than 3 elements, return a sentinel value
+    if (size < 3) {
+        return -1; // Return some sentinel value indicating error or absence of valid result
+    }
+
+    // Initialize three variables to keep track of the three largest numbers
+    int firstLargest = arr[0];
+    int secondLargest = arr[1];
+    int thirdLargest = arr[2];
+
+    // Arrange the largest variables in decreasing order
+    if (secondLargest > firstLargest) {
+        swap(firstLargest, secondLargest);
+    }
+    if (thirdLargest > secondLargest) {
+        swap(secondLargest, thirdLargest);
+    }
+    if (secondLargest > firstLargest) {
+        swap(firstLargest, secondLargest);
+    }
+
+    // Iterate through the array to find the three largest numbers
+    for (int i = 3; i < size; i++) {
+        if (arr[i] > firstLargest) {
+            thirdLargest = secondLargest;
+            secondLargest = firstLargest;
+            firstLargest = arr[i];
+        } else if (arr[i] > secondLargest && arr[i] != firstLargest) {
+            thirdLargest = secondLargest;
+            secondLargest = arr[i];
+        } else if (arr[i] > thirdLargest && arr[i] != secondLargest && arr[i] != firstLargest) {
+            thirdLargest = arr[i];
+        }
+    }
+
+    return thirdLargest;
+}
+
+int main() {
+    int arr[] = {5, 3, 9, 2, 7};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    // Call the function to find the third largest number
+    int thirdLargest = findThirdLargest(arr, size);
+
+    if (thirdLargest != -1) {
+        cout &lt;&lt; "The third largest number in the array is: " &lt;&lt; thirdLargest &lt;&lt; endl;
+    } else {
+        cout &lt;&lt; "The array doesn't have a third largest number." &lt;&lt; endl;
+    }
+
+    return 0;
+}
+        </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+          output:-
+          The third largest number in the array is: 5
+        </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code17">17. Program to Find 2nd Largest Number in an array</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+          #include < iostream >
+using namespace std;
+
+// Function to find the second largest number in an array
+int findSecondLargest(const int arr[], int size) {
+    if (size < 2) {
+        // Handle case when array has less than 2 elements
+        return -1; // Return some sentinel value indicating error or absence of valid result
+    }
+
+    int largest = arr[0];
+    int secondLargest = arr[1];
+
+    // Ensure largest is greater than or equal to secondLargest
+    if (largest < secondLargest) {
+        int temp = largest;
+        largest = secondLargest;
+        secondLargest = temp;
+    }
+
+    for (int i = 2; i < size; i++) {
+        if (arr[i] > largest) {
+            secondLargest = largest;
+            largest = arr[i];
+        } else if (arr[i] > secondLargest && arr[i] != largest) {
+            secondLargest = arr[i];
+        }
+    }
+
+    return secondLargest;
+}
+
+int main() {
+    int arr[] = {5, 3, 9, 2, 7};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int secondLargest = findSecondLargest(arr, size);
+
+    if (secondLargest != -1) {
+        cout &lt;&lt; "The second largest number in the array is: " &lt;&lt; secondLargest &lt;&lt; endl;
+    } else {
+        cout &lt;&lt; "The array doesn't have a second largest number." &lt;&lt; endl;
+    }
+
+    return 0;
+}
+        </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+          output:-
+          The second largest number in the array is: 7
+        </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code18">18. Program to Find Largest Number in an array</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+          #include 
+using namespace std;
+
+// Function to find the largest number in an array
+int findLargest(const int arr[], int size) {
+    if (size == 0) {
+        // Handle case when array is empty
+        return -1; // Return some sentinel value indicating error or absence of valid result
+    }
+
+    int largest = arr[0]; // Initialize largest to the first element of the array
+
+    for (int i = 1; i < size; i++) {
+        if (arr[i] > largest) {
+            largest = arr[i];
+        }
+    }
+
+    return largest;
+}
+
+int main() {
+    int arr[] = {5, 3, 9, 2, 7};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    // Call the function to find the largest number
+    int largest = findLargest(arr, size);
+
+    if (largest != -1) {
+        cout &lt;&lt; "The largest number in the array is: " &lt;&lt; largest &lt;&lt; endl;
+    } else {
+        cout &lt;&lt; "The array is empty." &lt;&lt; endl;
+    }
+	return 0;
+}
+        </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+          output:-
+          The largest number in the array is: 9
+        </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code19">19. C++ Program Find 2nd Smallest Number in an array</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+          #include < iostream >
+using namespace std;
+
+// Function to find the second smallest number in an array
+int findSecondSmallest(const int arr[], int size) {
+    // Assuming the array has at least two elements
+    int smallest = arr[0];
+    int secondSmallest = arr[1];
+
+    if (secondSmallest < smallest) {
+        int temp = smallest;
+        smallest = secondSmallest;
+        secondSmallest = temp;
+    }
+
+    for (int i = 2; i < size; i++) {
+        if (arr[i] < smallest) {
+            secondSmallest = smallest;
+            smallest = arr[i];
+        } else if (arr[i] < secondSmallest && arr[i] != smallest) {
+            secondSmallest = arr[i];
+        }
+    }
+
+    return secondSmallest;
+}
+
+int main() {
+    int arr[] = {5, 3, 9, 2, 7};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    // Call the function to find the second smallest number
+    int secondSmallest = findSecondSmallest(arr, size);
+
+    cout &lt;&lt; "The second smallest number in the array is: " &lt;&lt; secondSmallest &lt;&lt; endl;
+
+    return 0;
+}
+        </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+          output:-
+          The second smallest number in the array is: 3
+        </pre>
+      </div>
+    </div>
+
+    <div class="code">
+      <div>
+        <h2 name="code120">20. Program to Find Smallest Number in an array
+        </h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+          #include < iostream >
+using namespace std;
+
+// Function to find the smallest number in an array
+int findSmallest(const int arr[], int size) {
+    // If the array is empty, return -1
+    if (size == 0) {
+        return -1;
+    }
+
+    int smallest = arr[0];
+
+    // Iterate through the array to find the smallest element
+    for (int i = 1; i < size; i++) {
+        if (arr[i] < smallest) {
+            smallest = arr[i];
+        }
+    }
+
+    return smallest;
+}
+
+int main() {
+    int arr[] = {5, 3, 9, 2, 7};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int smallest = findSmallest(arr, size); //function call
+
+    if (smallest != -1) {
+        cout &lt;&lt; "The smallest number in the array is: " &lt;&lt; smallest &lt;&lt; endl;
+    } else {
+        cout &lt;&lt; "The array is empty." &lt;&lt; endl;
+    }
+
+    return 0;
+}
+        </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+          output:-
+          The smallest number in the array is: 2
+        </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code121">21. Program to Remove Duplicate Element in an array
+        </h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+          #include < iostream >
+using namespace std;
+
+// Function to remove duplicate elements from an array
+int removeDuplicates(int arr[], int size) {
+    if (size == 0 || size == 1) {
+        return size;
+    }
+
+    int index = 0;
+
+    // Traverse the array and move non-duplicate elements to the beginning
+    for (int i = 0; i < size - 1; i++) {
+        if (arr[i] != arr[i + 1]) {
+            arr[index++] = arr[i];
+        }
+    }
+
+    // Store the last element (which is always unique)
+    arr[index++] = arr[size - 1];
+
+    return index; // Return the new size of the array
+}
+
+// Function to print the array
+void printArray(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        cout &lt;&lt; arr[i] &lt;&lt; " ";
+    }
+    cout &lt;&lt; endl;
+}
+
+int main() {
+    int arr[] = {1, 2, 2, 3, 4, 4, 5};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    cout &lt;&lt; "Original Array: ";
+    printArray(arr, size);
+    int newSize = removeDuplicates(arr, size);    //function call to remove duplicates
+
+    cout &lt;&lt; "Array after removing duplicates: ";
+    printArray(arr, newSize);
+
+    return 0;
+}
+        </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+          output:-
+          Original Array: 1 2 2 3 4 4 5
+          Array after removing duplicates: 1 2 3 4 5                          
+        </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code122">22. Program to Print Odd and Even Numbers from an array
+        </h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+          #include &lt;iostream>
+          using namespace std;
+
+// Function to print odd and even numbers from an array
+void printOddEven(const int arr[], int size) {
+    cout &lt;&lt; "Odd numbers: ";
+    for (int i = 0; i < size; i++) {
+        if (arr[i] % 2 != 0) {
+            cout &lt;&lt; arr[i] &lt;&lt; " ";
+        }
+    }
+    cout &lt;&lt; endl;
+
+    cout &lt;&lt; "Even numbers: ";
+    for (int i = 0; i < size; i++) {
+        if (arr[i] % 2 == 0) {
+            cout &lt;&lt; arr[i] &lt;&lt; " ";
+        }
+    }
+    cout &lt;&lt; endl;
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    cout &lt;&lt; "Original Array: ";
+    for (int i = 0; i < size; i++) {
+        cout &lt;&lt; arr[i] &lt;&lt; " ";
+    }
+    cout &lt;&lt; endl;
+
+    // Call the function to print odd and even numbers
+    printOddEven(arr, size);
+
+    return 0;
+}
+        </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+          output:-
+          Original Array: 1 2 3 4 5 6 7 8 9
+          Odd numbers: 1 3 5 7 9
+          Even numbers: 2 4 6 8         
+        </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code23">23. Write a C++ program to swap the first and last elements of an array and create a new array</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+          #include < iostream >
+          using namespace std;
+
+// Function to swap the first and last elements of an array and create a new array
+int* swapFirstLast(const int arr[], int size) {
+    int* newArr = new int[size]; // Allocate memory for new array
+    
+    // Copy the original array to the new array
+    for (int i = 0; i < size; i++) {
+        newArr[i] = arr[i];
+    }
+
+    // Swap the first and last elements
+    int temp = newArr[0];
+    newArr[0] = newArr[size - 1];
+    newArr[size - 1] = temp;
+
+    return newArr; // Return the new array
+}
+
+// function to print the array
+void printArray(const int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        cout &lt;&lt; arr[i] &lt;&lt; " ";
+    }
+    cout &lt;&lt; endl;
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    cout &lt;&lt; "Original Array: ";
+    printArray(arr, size);
+
+    // Call the function to swap first and last elements and create a new array
+    int* swappedArr = swapFirstLast(arr, size);
+
+    cout &lt;&lt; "Array after swapping first and last elements: ";
+    printArray(swappedArr, size);
+
+    // Don't forget to deallocate memory for the new array
+    delete[] swappedArr;
+
+    return 0;
+}
+        </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+          output:-
+          Original Array: 1 2 3 4 5
+          Array after swapping first and last elements: 5 2 3 4 1
+        </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code24">24. Write a C++ program to count the number of even and odd elements in a given array </h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include< iostream>
+
+          using namespace std;
+          
+          int countevenodd(int arr[],int size,int& evencount, int& oddcount){
+            evencount=0;
+            oddcount=0;
+          
+            for(int i=0;i < size;i++){
+            
+              if (arr[i]%2==0){
+              evencount++;
+              }
+              else{
+              oddcount++;
+              }
+            }
+            return 0;
+          }
+          //main definition
+          int main(){
+            int arr[]={1,2,3,4,5,6,7,8,9};
+            int size =sizeof(arr)/sizeof(arr[0]);
+            int evencount,oddcount;
+            //call the function to count even and odd
+            
+            countevenodd(arr,size,evencount,oddcount);
+            
+            cout&lt;&lt; "Number of even elements: "&lt;&lt; evencount&lt;&lt; endl;
+            cout&lt;&lt; "Number of odd elements: "&lt;&lt; oddcount&lt;&lt; endl;
+            return 0;	
+          }
+          </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+          output:-
+          Number of even elements: 4
+          Number of odd elements: 5         
+        </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code25">25. Program to sum values of an array</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+          #include&lt;iostream>
+          using namespace std;
+          
+                     // Function to calculate the size of array // 
+          int sumArray(int arr[], int size) {
+              int sum = 0;
+              for (int i = 0; i &lt; size; ++i) {
+                  sum += arr[i];
+              }
+              return sum;
+          }
+                      // Main  function Inclusion //
+          int main() {
+              // Define an array
+              int arr[] = {1, 2, 3, 4, 5,6};
+          
+              // Calculate the sum of the array elements
+              int total = sumArray(arr, sizeof(arr) / sizeof(arr[0]));
+          
+              // Output the sum
+              cout &lt;&lt; "Sum of array elements: " &lt;&lt; total &lt;&lt; endl;
+          
+              return 0;
+          }
+          </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+          Sum of array elements: 21
+        </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code26">26. Write a C++ program to find the index of an array element</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+          #include &lt;iostream>
+            using namespace std;
+                   // Creating function to find index //
+            int findIndex(int arr[], int size, int target) {
+                for (int i = 0; i &lt; size; ++i) {
+                    if (arr[i] == target) {
+                        return i; // Return the index if found //
+                    }
+                }
+                return -1; // Return -1 if not found
+            }
+            
+            int main() {
+                int size;
+                cout &lt;&lt; "Enter the size of the array: ";
+                cin >> size;
+            
+                // Define an array with the specified size //
+                int arr[size];
+                cout &lt;&lt; "Enter " &lt;&lt; size &lt;&lt; " integers for the array:\n";
+            
+                // Input elements into the array //
+                for (int i = 0; i &lt; size; ++i) {
+                    cin >> arr[i];
+                }
+            
+                // Element to search
+                int target;
+                cout &lt;&lt; "Enter the element to search for: ";
+                cin >> target;
+            
+                // Find the index of the target element
+                int index = findIndex(arr, size, target);
+            
+                // Output the index
+                if (index != -1) {
+                    cout &lt;&lt; "Index of " &lt;&lt; target &lt;&lt; " is: " &lt;&lt; index &lt;&lt; endl;
+                } else {
+                    cout &lt;&lt; "Element " &lt;&lt; target &lt;&lt; " not found in the array." &lt;&lt; endl;
+                }
+                return 0;
+            }
+            
+        </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+          Enter the size of the array: 4
+          Enter 4 integers for the array:
+          22 34 56 87
+          Enter the element to search for: 56
+          Index of 56 is: 2
+        </pre>
+      </div>
+    </div>
+
+    <div class="code">
+      <div>
+        <h2 name="code27">27. Program to calculate the average value of array elements </h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+          #include&lt;iostream>
+            using namespace std;
+                       // Function to calculate average //
+            double calculateAverage(int arr[], int size) {
+                double sum = 0;
+            
+                // Calculate the sum of array elements
+                for (int i = 0; i < size; ++i) {
+                    sum += arr[i];
+                }
+            
+                // Calculate the average
+                return sum / size;
+            }
+            
+            int main() {
+                int size;
+                cout &lt;&lt; "Enter the size of the array: ";
+                cin >> size;
+            
+                // Define an array with the specified size
+                int arr[size];
+                cout &lt;&lt; "Enter " &lt;&lt; size &lt;&lt; " integers for the array:\n";
+            
+                // Input elements into the array
+                for (int i = 0; i < size; ++i) {
+                    cin >> arr[i];
+                }
+            
+                // Calculate the average value of array elements
+                double average = calculateAverage(arr, size);
+            
+                // Output the average
+                cout &lt;&lt; "Average value of array elements: " &lt;&lt; average &lt;&lt; endl;
+            
+                return 0;
+            }
+            
+        </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+          Enter the size of the array: 4
+          Enter 4 integers for the array:
+          21 34 45
+          55
+          Average value of array elements: 38.75
+
+        </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code28">28. Program to test if an array contains a specific value </h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+          #include &lt;iostream>
+            using namespace std;
+            
+            bool containsValue(int arr[], int size, int target) {
+                for (int i = 0; i < size; ++i) {
+                    if (arr[i] == target) {
+                        return true; // Return true if target value is found
+                    }
+                }
+                return false; // Return false if target value is not found
+            }
+            
+            int main() {
+                int size;
+                cout &lt;&lt; "Enter the size of the array: ";
+                cin >> size;
+            
+                // Define an array with the specified size
+                int arr[size];
+                cout &lt;&lt; "Enter " &lt;&lt; size &lt;&lt; " integers for the array:\n";
+            
+                // Input elements into the array
+                for (int i = 0; i < size; ++i) {
+                    cin >> arr[i];
+                }
+            
+                // Value to search for
+                int target;
+                cout &lt;&lt; "Enter the value to search for: ";
+                cin >> target;
+            
+                // Check if the array contains the target value
+                if (containsValue(arr, size, target)) {
+                    cout &lt;&lt; "The array contains the value " &lt;&lt; target &lt;&lt; endl;
+                } else {
+                    cout &lt;&lt; "The array does not contain the value " &lt;&lt; target &lt;&lt; endl;
+                }
+            
+                return 0;
+            }
+            
+        </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+          Enter the size of the array: 5
+          Enter 5 integers for the array:
+          12 34 22 56 77
+          Enter the value to search for: 22
+          The array contains the value 22         
+        </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code29">29. Program to find the maximum and minimum value of an array</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+          #include &lt;iostream>
+            using namespace std;
+            
+            void findMaxMin(int arr[], int size, int &maxValue, int &minValue) 
+            {
+                // Initialize maxValue and minValue value // 
+                maxValue = arr[0];
+                minValue = arr[0];
+            
+                // Iterate through the array to find the maximum and minimum values
+                for (int i = 1; i < size; ++i) {
+                    if (arr[i] > maxValue) {
+                        maxValue = arr[i];
+                    }
+                    if (arr[i] < minValue) {
+                        minValue = arr[i];
+                    }
+                }
+            }
+            
+            int main() {
+                int size;
+                cout &lt;&lt; "Enter the size of the array: ";
+                cin >> size;
+            
+                // Define an array with the specified size
+                int arr[size];
+                cout &lt;&lt; "Enter " &lt;&lt; size &lt;&lt; " integers for the array:\n";
+            
+                // Input elements into the array
+                for (int i = 0; i < size; ++i) {
+                    cin >> arr[i];
+                }
+            
+                // Variables to store maximum and minimum values //
+                int maxVal, minVal;
+            
+                // Find the maximum and minimum values of the array // 
+                findMaxMin(arr, size, maxVal, minVal);
+            
+                // Output the maximum and minimum values
+                cout &lt;&lt; "Maximum value of the array: " &lt;&lt; maxVal &lt;&lt; endl;
+                cout &lt;&lt; "Minimum value of the array: " &lt;&lt; minVal &lt;&lt; endl;
+            
+                return 0;
+            }
+            
+        </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+          Enter the size of the array: 3
+          Enter 3 integers for the array:
+          22 35 54
+          Maximum value of the array: 54
+          Minimum value of the array: 22
+        </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code30">30. Program to insert an element (specific position) into an array</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+          #include &lt;iostream>
+            using namespace std;
+            
+            int main() {
+                int size;
+                cout &lt;&lt; "Enter the size of the array: ";
+                cin >> size;
+            
+                // Define an array with the specified size // 
+                int arr[100];
+                cout &lt;&lt; "Enter " &lt;&lt; size &lt;&lt; " integers for the array:\n";
+            
+                // Input elements into the array //  
+                for (int i = 0; i < size; ++i) {
+                    cin >> arr[i];
+                }
+            
+                int element, position;
+                cout &lt;&lt; "Enter the element to insert: ";
+                cin >> element;
+                cout &lt;&lt; "Enter the position to insert (0-based index): ";
+                cin >> position;
+            
+                // Shift elements to the right to make space for the new element
+                for (int i = size; i > position; --i) {
+                    arr[i] = arr[i - 1];
+                }
+            
+                // Insert the element at the specified position // 
+                arr[position] = element;
+            
+                // Increment the size of the array // 
+                ++size;
+            
+                // Output the updated array // 
+                cout &lt;&lt; "Updated array after insertion:\n";
+                for (int i = 0; i < size; ++i) {
+                    cout &lt;&lt; arr[i] &lt;&lt; " ";
+                }
+                cout &lt;&lt; endl;
+            
+                return 0;
+            }
+            
+        </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+          Enter the size of the array: 4
+          Enter 4 integers for the array:
+          12 44 21 45
+          Enter the element to insert: 20
+          Enter the position to insert (0-based index): 4
+          Updated array after insertion:
+          12 44 21 45 20
+
+        </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code31">31.Program to reverse an array of integer values</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+          #include &lt;iostream>
+            using namespace std;
+            
+            int main() {
+                int size;
+                std::cout &lt;&lt; "Enter the size of the array: ";
+                std::cin >> size;
+            
+                // Define an array with the specified size
+                int arr[size];
+                std::cout &lt;&lt; "Enter " &lt;&lt; size &lt;&lt; " integers for the array:\n";
+            
+                // Input elements into the array
+                for (int i = 0; i < size; ++i) {
+                    std::cin >> arr[i];
+                }
+            
+                // Reverse the array
+                for (int i = 0; i < size / 2; ++i) {
+                    std::swap(arr[i], arr[size - 1 - i]);
+                }
+            
+                // Output the reversed array
+                std::cout &lt;&lt; "Reversed array:\n";
+                for (int i = 0; i < size; ++i) {
+                    std::cout &lt;&lt; arr[i] &lt;&lt; " ";
+                }
+                std::cout &lt;&lt; std::endl;
+            
+                return 0;
+            }
+            
+        </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+          Enter the size of the array: 6
+          Enter 6 integers for the array:
+          12 43 54 67 87 65
+          Reversed array:
+          65 87 67 54 43 12
+        </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code32">32. Write a C++ program to find the common elements between two arrays</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include&lt;iostream>
+          using namespace std;
+          int check(int ar[],int n,int s){
+              for(int i=0;i< s;i++){
+                 if(ar[i]==n){
+                   return 0;
+                 }
+              }
+              return 1;
+          }
+          int main(){
+            int ar1[]={1,2,3,6,8,9,7,11};
+            int ar2[]={4,5,3,2,1,10,3,6,14};
+            int l1=sizeof(ar1)/sizeof(int);
+            int l2=sizeof(ar2)/sizeof(int);
+            cout&lt;&lt;"Array 1 : "&lt;&lt; endl;
+            for(int i=0;i< l1;i++){
+              cout&lt;&lt; ar1[i]&lt;&lt;" ";  
+            }
+            cout&lt;&lt; endl&lt;&lt;"Array 2 : "&lt;&lt; endl;
+            for(int i=0;i< l2;i++){
+              cout&lt;&lt; ar2[i]&lt;&lt;" ";  
+            }
+            int ca[10],cai=0;
+            for(int i=0;i< l1;i++){
+               for(int j=0;j< l2;j++){
+                     if(ar1[i]==ar2[j]){
+                         if(check(ca,ar1[i],cai)){
+                            ca[cai]=ar1[i];
+                            cai++;  
+                        }
+                       }
+                     }} 
+            cout&lt;&lt; endl&lt;&lt;"Common elements between arrays : "&lt;&lt; endl;
+            for(int i=0;i< cai;i++){
+              cout&lt;&lt; ca[i]&lt;&lt;" ";  
+            }
+            return 0;}
+       </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre> Array 1 : 
+          1 2 3 6 8 9 7 11 
+          Array 2 : 
+          4 5 3 2 1 10 3 6 14 
+          Common elements between arrays : 
+          1 2 3 6 </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code33">33. Write a C++ program to find the duplicate values of an array of integer values</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include&lt;iostream>
+          using namespace std;
+          int check(int a[],int num,int s){
+            for(int i=0;i< s;i++){
+            if (a[i]==num){
+              return 0;
+            }
+            }
+            return 1;
+          }
+          int main(){
+            int ar[10],n,in=0,da[10];
+            cout&lt;&lt;"Enter the no. of elements of array: ";
+            cin>>n;
+            cout&lt;&lt;"Enter the elements of arrays : "; 
+            for(int i=0;i< n;i++){
+              cin>>ar[i];
+            }
+            for(int i=0;i< n;i++){
+              int c=0;
+              for(int j=0;j< n;j++){
+                 if(ar[i]==ar[j]){
+                 c++;
+                 }
+              }
+              if(c>1){
+              if(check(da,ar[i],in)){
+                da[in]=ar[i];
+                in++;
+              }
+              }
+            }
+            if(in==0){
+              cout&lt;&lt;"No duplicate elements found ";
+            }
+            else{
+            cout&lt;&lt;"Duplicate elements of  array : "&lt;&lt; endl;
+            for(int i=0;i< in;i++){
+               cout&lt;&lt; da[i]&lt;&lt;" ";
+            }}
+            return 0;}
+         </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre> Enter the no. of elements of array: 4
+          Enter the elements of arrays : 56 78 32 11
+          No duplicate elements found </pre>
+      </div>
+    </div>
+
+    <div class="code">
+      <div>
+        <h2 name="code34">34. Write a C++ program to find second largest number from the array
+        </h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include&lt;iostream>
+          using namespace std;
+          int main(){
+            int ar[]={3,8,57,86,55,76,56};
+            int lrt=ar[0],lrt2=lrt;
+            cout&lt;&lt;"Array : "&lt;&lt; endl;
+            int l=sizeof(ar)/sizeof(int);
+            for(int i=0;i< l;i++){
+              cout&lt;&lt; ar[i]&lt;&lt;" ";
+            }
+            for(int i=0;i< l;i++){
+              if(lrt< ar[i]){
+                lrt2=lrt;
+                lrt=ar[i];}
+              if(lrt2< ar[i] && ar[i]< lrt){
+                lrt2=ar[i];
+                }
+            }
+            cout&lt;&lt; endl&lt;&lt; "Second largest in an array : "&lt;&lt; lrt2; 
+            return 0;}
+       </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre> Array : 
+          3 8 57 86 55 76 56 
+          Second largest in an array : 76</pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code35">35.Write a C++ program to find second lowest number from the array</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include&lt;iostream>
+          using namespace std;
+          int main(){
+            int ar[]={3,8,57,86,55,76,56};
+            int sml=ar[0],sml2=sml;
+            cout&lt;&lt;"Array : "&lt;&lt;endl;
+            int l=sizeof(ar)/sizeof(int);
+            for(int i=0;i< l;i++){
+              cout&lt;&lt;ar[i]&lt;&lt;" ";
+            }
+            for(int i=0;i< l;i++){
+              if(sml>ar[i]){
+                sml=ar[i];}
+            }
+            for(int i=0;i< l;i++){
+              if(sml2< ar[i]){
+                 sml2=ar[i];
+                 break;
+            }}
+            cout&lt;&lt;endl&lt;&lt;"Second smallest in an array : "&lt;&lt;sml2; 
+            return 0;}
+        </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>  Array : 
+          3 8 57 86 55 76 56 
+          Second smallest in an array : 8
+          </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code36">36. Write a C++ program to find the number of even and odd integers in a given array of integers</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include<iostream>
+          using namespace std;
+          int main(){
+            int ar[]={1,2,3,6,8,9,7,11};
+            int e=0,o=0;
+            cout&lt;&lt;"Array : "&lt;&lt;endl;
+            int l=sizeof(ar)/sizeof(int);
+            for(int i=0;i< l;i++){
+              cout&lt;&lt;ar[i]&lt;&lt;" ";  
+            }
+            for(int i=0;i< l;i++){
+              if(ar[i]%2==0){
+              e++;}
+              else{
+                o++;
+              }
+            } 
+            cout&lt;&lt;endl&lt;&lt;"No. of even elements in array : "&lt;&lt;e&lt;&lt;endl;
+            cout&lt;&lt;"No. of odd elements in array : "&lt;&lt;o&lt;&lt;endl;
+            return 0;}
+          </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre> Array : 
+          1 2 3 6 8 9 7 11 
+          No. of even elements in array : 3
+          No. of odd elements in array : 5
+          </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code37">37. Write a C++ program to get the difference between the
+           largest and smallest values in an array of integers</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include<iostream>
+          using namespace std;
+          int main(){
+            int ar[]={12,22,3,6,8,9,7,11};
+            int max=ar[0],min=ar[0];
+            cout&lt;&lt;"Array : "&lt;&lt;endl;
+            int l=sizeof(ar)/sizeof(int);
+            for(int i=0;i< l;i++){
+              cout&lt;&lt;ar[i]&lt;&lt;" ";  
+            }
+            for(int i=0;i< l;i++){
+              if(max< ar[i]){
+                max=ar[i];
+              }
+              else if(min>ar[i]){
+                min=ar[i];
+              }
+            }
+            cout&lt;&lt;endl&lt;&lt;"Difference between the largest and smallest values of array : "&lt;&lt;max-min;
+            return 0;}
+          
+            output:
+           
+          </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre> Array : 
+          12 22 3 6 8 9 7 11 
+          Difference between the largest and smallest values of array : 19
+          </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code38">38 Write a C++ program to segregate all 0s on left side and all 1s on right side
+           of a given array of 0s and 1s</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include<iostream>
+          using namespace std;
+          int main(){
+            int ar[10],l;
+            cout&lt;&lt;"Enter the no. of elements : ";
+            cin>>l;
+            cout&lt;&lt;" Enter Array elements (0 and 1 only) : "&lt;&lt; endl;
+            for(int i=0;i< l;i++){
+              cin>>ar[i];  
+            }
+            int tem;
+            for(int i=0;i< l-1;i++){
+              for(int j=0;j< l-i-1;j++){
+                if(ar[j]>ar[j+1]){
+                   tem=ar[j];
+                   ar[j]=ar[j+1];
+                   ar[j+1]=tem;
+                }
+              }
+            }
+            cout&lt;&lt;"Array after segregation of all '0' and '1' : "&lt;&lt; endl;
+            for(int i=0;i< l;i++){
+              cout&lt;&lt; ar[i]&lt;&lt;" "; 
+            }
+            return 0;}
+          </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre> Enter the no. of elements : 4
+           Enter Array elements (0 and 1 only) : 
+          0 10 11 01
+          Array after segregation of all '0' and '1' : 
+          0 1 10 11 </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code39">39.Write a C++ program to cyclically rotate a given array clockwise by one</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include&lt;iostream>
+          using namespace std;
+          int main(){
+            int ar[10],n;
+            cout&lt;&lt;"Enter the no. of elements of array: ";
+            cin>>n;
+            cout&lt;&lt;"Enter the elements of arrays : "; 
+            for(int i=0;i< n;i++){
+              cin>>ar[i];
+            }
+            int temp=ar[n-1];
+            for(int i=n-1;i>0;i--){
+              ar[i]=ar[i-1];
+            }
+            ar[0]=temp;
+            cout&lt;&lt;"Elements of array after  rotating ones clockwise : "&lt;&lt;endl;
+            for(int i=0;i< n;i++){
+              cout&lt;&lt;ar[i]&lt;&lt;"  ";
+            }
+            return 0;}
+          </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre> Enter the no. of elements of array: 4
+          Enter the elements of arrays : 45 11 23 12
+          Elements of array after  rotating ones clockwise : 
+          12  45  11  23  </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code40">40. Write a C++ program to print all unique element in an array</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include&lt;iostream>
+          using namespace std;
+          int main(){
+            int ar[10],l;
+            cout&lt;&lt;"Enter the no. of elements : ";
+            cin>>l;
+            cout&lt;&lt;" Enter Array elements : "&lt;&lt;endl;
+            for(int i=0;i< l;i++){
+              cin>>ar[i];  
+            }
+            int c=0,con=0;
+            cout&lt;&lt;"Unique elemenst of given array : ";
+            for(int i=0;i< l;i++){
+              c=0;
+              for(int j=0;j< l;j++){
+                if(ar[i]==ar[j]){
+                   c++;
+                }
+              }
+              if(c==1){
+                cout&lt;&lt;ar[i]&lt;&lt;" ";
+                con=1;
+              }
+            }
+            if(con==0){
+              cout&lt;&lt;"No element found ";
+            }
+            return 0;}
+          
+            output:
+           
+          
+          </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre> Enter the no. of elements : 5
+           Enter Array elements : 
+          11 12 34 55 66
+          Unique elemenst of given array : 11 12 34 55 66 </pre>
+      </div>
+    </div>
+
+    <div class="code">
+      <div>
+        <h2 name="code41">41. Write a C++ Program to Sort the Array in an Ascending Order</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include&lt;iostream>
+          using namespace std;
+          int main(){
+            int ar[10],n,l=0;
+            cout&lt;&lt;"Enter the no. of elements of array: ";
+            cin>>n;
+            cout&lt;&lt;"Enter the elements of arrays : "; 
+            for(int i=0;i< n;i++){
+              cin>>ar[i];
+            }
+            int temp;
+            for(int i=0;i< n-1;i++){
+              for(int j=0;j< n-i-1;j++){
+                if(ar[j]>ar[j+1]){
+                   temp=ar[j];
+                   ar[j]=ar[j+1];
+                   ar[j+1]=temp;
+                }
+              }
+            }
+            cout&lt;&lt;"Array after sorting in ascending order : "&lt;&lt;endl;
+            for(int i=0;i< n;i++){
+              cout&lt;&lt;ar[i]&lt;&lt;"  ";
+            }
+            return 0;} 
+          </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre> Enter the no. of elements of array: 5
+          Enter the elements of arrays : 11 12 78 65 78 
+          Array after sorting in ascending order : 
+          11  12  65  78  78  </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code42">42.Write a C++ Program to Sort the Array in an Descending Order</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include&lt;iostream>
+          using namespace std;
+          int main(){
+            int ar[10],n,l=0;
+            cout&lt;&lt;"Enter the no. of elements of array: ";
+            cin>>n;
+            cout&lt;&lt;"Enter the elements of arrays : "; 
+            for(int i=0;i< n;i++){
+              cin>>ar[i];
+            }
+            int temp;
+            for(int i=0;i< n-1;i++){
+              for(int j=0;j< n-i-1;j++){
+                if(ar[j]< ar[j+1]){
+                   temp=ar[j];
+                   ar[j]=ar[j+1];
+                   ar[j+1]=temp;
+                }
+              }
+            }
+            cout&lt;&lt;"Array after sorting in descending order : "&lt;&lt;endl;
+            for(int i=0;i< ;i++){
+              cout&lt;&lt;ar[i]&lt;&lt;"  ";
+            }
+            return 0;}
+          
+            output:
+           
+          </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre> Enter the no. of elements of array: 5
+          Enter the elements of arrays : 11 23 12 67 90
+          Array after sorting in descending order : 
+          90  67  23  12  11  </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code43">43. Write a C++ Program to Search Key Elements in an Array</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include&lt;iostream>
+          using namespace std;
+          int main(){
+            int ar[]={1,2,3,6,8,9,7,11};
+            int n;
+            cout&lt;&lt;"Array : "&lt;&lt;endl;
+            int l=sizeof(ar)/sizeof(int);
+            for(int i=0;i< l;i++){
+              cout&lt;&lt;ar[i]&lt;&lt;" ";  
+            }
+            cout&lt;&lt;endl&lt;&lt;"Enter the element you want to check in array : ";
+            cin>>n;
+            int i;
+            for(i=0;i< l;i++){
+               if(ar[i]==n){
+                 cout&lt;&lt;"Key Element found in array at index "&lt;&lt;i;
+                 break;
+               }
+            }
+            if(i==l){
+            cout&lt;&lt;"Key Element not found in array ";
+            }  
+            return 0;}
+          
+            output:
+           
+          </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre> Array : 
+          1 2 3 6 8 9 7 11 
+          Enter the element you want to check in array : 11
+          Key Element found in array at index 7
+          </pre>
+      </div>
+    </div>
+     </body>
+</html>

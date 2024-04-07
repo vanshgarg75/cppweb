@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title><style>
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+        pre{
+            font:bold;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <h1>Inheritance</h1>
+    <div class="code">
+        <div>
+          <h2 name="code1">1.Write a C++ program to create a class called Animal with a method called makeSound(). 
+            Create a derived class called Cat that overrides the makeSound() method to bark.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            #include&lt;iostream>
+                using namespace std;
+                class animal
+                {
+                    public:
+                        void makesound()
+                        {
+                            cout&lt;&lt;"Animal makes sound."&lt;&lt;endl;
+                        }
+                };
+                class cat:public animal
+                {		
+                    public:
+                        void makesound()
+                        {
+                            cout&lt;&lt;"Cat barks.";	
+                        }	
+                };
+                int main()
+                {
+                    animal a1;
+                    cat c1;
+                    a1.makesound();
+                    c1.makesound();
+                }
+                
+          </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Animal makes sound.
+            Cat barks.</pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code2">2.  Write a C++ program to create a class called Vehicle with a method called drive(). 
+            Create a derived class called Car that overrides the drive() method to print "Repairing a car".</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include&lt;iostream>
+            using namespace std;
+            class veichle
+            {
+                public:
+                    void drive()
+                    {
+                        cout&lt;&lt;"Ready to go for a drive."&lt;&lt;endl;	
+                    }	
+            };
+            class car:public veichle
+            {
+                public:
+                    void drive()
+                    {
+                        cout&lt;&lt;"Repairing a car.";
+                    }
+            };
+            int main()
+            {
+                veichle v1;
+                car c1;
+                v1.drive();
+                c1.drive();
+            }</pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Ready to go for a drive.
+            Repairing a car.</pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code3">3.Write a C++ program to create a class called Shape with a method called getArea(). Create a 
+            derived class called Rectangle that overrides the getArea() method to calculate the area of a 
+            rectangle.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include&lt;iostream>
+            using namespace std;
+            class shape
+            {
+                public:
+                    float a,b;
+                    void getarea()
+                    {
+                        cout&lt;&lt;"Enter sides:";
+                        cin>>a>>b;
+                    }
+            };
+            class rectangle:public shape
+            {
+                public:
+                    void getarea()
+                    {
+                        shape::getarea();
+                        float area=a*b;
+                        cout&lt;&lt;"Area of rectangle:"&lt;&lt;area;
+                    }
+            };
+            int main()
+            {
+                rectangle r1;
+                r1.getarea();
+            }
+            </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Enter sides:12 2
+            Area of rectangle:24</pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code4">4.Write a C++ program to create a class called Employee with methods called work() and getSalary().
+            Create a derived class called HRManager that overrides the work() method and adds a new method 
+            called addEmployee().</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include&lt;iostream>
+            using namespace std;
+            class employee
+            {
+                public:
+                    char duty[50];
+                    char name[20];
+                    float salary;
+                    void work()
+                    {
+                        cout&lt;&lt;"Enter name of the employee:";
+                        cin>>name;
+                        cout&lt;&lt;"Enter work assigned:";
+                        cin>>duty;
+                    }
+                    void getsalary()
+                    {
+                        cout&lt;&lt;"Input salary:";
+                        cin>>salary;
+                    }
+            };
+            class HRManager:public employee
+            {
+                public:
+                    void work()
+                    {
+                        cout&lt;&lt;"Assign work:";
+                        cin>>duty;	
+                    }	
+                    void addemployee()
+                    {
+                        cout&lt;&lt;"Enter name of the employee:";
+                        cin>>name;
+                        getsalary();
+                        work();
+                    }
+                    void details()
+                    {
+                        cout&lt;&lt;"************************************"&lt;&lt;endl;
+                        cout&lt;&lt;"Name:"&lt;&lt;name&lt;&lt;endl;
+                        cout&lt;&lt;"Work:"&lt;&lt;duty&lt;&lt;endl;
+                        cout&lt;&lt;"Salary:"&lt;&lt;salary&lt;&lt;endl;
+                    }
+            };
+            int main()
+            {
+                HRManager h1;
+                h1.addemployee();
+                h1.details();
+            }
+            </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Enter name of the employee:Gaurav
+            Input salary:50000
+            Assign work:Web_Development
+            ************************************
+            Name:Gaurav
+            Work:Web_Development
+            Salary:50000
+            </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code5">5.Write a C++ program to create a class known as "BankAccount" with methods called deposit() and 
+            withdraw(). Create a derived class called SavingsAccount that overrides the withdraw() method to 
+            prevent withdrawals if the account balance falls below one hundred.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include&lt;iostream>
+            using namespace std;
+            class BankAccount
+            {
+                public:
+                    BankAccount()
+                    {
+                        balance=0;
+                    }
+                    float money;
+                    float balance;
+                    void deposit()
+                    {
+                        cout&lt;&lt;"Input amount:";
+                        cin>>money;
+                        balance=balance+money;
+                        cout&lt;&lt;"Deposited "&lt;&lt;money&lt;&lt;" Successfully!"&lt;&lt;endl;
+                        cout&lt;&lt;"Current balance:"&lt;&lt;balance&lt;&lt;endl;
+                    }
+                    void withdraw()
+                    {
+                        cout&lt;&lt;"Input amount:";
+                        cin>>money;
+                        balance=balance-money;
+                        cout&lt;&lt;"Withdrawed "&lt;&lt;money&lt;&lt;" Successfully!"&lt;&lt;endl;
+                        cout&lt;&lt;"Current balance:"&lt;&lt;balance&lt;&lt;endl;
+                    }
+            };
+            class savingsaccount:public BankAccount
+            {
+                public:
+                    void withdraw()
+                    {
+                        int money;
+                        cout&lt;&lt;"Input amount:";
+                        cin>>money;
+                        if(balance>100)
+                        {
+                            balance=balance-money;
+                            cout&lt;&lt;"Withdrawed "&lt;&lt;money&lt;&lt;" Successfully!"&lt;&lt;endl;
+                            cout&lt;&lt;"Current balance:"&lt;&lt;balance&lt;&lt;endl;
+                        }
+                        else
+                        {
+                            cout&lt;&lt;"Can't Withdraw Balance less than 100"&lt;&lt;endl;
+                            cout&lt;&lt;"Current balance:"&lt;&lt;balance&lt;&lt;endl;
+                        }
+                    }
+            };
+            int main()
+            {
+                savingsaccount s1;
+                int x;
+                int end;
+                for(int i=0;end!=0;i++)
+                {
+                    cout&lt;&lt;"Select Operation:-\n"&lt;&lt;"1.Deposit 2.Withdrawal :";
+                    cin>>x;
+                    switch(x)
+                    {
+                        case 1: s1.deposit();
+                                break;
+                        case 2: s1.withdraw();
+                                break;
+                        default: cout&lt;&lt;"Invalid Operation!";
+                                break;
+                    }
+                    cout&lt;&lt;"Enter 0 to exit or any other to continue:";
+                    cin>>end;
+                }
+            }
+            </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Select Operation:-
+            1.Deposit 2.Withdrawal :1
+            Input amount:1000
+            Deposited 1000 Successfully!
+            Current balance:1000
+            Enter 0 to exit or any other to continue:1
+            Select Operation:-
+            1.Deposit 2.Withdrawal :2
+            Input amount:950
+            Withdrawed 950 Successfully!
+            Current balance:50
+            Enter 0 to exit or any other to continue:1
+            Select Operation:-
+            1.Deposit 2.Withdrawal :2
+            Input amount:50
+            Can't Withdraw Balance less than 100
+            Current balance:50
+            Enter 0 to exit or any other to continue:0</pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code6">6. Write a C++ program to create a class called Animal with a method named move(). Create a derived 
+            class called Cheetah that overrides the move() method to run.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include&lt;iostream>
+            using namespace std;
+            class animal
+            {
+                public:
+                    void move()
+                    {
+                        cout&lt;&lt;"Animal moves."&lt;&lt;endl;
+                    }
+            };
+            class cheetah:public animal
+            {
+                public:
+                    void move()
+                    {
+                        cout&lt;&lt;"Cheetah Runs.";
+                    }
+            };
+            int main()
+            {
+                animal a1;
+                cheetah c1;
+                a1.move();
+                c1.move();
+            }
+            </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Animal moves.
+            Cheetah Runs.</pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code7">7.Write a C++ program to create a class known as Person with methods called getFirstName() and 
+            getLastName(). Create a derived class called Employee that adds a new method named getEmployeeId() 
+            and overrides the getLastName() method to include the employee's job title</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include&lt;iostream>
+            using namespace std;
+            class person
+            {
+                public:
+                    char fname[20];
+                    char lname[20];
+                    void firstname()
+                    {
+                        cout&lt;&lt;"Enter your first name:";
+                        cin>>fname;
+                    }
+                    void lastname()
+                    {
+                        cout&lt;&lt;"Enter your last name:";
+                        cin>>lname;
+                    }
+            };
+            class employee:public person
+            {
+                public:
+                    int employeeid;
+                    char title[50];
+                    void getempid()
+                    {
+                        cout&lt;&lt;"Enter employeeid:";
+                        cin>>employeeid;
+                    }
+                    void lastname()
+                    {
+                        cout&lt;&lt;"Enter job title:";
+                        cin>>title;
+                    }
+                    void display()
+                    {
+                        cout&lt;&lt;"***************************"&lt;&lt;endl;
+                        cout&lt;&lt;"First name:"&lt;&lt;fname&lt;&lt;endl;
+                        cout&lt;&lt;"Last name:"&lt;&lt;lname&lt;&lt;endl;
+                        cout&lt;&lt;"Employee id:"&lt;&lt;employeeid&lt;&lt;endl;
+                        cout&lt;&lt;"Job Title:"&lt;&lt;title&lt;&lt;endl;
+                    }
+            };
+            int main()
+            {
+                person p1;
+                employee e1;
+                e1.firstname();
+                p1.lastname();
+                e1.lastname();
+                e1.getempid();
+                e1.display();
+            }
+            </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Enter your first name:Rohit
+            Enter your last name:Garg
+            Enter job title:Web_Developer
+            Enter employeeid:3534
+            ***************************
+            First name:Rohit
+            Last name:
+            Employee id:3534
+            Job Title:Web_Developer</pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code8">8.Write a C++ program to create a class called Shape with methods called getPerimeter() and 
+            getArea(). Create a derived class called Circle that overrides the getPerimeter() and getArea() 
+            methods to calculate the area and perimeter of a circle.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include&lt;iostream>
+            #define pi 3.14
+            using namespace std;
+            class shape
+            {
+                public:
+                    float length,breadth,perimeter,area;
+                    void getperimeter()
+                    {
+                        cout&lt;&lt;"Enter length and breadth:";
+                        cin>>length>>breadth;
+                        perimeter=2.0*(length+breadth);
+                        cout&lt;&lt;"Perimeter:"&lt;&lt;perimeter&lt;&lt;endl;
+                    }
+                    void getarea()
+                    {
+                        cout&lt;&lt;"Enter length and breadth:";
+                        cin>>length>>breadth;
+                        area=length*breadth;
+                        cout&lt;&lt;"Area:"&lt;&lt;area&lt;&lt;endl;
+                    }
+            };
+            class circle:public shape
+            {
+                public:
+                    float r;
+                    void getperimeter()
+                    {
+                        cout&lt;&lt;"Enter radius:";
+                        cin>>r;
+                        perimeter=2.0*pi*r;
+                        cout&lt;&lt;"Perimeter:"&lt;&lt;perimeter&lt;&lt;endl;
+                    }
+                    void getarea()
+                    {
+                        cout&lt;&lt;"Enter radius:";
+                        cin>>r;
+                        area=pi*r*r;
+                        cout&lt;&lt;"Area:"&lt;&lt;area&lt;&lt;endl;
+                    }
+            };
+            int main()
+            {
+                shape s1;
+                circle c1;
+                s1.getperimeter();
+                s1.getarea();
+                c1.getperimeter();
+                c1.getarea();
+            }</pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Enter length and breadth:10 5
+            Perimeter:30
+            Enter length and breadth:10 5
+            Area:50
+            Enter radius:12
+            Perimeter:75.36
+            Enter radius:12
+            Area:452.16
+            </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code9">9. Write a C++ program to create a vehicle class hierarchy. The base class should be Vehicle, 
+            with derived classes Truck, Car and Motorcycle. Each derived class should have properties such as 
+            make, model, year, and fuel type. Implement methods for calculating fuel efficiency, distance 
+            traveled, and maximum speed</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            #include&lt;iostream>
+              using namespace std;
+              
+              class vehicle {
+              public:
+                  vehicle() {
+                      totaldistance = 0;
+                  }
+                  char make[50], fueltype[50], model[50];
+                  int year;
+                  float totaldistance, kilometersDriven, litersUsed, fuelEfficiency, maxspd;
+              
+                  virtual void fuelefficiency() {
+                      cout&lt;&lt; "Enter the number of kilometers driven: ";
+                      cin >> kilometersDriven;
+                      cout&lt;&lt; "Enter the liters of fuel used: ";
+                      cin >> litersUsed;
+                      fuelEfficiency = kilometersDriven / litersUsed;
+                      cout&lt;&lt; "Fuel efficiency: "&lt;&lt; fuelEfficiency&lt;&lt; " km/L"&lt;&lt; endl;
+                  }
+              
+                  void distancetravelled() {
+                      float distance;
+                      cout&lt;&lt; "Input distance: ";
+                      cin >> distance;
+                      totaldistance += distance;
+                  }
+              
+                  void maxspeed() {
+                      cout&lt;&lt; "Input maximum speed: ";
+                      cin >> maxspd;
+                  }
+              };
+              
+              class truck : public vehicle {
+              public:
+                  void get() {
+                      cout&lt;&lt; "Enter material used in building of vehicle: ";
+                      cin >> make;
+                      cout&lt;&lt; "Enter model of the vehicle: ";
+                      cin >> model;
+                      cout&lt;&lt; "Enter year: ";
+                      cin >> year;
+                      cout&lt;&lt; "Enter fuel type: ";
+                      cin >> fueltype;
+                  }
+              
+                  void display() {
+                      cout&lt;&lt; "*************************************"&lt;&lt; endl;
+                      cout&lt;&lt; "Model: "&lt;&lt; model&lt;&lt; endl;
+                      cout&lt;&lt; "Material used: "&lt;&lt; make&lt;&lt; endl;
+                      cout&lt;&lt; "Fuel type: "&lt;&lt; fueltype&lt;&lt; endl;
+                      cout&lt;&lt; "Year: "&lt;&lt; year&lt;&lt; endl;
+                      fuelefficiency(); // Calculate fuel efficiency
+                      cout&lt;&lt; "Max speed: "&lt;&lt; maxspd&lt;&lt; endl;
+                      cout&lt;&lt; "Distance traveled: "&lt;&lt; totaldistance&lt;&lt; endl;
+                      cout&lt;&lt; "*************************************"&lt;&lt; endl;
+                  }
+              };
+              
+              class car : public vehicle {
+              public:
+                  void get() {
+                      cout&lt;&lt; "Enter material used in building of vehicle: ";
+                      cin >> make;
+                      cout&lt;&lt; "Enter model of the vehicle: ";
+                      cin >> model;
+                      cout&lt;&lt; "Enter year: ";
+                      cin >> year;
+                      cout&lt;&lt; "Enter fuel type: ";
+                      cin >> fueltype;
+                  }
+              
+                  void display() {
+                      cout&lt;&lt; "*************************************"&lt;&lt; endl;
+                      cout&lt;&lt; "Model: "&lt;&lt; model&lt;&lt; endl;
+                      cout&lt;&lt; "Material used: "&lt;&lt; make&lt;&lt; endl;
+                      cout&lt;&lt; "Fuel type: "&lt;&lt; fueltype&lt;&lt; endl;
+                      cout&lt;&lt; "Year: "&lt;&lt; year&lt;&lt; endl;
+                      fuelefficiency(); // Calculate fuel efficiency
+                      cout&lt;&lt; "Max speed: "&lt;&lt; maxspd&lt;&lt; endl;
+                      cout&lt;&lt; "Distance traveled: "&lt;&lt; totaldistance&lt;&lt; endl;
+                      cout&lt;&lt; "*************************************"&lt;&lt; endl;
+                  }
+              };
+              
+              class motorcycle : public vehicle {
+              public:
+                  void get() {
+                      cout&lt;&lt; "Enter material used in building of vehicle: ";
+                      cin >> make;
+                      cout&lt;&lt; "Enter model of the vehicle: ";
+                      cin >> model;
+                      cout&lt;&lt; "Enter year: ";
+                      cin >> year;
+                      cout&lt;&lt; "Enter fuel type: ";
+                      cin >> fueltype;
+                  }
+              
+                  void display() {
+                      cout&lt;&lt; "*************************************"&lt;&lt; endl;
+                      cout&lt;&lt; "Model: "&lt;&lt; model&lt;&lt; endl;
+                      cout&lt;&lt; "Material used: "&lt;&lt; make&lt;&lt; endl;
+                      cout&lt;&lt; "Fuel type: "&lt;&lt; fueltype&lt;&lt; endl;
+                      cout&lt;&lt; "Year: "&lt;&lt; year&lt;&lt; endl;
+                      fuelefficiency(); // Calculate fuel efficiency
+                      cout&lt;&lt; "Max speed: "&lt;&lt; maxspd&lt;&lt; endl;
+                      cout&lt;&lt; "Distance traveled: "&lt;&lt; totaldistance&lt;&lt; endl;
+                      cout&lt;&lt; "*************************************"&lt;&lt; endl;
+                  }
+              };
+              
+              int main() {
+                  truck t1;
+                  car c1;
+                  motorcycle m1;
+              
+                  cout&lt;&lt; "For truck:"&lt;&lt; endl;
+                  t1.get();
+                  t1.distancetravelled();
+                  t1.maxspeed();
+                  t1.display();
+              
+                  cout&lt;&lt; "For car:"&lt;&lt; endl;
+                  c1.get();
+                  c1.distancetravelled();
+                  c1.maxspeed();
+                  c1.display();
+              
+                  cout&lt;&lt; "For motorcycle:"&lt;&lt; endl;
+                  m1.get();
+                  m1.distancetravelled();
+                  m1.maxspeed();
+                  m1.display();
+              
+                  return 0;
+              }
+            </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>
+            For truck:
+Enter material used in building of vehicle:  iron_and_alluminium
+Enter model of the vehicle: Actros
+Enter year: 2022
+Enter fuel type: Diesel
+Input distance: 0
+Input maximum speed: 100
+*************************************
+Model: Actros
+Material used: iron_and_alluminium
+Fuel type: Diesel
+Year: 2022
+Enter the number of kilometers driven: 100
+Enter the liters of fuel used: 29
+Fuel efficiency: 3.44828 km/L
+Max speed: 100
+Distance traveled: 0
+*************************************
+For car:
+Enter material used in building of vehicle: alluminium
+Enter model of the vehicle: ScorpioN
+Enter year: 2023
+Enter fuel type: Petrol
+Input distance: 1000
+Input maximum speed: 200
+*************************************
+Model: ScorpioN
+Material used: alluminium
+Fuel type: Petrol
+Year: 2023
+Enter the number of kilometers driven: 100
+Enter the liters of fuel used: 6.8
+Fuel efficiency: 14.7059 km/L
+Max speed: 200
+Distance traveled: 1000
+*************************************
+For motorcycle:
+Enter material used in building of vehicle: Alluminium
+Enter model of the vehicle: Royal_Enfield_Classic_350
+Enter year: 2020
+Enter fuel type: Petrol
+Input distance: 0
+Input maximum speed: 150
+*************************************
+Model: Royal_Enfield_Classic_350
+Material used: Alluminium
+Fuel type: Petrol
+Year: 2020
+Enter the number of kilometers driven: 50
+Enter the liters of fuel used: 2
+Fuel efficiency: 25 km/L
+Max speed: 150
+Distance traveled: 0
+*************************************
+          </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code10">10. Write a C++ program that creates a class hierarchy for employees of a company. The base class 
+            should be Employee, with derived classes Manager, Developer, and Programmer. Each derived class 
+            should have properties such as name, address, salary, and job title. Implement methods for 
+            calculating bonuses, generating performance reports, and managing projects.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            #include&lt;iostream>
+    using namespace std;
+    class employee
+    {
+        public:
+            char name[50],address[50],title[20],projects[50],feedback[50];
+            float salary,per,sales,engagement,rating,bonuss;
+            void bonus()
+            {
+                cout&lt;&lt;"Enter bonus perecntage:";
+                cin>>per;
+                bonuss=(salary)*per/100;
+                salary=salary+bonuss;
+            }
+            void report()
+            {
+                cout&lt;&lt;"***************************"&lt;&lt;endl;
+                cout&lt;&lt;"Name:"&lt;&lt;name&lt;&lt;endl;
+                cout&lt;&lt;"Job title:"&lt;&lt;title&lt;&lt;endl;
+                cout&lt;&lt;"Projects:"&lt;&lt;projects&lt;&lt;endl;
+                cout&lt;&lt;"Salary:"&lt;&lt;salary&lt;&lt;endl;
+                cout&lt;&lt;"Sales:"&lt;&lt;sales&lt;&lt;endl;
+                cout&lt;&lt;"Engagements:"&lt;&lt;engagement&lt;&lt;endl;
+                cout&lt;&lt;"Rating:"&lt;&lt;rating&lt;&lt;endl;
+                cout&lt;&lt;"***************************"&lt;&lt;endl;
+            }
+            void project()
+            {
+                cout&lt;&lt;"Assign Project:";
+                cin>>projects;
+            }
+    };
+    class manager:public employee
+    {
+        public:
+            void get()
+            {
+                cout&lt;&lt;"Enter name:";
+                cin>>name;
+                cout&lt;&lt;"Address:";
+                cin>>address;
+                cout&lt;&lt;"Enter job title:";
+                cin>>title;
+                cout&lt;&lt;"Enter salary:";
+                cin>>salary;
+                cout&lt;&lt;"Sales:";
+                cin>>sales;
+                cout&lt;&lt;"Engagements:";
+                cin>>engagement;
+                cout&lt;&lt;"Ratings:";
+                cin>>rating;
+            }
+    };
+    class developer:public employee
+    {
+        public:
+            void get()
+            {
+                cout&lt;&lt;"Enter name:";
+                cin>>name;
+                cout&lt;&lt;"Address:";
+                cin>>address;
+                cout&lt;&lt;"Enter job title:";
+                cin>>title;
+                cout&lt;&lt;"Enter salary:";
+                cin>>salary;
+                cout&lt;&lt;"Sales:";
+                cin>>sales;
+                cout&lt;&lt;"Engagements:";
+                cin>>engagement;
+                cout&lt;&lt;"Ratings:";
+                cin>>rating;
+            }
+    };
+    class programmer:public employee
+    {
+        public:
+            void get()
+            {
+                cout&lt;&lt;"Enter name:";
+                cin>>name;
+                cout&lt;&lt;"Address:";
+                cin>>address;
+                cout&lt;&lt;"Enter job title:";
+                cin>>title;
+                cout&lt;&lt;"Enter salary:";
+                cin>>salary;
+                cout&lt;&lt;"Sales:";
+                cin>>sales;
+                cout&lt;&lt;"Engagements:";
+                cin>>engagement;
+                cout&lt;&lt;"Ratings:";
+                cin>>rating;
+            }
+    };
+    int main()
+    {
+        manager m1;
+        developer d1;
+        programmer p1;
+        cout&lt;&lt;"For manager :-"&lt;&lt;endl;
+        m1.get();
+        m1.bonus();
+        m1.project();
+        m1.report();
+        cout&lt;&lt;"For Programmer :-"&lt;&lt;endl;
+        p1.get();
+        p1.bonus();
+        p1.project();
+        p1.report();
+        cout&lt;&lt;"For Developer :-"&lt;&lt;endl;
+        d1.get();
+        d1.bonus();
+        d1.project();
+        d1.report();
+    }
+    
+          </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>
+            For manager :-
+Enter name:lakshay
+Address:indore
+Enter job title:branch_manager
+Enter salary:45000
+Sales:250000
+Engagements:300
+Ratings:4.3
+Enter bonus perecntage:11
+Assign Project:expansion_of_branch
+***************************
+Name:lakshay
+Job title:branch_manager
+Projects:expansion_of_branch
+Salary:49950
+Sales:250000
+Engagements:300
+Rating:4.3
+***************************
+For Programmer :-
+Enter name:harsh
+Address:dubai
+Enter job title:ios_developer
+Enter salary:65000
+Sales:500000
+Engagements:800
+Ratings:4.7
+Enter bonus perecntage:15
+Assign Project:make_a_software_for_traveling
+***************************
+Name:harsh
+Job title:ios_developer
+Projects:make_a_software_for_traveling
+Salary:74750
+Sales:500000
+Engagements:800
+Rating:4.7
+***************************
+For Developer :-
+Enter name:ayushi
+Address:dubai
+Enter job title:software_developer
+Enter salary:70000
+Sales:450000
+Engagements:600
+Ratings:4.6
+Enter bonus perecntage:7
+Assign Project:develop_company_app
+***************************
+Name:ayushi
+Job title:software_developer
+Projects:develop_company_app
+Salary:74900
+Sales:450000
+Engagements:600
+Rating:4.6
+***************************
+        </pre>
+        </div>
+      </div>
+</body>
+</html>

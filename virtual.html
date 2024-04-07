@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>virtual functions</title>
+    <style>
+        pre {
+            font-weight: bold;
+            font-size: large;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Virtual Functions</h1>
+    <h2>1. Write a C++ program to create an abstract class Animal with an abstract method called sound(). Create derived
+        classes Lion and Tiger that extend the Animal class and implement the sound() method to make a specific sound
+        for each animal.</h2>
+    <pre>#include &lt;iostream>
+
+        // Abstract base class Animal
+        class Animal {
+        public:
+            // Pure virtual method sound() makes Animal an abstract class
+            virtual void sound() const = 0;
+        };
+        
+        // Derived class Lion from Animal
+        class Lion : public Animal {
+        public:
+            // Implementation of sound() method for Lion
+            void sound() const override {
+                std::cout << "Lion roars." << std::endl;
+            }
+        };
+        
+        // Derived class Tiger from Animal
+        class Tiger : public Animal {
+        public:
+            // Implementation of sound() method for Tiger
+            void sound() const override {
+                std::cout << "Tiger growls." << std::endl;
+            }
+        };
+        
+        int main() {
+            // Create objects of Lion and Tiger
+            Lion lion;
+            Tiger tiger;
+        
+            // Call sound() method on Lion and Tiger objects
+            std::cout << "Sound of Lion: ";
+            lion.sound(); // Output: Lion roars.
+        
+            std::cout << "Sound of Tiger: ";
+            tiger.sound(); // Output: Tiger growls.
+        
+            return 0;
+        }
+        
+        output:
+        Sound of Lion: Lion roars.
+        Sound of Tiger: Tiger growls.
+        </pre>
+    <h2>2. Write a C++ program to create an abstract class Animal with an abstract method called sound(). Create derived
+        classes Lion and Tiger that extend the Animal class and implement the sound() method to make a specific sound
+        for each animal.
+
+    </h2>
+    <pre>#include &lt;iostream>
+
+        // Abstract base class Animal
+        class Animal {
+        public:
+            // Pure virtual method sound() makes Animal an abstract class
+            virtual void sound() const = 0;
+            };
+            
+        // Derived class Lion from Animal
+        class Lion : public Animal {
+        public:
+            // Implementation of sound() method for Lion
+            void sound() const override {
+                std::cout << "Lion roars." << std::endl;
+                }
+            };
+            
+        // Derived class Tiger from Animal
+        class Tiger : public Animal {
+        public:
+            // Implementation of sound() method for Tiger
+            void sound() const override {
+                std::cout << "Tiger growls." << std::endl;
+                }
+            };
+            
+            int main() {
+        // Create objects of Lion and Tiger
+           Lion lion;
+            Tiger tiger;
+            
+        // Call sound() method on Lion and Tiger objects
+            std::cout << "Sound of Lion: ";
+            lion.sound(); // Output: Lion roars.
+            
+            std::cout << "Sound of Tiger: ";
+            tiger.sound(); // Output: Tiger growls.
+            
+            return 0;
+        }
+            
+        output:
+        Sound of Lion: Lion roars.
+        Sound of Tiger: Tiger growls.
+            
+            
+            
+            </pre>
+    <h2>3. Write a C++ program to create an abstract class Shape with abstract methods calculateArea() and
+        calculatePerimeter(). Create derived classes Circle and Triangle that extend the Shape class and implement the
+        respective methods to calculate the area and perimeter of each shape.
+
+    </h2>
+    <pre>#include &lt;iostream>
+
+        // Abstract base class Shape
+        class Shape {
+        public:
+            // Pure virtual methods make Shape an abstract class
+            virtual double calculateArea() const = 0;
+            virtual double calculatePerimeter() const = 0;
+        };
+                
+        // Derived class Circle from Shape
+        class Circle : public Shape {
+        private:
+            double radius;
+                
+        public:
+            Circle(double r) : radius(r) {}
+                
+            double calculateArea() const override {
+            return 3.14 * radius * radius; // Area of circle formula
+            }
+                
+            double calculatePerimeter() const override {
+                return 2 * 3.14 * radius; // Perimeter of circle formula
+            }
+        };
+                
+        // Derived class Triangle from Shape
+        class Triangle : public Shape {
+        private:
+            double side1, side2, side3;
+                
+        public:
+            Triangle(double s1, double s2, double s3) : side1(s1), side2(s2), side3(s3) {}
+                
+            double calculateArea() const override {
+                // Using Heron's formula to calculate the area of a triangle
+                double s = (side1 + side2 + side3) / 2; // Semiperimeter
+                return sqrt(s * (s - side1) * (s - side2) * (s - side3)); // Area of triangle formula
+            }
+                
+            double calculatePerimeter() const override {
+                return side1 + side2 + side3; // Perimeter of triangle formula
+            }
+        };
+                
+        int main() {
+            // Create a Circle object with radius 5
+            Circle circle(5);
+            // Create a Triangle object with sides 3, 4, and 5
+            Triangle triangle(3, 4, 5);
+                
+            // Calculate and display area and perimeter of Circle
+            std::cout << "Circle Area: " << circle.calculateArea() << std::endl;
+            std::cout << "Circle Perimeter: " << circle.calculatePerimeter() << std::endl;
+                
+            // Calculate and display area and perimeter of Triangle
+            std::cout << "Triangle Area: " << triangle.calculateArea() << std::endl;
+            std::cout << "Triangle Perimeter: " << triangle.calculatePerimeter() << std::endl;
+                
+            return 0;
+        }
+                </pre>
+    <h2>4. Write a C++ program to create an abstract class BankAccount with abstract methods deposit() and withdraw().
+        Create derived classes: SavingsAccount and CurrentAccount that extend the BankAccount class and implement the
+        respective methods to handle deposits and withdrawals for each account type.
+
+    </h2>
+    <pre>#include &lt;iostream>
+
+        // Abstract base class BankAccount
+        class BankAccount {
+        protected:
+            double balance;
+                    
+        public:
+            // Constructor
+            BankAccount(double initialBalance = 0.0) : balance(initialBalance) {}
+                    
+            // Pure virtual methods make BankAccount an abstract class
+            virtual void deposit(double amount) = 0;
+            virtual void withdraw(double amount) = 0;
+        };
+                    
+        // Derived class SavingsAccount from BankAccount
+        class SavingsAccount : public BankAccount {
+        public:
+        // Constructor
+            SavingsAccount(double initialBalance = 0.0) : BankAccount(initialBalance) {}
+                    
+            // Implementation of deposit() method for SavingsAccount
+            void deposit(double amount) override {
+                balance += amount;
+                std::cout << "Deposited $" << amount << " into Savings Account. New balance: $" << balance << std::endl;
+            }
+                    
+            // Implementation of withdraw() method for SavingsAccount
+            void withdraw(double amount) override {
+                if (amount <= balance) {
+                    balance -= amount;
+                    std::cout << "Withdrawn $" << amount << " from Savings Account. New balance: $" << balance << std::endl;
+                } 
+                else {
+                    std::cout << "Insufficient funds to withdraw $" << amount << " from Savings Account." << std::endl;
+                }
+            }
+        };
+                    
+        // Derived class CurrentAccount from BankAccount
+        class CurrentAccount : public BankAccount {
+        public:
+            // Constructor
+            CurrentAccount(double initialBalance = 0.0) : BankAccount(initialBalance) {}
+                    
+            // Implementation of deposit() method for CurrentAccount
+            void deposit(double amount) override {
+                balance += amount;
+                std::cout << "Deposited $" << amount << " into Current Account. New balance: $" << balance << std::endl;
+            }
+                    
+            // Implementation of withdraw() method for CurrentAccount
+            void withdraw(double amount) override {
+                if (amount <= balance) {
+                    balance -= amount;
+                    std::cout << "Withdrawn $" << amount << " from Current Account. New balance: $" << balance << std::endl;
+                } 
+                else {
+                    std::cout << "Insufficient funds to withdraw $" << amount << " from Current Account." << std::endl;
+                }
+            }
+        };
+                    
+        int main() {
+            // Example usage
+            SavingsAccount savings(1000);
+            CurrentAccount current(2000);
+                    
+            // Deposit $500 into savings account
+                        savings.deposit(500);
+                    
+            // Withdraw $200 from current account
+                        current.withdraw(200);
+                    
+            // Withdraw $3000 from current account (attempting to overdraw)
+                        current.withdraw(3000);
+                    
+            return 0;
+        }
+                    
+        Output:
+                    
+        Deposited $500 into Savings Account. New balance: $1500
+        Withdrawn $200 from Current Account. New balance: $1800
+        Insufficient funds to withdraw $3000 from Current Account.
+                    
+                    </pre>
+    <h2>5. Write a C++ program to create an abstract class Animal with abstract methods eat() and sleep(). Create
+        derived classes Lion, Tiger, and Deer that extend the Animal class and implement the eat() and sleep() methods
+        differently based on their specific behavior.
+
+    </h2>
+    <pre>#include &lt;iostream>
+
+        // Abstract base class Animal
+        class Animal {
+        public:
+            // Pure virtual methods make Animal an abstract class
+            virtual void eat() const = 0;
+            virtual void sleep() const = 0;
+        };
+                        
+        // Derived class Lion from Animal
+        class Lion : public Animal {
+        public:
+            // Implementation of eat() method for Lion
+            void eat() const override {
+                std::cout << "Lion eats meat." << std::endl;
+            }
+                        
+            // Implementation of sleep() method for Lion
+            void sleep() const override {
+                std::cout << "Lion sleeps in the shade." << std::endl;
+            }
+        };
+                        
+        // Derived class Tiger from Animal
+        class Tiger : public Animal {
+        public:
+            // Implementation of eat() method for Tiger
+            void eat() const override {
+                std::cout << "Tiger eats meat." << std::endl;
+            }
+                        
+            // Implementation of sleep() method for Tiger
+            void sleep() const override {
+                std::cout << "Tiger sleeps in the grassland." << std::endl;
+            }
+        };
+                        
+        // Derived class Deer from Animal
+        class Deer : public Animal {
+        public:
+            // Implementation of eat() method for Deer
+            void eat() const override {
+                std::cout << "Deer eats grass." << std::endl;
+            }
+                        
+            // Implementation of sleep() method for Deer
+            void sleep() const override {
+                std::cout << "Deer sleeps in the forest." << std::endl;
+            }
+        };
+                        
+        int main() {
+            // Create objects of Lion, Tiger, and Deer
+            Lion lion;
+            Tiger tiger;
+            Deer deer;
+                        
+            // Call eat() and sleep() methods on Lion, Tiger, and Deer objects
+            std::cout << "Lion:" << std::endl;
+            lion.eat();   // Output: Lion eats meat.
+            lion.sleep(); // Output: Lion sleeps in the shade.
+                        
+            std::cout << "\nTiger:" << std::endl;
+            tiger.eat();   // Output: Tiger eats meat.
+            tiger.sleep(); // Output: Tiger sleeps in the grassland.
+                        
+            std::cout << "\nDeer:" << std::endl;
+            deer.eat();   // Output: Deer eats grass.
+            deer.sleep(); // Output: Deer sleeps in the forest.
+                        
+            return 0;
+        }
+                        
+        Output:
+        Lion:
+        Lion eats meat.
+        Lion sleeps in the shade.
+                        
+        Tiger:
+        Tiger eats meat.
+        Tiger sleeps in the grassland.
+                        
+        Deer:
+        Deer eats grass.
+        Deer sleeps in the forest.
+                        
+    </pre>
+    <h2>6. Write a C++ program to create an abstract class Employee with abstract methods calculateSalary() and
+        displayInfo(). Create derived classes Manager and Programmer that extend the Employee class and implement the
+        respective methods to calculate salary and display information for each role.
+
+    </h2>
+    <pre>#include &lt;iostream>
+        #include &lt;string>
+        
+        // Abstract base class Employee
+        class Employee {
+        protected:
+            std::string name;
+            int employeeId;
+        
+        public:
+            // Constructor
+            Employee(const std::string& _name, int _employeeId) : name(_name), employeeId(_employeeId) {}
+        
+            // Pure virtual methods make Employee an abstract class
+            virtual double calculateSalary() const = 0;
+            virtual void displayInfo() const = 0;
+        };
+        
+        // Derived class Manager from Employee
+        class Manager : public Employee {
+        private:
+            double salaryBase;
+            double bonus;
+        
+        public:
+            // Constructor
+            Manager(const std::string& _name, int _employeeId, double _salaryBase, double _bonus)
+                : Employee(_name, _employeeId), salaryBase(_salaryBase), bonus(_bonus) {}
+        
+            // Implementation of calculateSalary() method for Manager
+            double calculateSalary() const override {
+                return salaryBase + bonus;
+            }
+        
+            // Implementation of displayInfo() method for Manager
+            void displayInfo() const override {
+                std::cout << "Manager Name: " << name << std::endl;
+                std::cout << "Employee ID: " << employeeId << std::endl;
+                std::cout << "Salary: $" << calculateSalary() << std::endl;
+            }
+        };
+        
+        // Derived class Programmer from Employee
+        class Programmer : public Employee {
+        private:
+            double hourlyRate;
+            int hoursWorked;
+        
+        public:
+            // Constructor
+            Programmer(const std::string& _name, int _employeeId, double _hourlyRate, int _hoursWorked)
+                : Employee(_name, _employeeId), hourlyRate(_hourlyRate), hoursWorked(_hoursWorked) {}
+        
+            // Implementation of calculateSalary() method for Programmer
+            double calculateSalary() const override {
+                return hourlyRate * hoursWorked;
+            }
+        
+            // Implementation of displayInfo() method for Programmer
+            void displayInfo() const override {
+                std::cout << "Programmer Name: " << name << std::endl;
+                std::cout << "Employee ID: " << employeeId << std::endl;
+                std::cout << "Salary: $" << calculateSalary() << std::endl;
+            }
+        };
+        
+        int main() {
+            // Example usage
+            Manager manager("John Doe", 1001, 5000, 1000);
+            Programmer programmer("Jane Smith", 1002, 50, 160);
+        
+            // Display information for Manager
+            std::cout << "Manager Info:" << std::endl;
+            manager.displayInfo();
+            std::cout << std::endl;
+        
+            // Display information for Programmer
+            std::cout << "Programmer Info:" << std::endl;
+            programmer.displayInfo();
+        
+            return 0;
+        }
+        
+        Output:
+        Manager Info:
+        Manager Name: John Doe
+        Employee ID: 1001
+        Salary: $6000
+        
+        Programmer Info:
+        Programmer Name: Jane Smith
+        Employee ID: 1002
+        Salary: $8000
+        </pre>
+    <h2>7. Write a C++ program to create an abstract class Shape3D with abstract methods calculateVolume() and
+        calculateSurfaceArea(). Create derived classes Sphere and Cube that extend the Shape3D class and implement the
+        respective methods to calculate the volume and surface area of each shape
+
+    </h2>
+    <pre>#include &lt;iostream>
+        #include &lt;cmath>
+            
+        // Abstract base class Shape3D
+        class Shape3D {
+        public:
+            // Pure virtual methods make Shape3D an abstract class
+            virtual double calculateVolume() const = 0;
+            virtual double calculateSurfaceArea() const = 0;
+        };
+            
+        // Derived class Sphere from Shape3D
+        class Sphere : public Shape3D {
+        private:
+            double radius;
+            
+        public:
+            // Constructor
+            Sphere(double _radius) : radius(_radius) {}
+            
+            // Implementation of calculateVolume() method for Sphere
+            double calculateVolume() const override {
+                return (4.0 / 3.0) * 3.14159 * std::pow(radius, 3); // Volume of sphere formula
+            }
+            
+            // Implementation of calculateSurfaceArea() method for Sphere
+            double calculateSurfaceArea() const override {
+                return 4.0 * 3.14159 * std::pow(radius, 2); // Surface area of sphere formula
+            }
+        };
+            
+        // Derived class Cube from Shape3D
+        class Cube : public Shape3D {
+        private:
+            double side;
+            
+        public:
+            // Constructor
+            Cube(double _side) : side(_side) {}
+            
+            // Implementation of calculateVolume() method for Cube
+            double calculateVolume() const override {
+                return std::pow(side, 3); // Volume of cube formula
+            }
+            
+            // Implementation of calculateSurfaceArea() method for Cube
+            double calculateSurfaceArea() const override {
+                return 6.0 * std::pow(side, 2); // Surface area of cube formula
+            }
+        };
+            
+        int main() {
+            // Example usage
+            Sphere sphere(5);
+            Cube cube(4);
+            
+            // Calculate and display volume and surface area of Sphere
+            std::cout << "Sphere Volume: " << sphere.calculateVolume() << std::endl;
+            std::cout << "Sphere Surface Area: " << sphere.calculateSurfaceArea() << std::endl;
+            
+            // Calculate and display volume and surface area of Cube
+            std::cout << "\nCube Volume: " << cube.calculateVolume() << std::endl;
+            std::cout << "Cube Surface Area: " << cube.calculateSurfaceArea() << std::endl;
+            
+            return 0;
+        }
+            
+        Output:
+            
+        Sphere Volume: 523.598
+        Sphere Surface Area: 314.159
+            
+        Cube Volume: 64
+        Cube Surface Area: 96
+            </pre>
+    <h2>8. Write a C++ program to create an abstract class Vehicle with abstract methods startEngine() and stopEngine().
+        Create derived classes Car and Motorcycle that extend the Vehicle class and implement the respective methods to
+        start and stop the engines for each vehicle type.
+
+    </h2>
+    <pre>#include &lt;iostream>
+
+        // Abstract base class Vehicle
+        class Vehicle {
+        public:
+            // Pure virtual methods make Vehicle an abstract class
+            virtual void startEngine() const = 0;
+            virtual void stopEngine() const = 0;
+        };
+                
+        // Derived class Car from Vehicle
+        class Car : public Vehicle {
+        public:
+            // Implementation of startEngine() method for Car
+            void startEngine() const override {
+                std::cout << "Car engine started." << std::endl;
+            }
+                
+            // Implementation of stopEngine() method for Car
+            void stopEngine() const override {
+                std::cout << "Car engine stopped." << std::endl;
+            }
+        };
+                
+        // Derived class Motorcycle from Vehicle
+        class Motorcycle : public Vehicle {
+        public:
+            // Implementation of startEngine() method for Motorcycle
+            void startEngine() const override {
+                std::cout << "Motorcycle engine started." << std::endl;
+        }
+                
+            // Implementation of stopEngine() method for Motorcycle
+            void stopEngine() const override {
+                std::cout << "Motorcycle engine stopped." << std::endl;
+            }
+        };
+                
+        int main() {
+            // Example usage
+            Car car;
+            Motorcycle motorcycle;
+                    
+            // Start and stop the engine of the car
+            car.startEngine();
+            car.stopEngine();
+                    
+            std::cout << std::endl;
+                    
+            // Start and stop the engine of the motorcycle
+            motorcycle.startEngine();
+            motorcycle.stopEngine();
+                    
+            return 0;
+        }
+                
+        output:
+                
+        Car engine started.
+        Car engine stopped.
+                
+        Motorcycle engine started.
+        Motorcycle engine stopped.
+                
+                
+                
+                </pre>
+    <h2>9. Write a C++ program to create an abstract class Person with abstract methods eat() and exercise(). Create
+        derived classes Athlete and LazyPerson that extend the Person class and implement the respective methods to
+        describe how each person eats and exercises.
+
+    </h2>
+<pre>#include &lt;iostream>
+
+    // Abstract base class Person
+    class Person {
+    public:
+        // Pure virtual methods make Person an abstract class
+        virtual void eat() const = 0;
+        virtual void exercise() const = 0;
+    };
+    
+    // Derived class Athlete from Person
+    class Athlete : public Person {
+    public:
+        // Implementation of eat() method for Athlete
+        void eat() const override {
+            std::cout << "Athlete eats a balanced diet to maintain energy levels." << std::endl;
+        }
+    
+        // Implementation of exercise() method for Athlete
+        void exercise() const override {
+            std::cout << "Athlete engages in rigorous training sessions regularly." << std::endl;
+        }
+    };
+    
+    // Derived class LazyPerson from Person
+    class LazyPerson : public Person {
+    public:
+        // Implementation of eat() method for LazyPerson
+        void eat() const override {
+            std::cout << "Lazy person snacks on junk food while binge-watching TV shows." << std::endl;
+        }
+    
+        // Implementation of exercise() method for LazyPerson
+        void exercise() const override {
+            std::cout << "Lazy person avoids exercise and prefers sedentary activities." << std::endl;
+        }
+    };
+    
+    int main() {
+        // Example usage
+        Athlete athlete;
+        LazyPerson lazyPerson;
+    
+        // Describe how an athlete eats and exercises
+        std::cout << "Athlete:" << std::endl;
+        athlete.eat();
+        athlete.exercise();
+    
+        std::cout << std::endl;
+    
+        // Describe how a lazy person eats and exercises
+        std::cout << "Lazy Person:" << std::endl;
+        lazyPerson.eat();
+        lazyPerson.exercise();
+    
+        return 0;
+    }
+    
+    output:
+    Athlete:
+    Athlete eats a balanced diet to maintain energy levels.
+    Athlete engages in rigorous training sessions regularly.
+    
+    Lazy Person:
+    Lazy person snacks on junk food while binge-watching TV shows.
+    Lazy person avoids exercise and prefers sedentary activities.
+    
+    </pre>
+    <h2>10. Write a C++ program to create an abstract class Instrument with abstract methods play() and tune(). Create
+        derived classes for Glockenspiel and Violin that extend the Instrument class and implement the respective
+        methods to play and tune each instrument.
+
+    </h2>
+<pre>#include &lt;iostream>// Abstract base class Instrument
+    class Instrument {
+    public:
+        // Pure virtual methods make Instrument an abstract class
+        virtual void play() const = 0;
+        virtual void tune() const = 0;
+    };
+    
+    // Derived class Glockenspiel from Instrument
+    class Glockenspiel : public Instrument {
+    public:
+        // Implementation of play() method for Glockenspiel
+        void play() const override {
+            std::cout << "Glockenspiel is being played." << std::endl;
+        }
+    
+        // Implementation of tune() method for Glockenspiel
+        void tune() const override {
+            std::cout << "Tuning the Glockenspiel." << std::endl;
+        }
+    };
+    
+    // Derived class Violin from Instrument
+    class Violin : public Instrument {
+    public:
+        // Implementation of play() method for Violin
+        void play() const override {
+            std::cout << "Violin is being played." << std::endl;
+        }
+    
+        // Implementation of tune() method for Violin
+        void tune() const override {
+            std::cout << "Tuning the Violin." << std::endl;
+        }
+    };
+    
+    int main() {
+        // Example usage
+        Glockenspiel glockenspiel;
+        Violin violin;
+    
+        // Play and tune the Glockenspiel
+        std::cout << "Playing the Glockenspiel:" << std::endl;
+        glockenspiel.play();
+        std::cout << "Tuning the Glockenspiel:" << std::endl;
+        glockenspiel.tune();
+    
+        std::cout << std::endl;
+    
+        // Play and tune the Violin
+        std::cout << "Playing the Violin:" << std::endl;
+        violin.play();
+        std::cout << "Tuning the Violin:" << std::endl;
+        violin.tune();
+    
+        return 0;
+    }
+    
+    output:
+    Playing the Glockenspiel:
+    Glockenspiel is being played.
+    Tuning the Glockenspiel:
+    Tuning the Glockenspiel.
+    
+    Playing the Violin:
+    Violin is being played.
+    Tuning the Violin:
+    Tuning the Violin.</pre>
+    <h2>11. Write a C++ program to create an abstract class Shape2D with abstract methods draw() and resize(). Create
+        derived classes Rectangle and Circle that extend the Shape2D class and implement the respective methods to draw
+        and resize each shape.
+
+    </h2>
+    <pre>#include &lt;iostream>
+
+        // Abstract base class Shape2D
+        class Shape2D {
+        public:
+            // Pure virtual methods make Shape2D an abstract class
+            virtual void draw() const = 0;
+            virtual void resize(double factor) = 0;
+        };
+        
+        // Derived class Rectangle from Shape2D
+        class Rectangle : public Shape2D {
+        private:
+            double width;
+            double height;
+        
+        public:
+            // Constructor
+            Rectangle(double w, double h) : width(w), height(h) {}
+        
+            // Implementation of draw() method for Rectangle
+            void draw() const override {
+                std::cout << "Drawing a Rectangle with width " << width << " and height " << height << std::endl;
+            }
+        
+            // Implementation of resize() method for Rectangle
+            void resize(double factor) override {
+                width *= factor;
+                height *= factor;
+                std::cout << "Resizing Rectangle: new width = " << width << ", new height = " << height << std::endl;
+            }
+        };
+        
+        // Derived class Circle from Shape2D
+        class Circle : public Shape2D {
+        private:
+            double radius;
+        
+        public:
+            // Constructor
+            Circle(double r) : radius(r) {}
+        
+            // Implementation of draw() method for Circle
+            void draw() const override {
+                std::cout << "Drawing a Circle with radius " << radius << std::endl;
+            }
+        
+            // Implementation of resize() method for Circle
+            void resize(double factor) override {
+                radius *= factor;
+                std::cout << "Resizing Circle: new radius = " << radius << std::endl;
+            }
+        };
+        
+        int main() {
+            // Example usage
+            Rectangle rectangle(5, 3);
+            Circle circle(4);
+        
+            // Draw the rectangle and circle
+            std::cout << "Drawing shapes:" << std::endl;
+            rectangle.draw();
+            circle.draw();
+        
+            std::cout << std::endl;
+        
+            // Resize the rectangle and circle
+            std::cout << "Resizing shapes:" << std::endl;
+            rectangle.resize(1.5);
+            circle.resize(2);
+        
+            return 0;
+        }
+        
+        output:
+        Drawing shapes:
+        Drawing a Rectangle with width 5 and height 3
+        Drawing a Circle with radius 4
+        
+        Resizing shapes:
+        Resizing Rectangle: new width = 7.5, new height = 4.5
+        Resizing Circle: new radius = 8
+        </pre>
+    <h2>12. Write a C++ program to create an abstract class GeometricShape with abstract methods area() and perimeter().
+        Create derived classes Triangle and Square that extend the GeometricShape class and implement the respective
+        methods to calculate the area and perimeter of each shape
+
+    </h2>
+    <pre>#include &lt;iostream>
+        #include &lt;cmath>
+        
+        // Abstract base class GeometricShape
+        class GeometricShape {
+        public:
+            // Pure virtual methods make GeometricShape an abstract class
+            virtual double area() const = 0;
+            virtual double perimeter() const = 0;
+        };
+        
+        // Derived class Triangle from GeometricShape
+        class Triangle : public GeometricShape {
+        private:
+            double side1, side2, side3;
+        
+        public:
+            // Constructor
+            Triangle(double s1, double s2, double s3) : side1(s1), side2(s2), side3(s3) {}
+        
+            // Implementation of area() method for Triangle using Heron's formula
+            double area() const override {
+                double s = (side1 + side2 + side3) / 2;
+                return sqrt(s * (s - side1) * (s - side2) * (s - side3));
+            }
+        
+            // Implementation of perimeter() method for Triangle
+            double perimeter() const override {
+                return side1 + side2 + side3;
+            }
+        };
+        
+        // Derived class Square from GeometricShape
+        class Square : public GeometricShape {
+        private:
+            double side;
+        
+        public:
+            // Constructor
+            Square(double s) : side(s) {}
+        
+            // Implementation of area() method for Square
+            double area() const override {
+                return side * side;
+            }
+        
+            // Implementation of perimeter() method for Square
+            double perimeter() const override {
+                return 4 * side;
+            }
+        };
+        
+        int main() {
+            // Example usage
+            Triangle triangle(3, 4, 5);
+            Square square(4);
+        
+            // Calculate and display area and perimeter of Triangle
+            std::cout << "Triangle:" << std::endl;
+            std::cout << "Area: " << triangle.area() << std::endl;
+            std::cout << "Perimeter: " << triangle.perimeter() << std::endl;
+        
+            std::cout << std::endl;
+        
+            // Calculate and display area and perimeter of Square
+            std::cout << "Square:" << std::endl;
+            std::cout << "Area: " << square.area() << std::endl;
+            std::cout << "Perimeter: " << square.perimeter() << std::endl;
+        
+            return 0;
+        }
+        
+        Triangle:
+        Area: 6
+        Perimeter: 12
+        
+        Square:
+        Area: 16
+        Perimeter: 16</pre>
+    <h2>13. Write a C++ program to create an abstract class Bird with abstract methods fly() and makeSound(). Create
+        derived classes Eagle and Hawk that extend the Bird class and implement the respective methods to describe how
+        each bird flies and makes a sound.
+
+    </h2>
+    <pre>#include &lt;iostream>
+
+
+        class Bird {
+        public:
+            
+            virtual void fly() const = 0;
+            virtual void makeSound() const = 0;
+        
+        class Eagle : public Bird {
+        public:
+            // Implementation of fly() method for Eagle
+            void fly() const override {
+                std::cout << "Eagle soars high in the sky." << std::endl;
+            }
+        
+            // Implementation of makeSound() method for Eagle
+            void makeSound() const override {
+                std::cout << "Eagle makes a screeching sound." << std::endl;
+            }
+        };
+        
+        // Derived class Hawk from Bird
+        class Hawk : public Bird {
+        public:
+            // Implementation of fly() method for Hawk
+            void fly() const override {
+                std::cout << "Hawk flies swiftly with agility." << std::endl;
+            }
+        
+            // Implementation of makeSound() method for Hawk
+            void makeSound() const override {
+                std::cout << "Hawk makes a piercing cry." << std::endl;
+            }
+        };
+        
+        int main() {
+            Eagle eagle;
+            Hawk hawk;
+        
+        
+            std::cout << "Eagle:" << std::endl;
+            eagle.fly();
+            eagle.makeSound();
+        
+            std::cout << std::endl;
+            std::cout << "Hawk:" << std::endl;
+            hawk.fly();
+            hawk.makeSound();
+        
+            return 0;
+        }
+        
+        output:
+        Eagle:
+        Eagle soars high in the sky.
+        Eagle makes a screeching sound.
+        
+        Hawk:
+        Hawk flies swiftly with agility.
+        Hawk makes a piercing cry.
+        </pre>
+</body>
+
+</html>

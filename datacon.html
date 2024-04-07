@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DATA Conversion</title>
+    <style>
+      h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+        pre{
+            font:bold;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+  <h1>Data Conversion</h1>
+    <div class="code">
+        <div>
+          <h2 name="code1">1.program to convert string into integer</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            
+#include< iostream>
+#include< cstdlib>
+
+
+using namespace std;
+
+int main()
+{
+	char str[20];
+	
+	cout<<"Enter a string representing an integer : ";
+	cin>>str;
+
+	//convert string to integer
+	int num=atoi(str);
+	cout<<"The integer value is : "<< num<< endl;
+	
+	return 0;
+}
+          </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>
+            Enter a string representing an integer : xyz
+The integer value is : 0
+
+          </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code2">2.C++ Program to convert int to String</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            #include< iostream>
+            #include< cstdio>
+                using namespace std;
+                int main()
+                {
+                    int num;
+                    cout<<"Enter an integer : ";
+                    cin>>num;
+                    //convert integer to string
+                    char str[20];
+                    sprintf(str,"%d",num);
+                    cout<<"The string value is : "<< str<< endl;
+                    return 0;
+                }
+          </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Enter an integer : 19
+            The string value is : 19</pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code3">3. C++ Program to convert String to long</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include< iostream>
+            #include< cstdlib>
+            using namespace std;
+            int main()
+            {
+                char str[20];
+            
+                cout<<"Enter a string representing a long integer: ";
+                cin>>str;
+            
+                long num=atol(str);
+            
+                cout<<"The long integer value is : "<< num<< endl;
+            
+                return 0;
+            } </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Enter a string representing a long integer: australia
+The long integer value is : 0</pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code4">4.C++ Program to convert long to String</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            #include< iostream>
+                using namespace std;
+                
+                int main()
+                {
+                    long num;
+                
+                    cout<<"Enter a long integer: ";
+                    cin>>num;
+                
+                    //convert long to string
+                    char str[20];
+                    sprintf(str,"%ld",num);
+                    cout<<"The string value is : "<< str<< endl;
+                
+                    return 0;
+                }
+          </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>
+            Enter a long integer: 123456
+The string value is : 123456
+          </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code5">5. C++ Program to convert String to float</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            #include< iostream.h>
+                using namespace std;
+                int main()
+                {
+                    char str[20];
+                    
+                    cout<<"Enter a floating point number as a string : ";
+                    cin>>str;
+                
+                    //convert string to float
+                    float num =atof(str);
+                    cout<<"The float value is : "<< num<< endl;
+                
+                    return 0;
+                }
+                
+                
+          </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>
+            Enter a floating point number as a string : 1999.9
+The float value is : 1999.9
+          </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code6">6. C++ Program to convert float to String</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include< iostream>
+            using namespace std;
+            
+            int main()
+            {
+                float num;
+            
+                cout<<"Enter a floating point number : ";
+                cin>>num;
+                //convert float to string
+                char str[20];
+                sprintf(str,"%2f",num);//%2f specifies two decimal places
+                cout<<"The string value is : "<< str<< endl;
+            
+                return 0;
+            }
+            </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>
+            Enter a floating point number : 199.9
+            The string value is : 199.899994
+          </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code7">7. C++ Program to convert String to double</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            #include< iostream>
+                using namespace std;
+                int main()
+                {
+                    char str[20];
+                    
+                    cout<<"Enter a string representing a double : ";
+                    cin>>str;
+                    //convert string to double
+                    double num=atof(str);
+                    cout<<"The double value is : "<< num<< endl;
+                    
+                    return 0;
+                }
+                
+          </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Enter a string representing a double : 19.12345
+            The double value is : 19.1234
+            </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code8">8. C++ Program to convert double to String</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+        #include<iostream>
+        using namespace std;
+
+int main()
+{
+	double num;
+	
+	cout<<"Enter the double value : ";
+	cin>>num;
+	//convert double to string
+	char str[20];
+	sprintf(str,"%2f",num);//%2f specifies 2 decimal places
+	cout<<"The string value is : "<< str<< endl;
+	
+	return 0;
+}
+          </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>
+            Enter the double value : 19.12345
+            The string value is : 19.123450 
+          </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code9">9.program to convert character to int(ASCII value) using typecasting</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            #include< iostream>
+            using namespace std;
+            
+            int main()
+            {
+                char ch;
+                
+                cout<<"Enter the character : ";
+                cin>>ch;
+                cout<<"the int(ASCII value) equivalent to "<< ch<<" is :";
+                cout<< int(ch);
+               
+                return 0;
+            }</pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Enter the character : x
+            the int(ASCII value) equivalent to x is :120
+            </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code10">10.C++ Program to convert int to char</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>//convert int to char using typecasting
+            #include< iostream>
+            using namespace std;
+            
+            int main()
+            {
+                int n;
+                
+                cout<<"Enter the integer : ";
+                cin>>n;
+                cout<<"character equivalent to integer value "<< n<<" is : ";
+                cout<< char(n);
+                
+                return 0;
+            }</pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>
+            Enter the integer : 120
+            character equivalent to integer value 120 is : x
+
+          </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code11">11.C++ Program to convert Binary to Decimal</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            #include< iostream>
+           using namespace std;
+            //function to convert binary to decimal
+            int binaryToDecimal(int n)
+            {
+                int num=n;
+                int dec_value=0;
+            
+                //intializing base value to 1,i.e 2^0
+                int base=1;
+                int temp=num;
+                while(temp)
+                {
+                    int last_digit=temp%10;
+                    temp=temp/10;
+            
+                    dec_value+=last_digit*base;
+                    base=base*2;
+                }
+                return dec_value;
+            }
+            //main definition'
+            int main()
+            {
+                int num;
+               
+                cout<<"Enter binary no : ";
+                cin>>num;
+                cout<<"The equivalent decimal no to "<< num<<"is : ";
+                cout<< binaryToDecimal(num)<< endl;
+                
+                return 0;
+            }
+            </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Enter binary no : 1010
+            The equivalent decimal no to 1010is : 10</pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code12">12. C++ Program to convert Decimal to Binary</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            
+#include< iostream>
+using namespace std;
+//function to convert a decimal to binary number
+void decToBinary(int n)
+{
+	//array to store binary number
+	int binaryNum[32];
+
+	//counter for binary array
+	int i=0;
+	while(n>0)
+	{
+		//storing remainder in binary array
+		binaryNum[i]=n%2;
+		n=n/2;
+		i++;
+	}
+
+	//printint binary array in reverse order
+	for(int j=i-1;j>=0;j--)
+		cout<< binaryNum[j];
+}
+int main()
+{
+	int n;
+	
+	cout<<"Enter the decimal no : ";
+	cin>>n;
+	cout<<"The equivalent binary no to "<< n<<" is : ";
+	decToBinary(n);
+	
+	return 0;
+}
+
+          </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Enter the decimal no : 10
+            The equivalent binary no to 10 is : 1010</pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code13">13.  C++ Program to convert Hex to Decimal</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            
+            #include< iostream>
+            #include< cstring>
+            #include< cmath>
+            using namespace std;
+            
+            int main()
+            {
+                char num[20];
+                int i,r,len,hex=0;
+               
+                cout<<"Enter a hexadecimal number : ";
+                cin>>num;
+                len=strlen(num);
+                for(i=0;num[i]!='\0';i++)
+                {
+                    len--;
+                    if(num[i]>='0'&&num[i]<='9')
+                        r=num[i]-48;
+                    else if(num[i]>='a'&&num[i]<='f')
+                        r=num[i]-87;
+                    else if(num[i]>='A'&&num[i]<='F')
+                        r=num[i]-55;
+                    hex+=r*pow(16,len);
+                }
+                cout<<"\nDecimal equivalent of "<< num<<" is : "<< hex;
+                
+                return 0;
+            }
+            
+          </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Enter a hexadecimal number : a
+
+            Decimal equivalent of a is : 10
+            </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code14">14. C++ Program to convert Decimal to Hex</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            #include&lt;iostream>
+            using namespace std;
+            int main()
+            {
+              int num,temp,i=1,j,r;
+              char hex[50];
+              
+              cout<<"Enter a decimal no : ";
+              cin>>num;
+              temp=num;
+              while(temp !=0)
+              {
+                r=temp%16;
+                if(r< 10)
+                  hex[i++]=r+48;
+                else
+                  hex[i++]=r+55;
+                temp=temp/16;
+              }
+              cout<<"\nHexadecimal equivalent of "<< num<<" is :";
+              for(j=1;j>0;j--)
+                cout<< hex[j];
+              return 0;
+            }</pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>
+            Enter a decimal no : 10
+
+Hexadecimal equivalent of 10 is :A
+
+          </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code15">15. C++ Program to convert Octal to Decimal</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            #include&lt;iostream>
+            using namespace std;
+            //function to convert octal to decimal
+            int octalToDecimal(int n)
+            {
+              int num=n;
+              int dec_value=0;
+              //initializing base value to 1,i.e 8^0
+              int base=1;
+              int temp=num;
+              while(temp)
+              {
+                //extracting last digit
+                int last_digit=temp%10;
+                temp=temp/10;
+                /*Multiplying last digit with appropriate base value and
+                   adding it to dec_value*/
+                dec_value+=last_digit*base;
+                base=base*8;
+              }
+                return dec_value;
+            }
+            //main definition
+            int main()
+            {	int num;	
+              cout<<"Enter the octal no: ";
+              cin>>num;
+              cout<<"the decimal value of no is :"<< octalToDecimal(num)<< endl;	
+              return 0;
+            }
+            
+            </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>
+            Enter the octal no: 7
+the decimal value of no is :7
+          </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code16">16.C++ Program to convert Decimal to Octal</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            #include&lt;iostream>
+            using namespace std;
+            //function to convert octal value of given decimal no
+            void decimalToOctal(int deciNum)
+            {
+              int octalNum=0,countval=1;
+              while(deciNum!=0)
+              {
+                //decimals remainder is calculated
+                int remainder=deciNum%8;
+                //storing the octal value
+                octalNum+=remainder*countval;
+                //storing exponential value
+                countval=countval*10;
+                deciNum/=8;
+              }
+              cout<< octalNum<< endl;
+            }
+            
+            int main()
+            {
+              int n;
+            
+              cout<<"Enter the value of n: ";
+              cin>>n;
+              decimalToOctal(n);
+              
+              return 0;
+            }
+            </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Enter the value of n: 34
+               42</pre>
+        </div>
+      </div>
+</body>
+</html>

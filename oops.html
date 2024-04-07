@@ -1,0 +1,3061 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="code">
+      <div>
+        <h2 name="code1">1.Write a C++ program to create a class called "Person" with a name and age attribute.<br>
+ Create two instances of the "Person" class, set their attributes using the constructor, and print<br>
+ their name and age.</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include &lt; iostream >
+#include &lt; string.h >
+using namespace std;
+
+class person{
+	private:
+		char name[50];
+		int age;
+	public:
+		//constructor to initialize name and age
+		person(const char* n,int a)
+		{
+			strcpy(name,n);
+			age=a;
+		}
+		void printInfo()
+		{
+<
+			cout<< "Name: "<< name <<",Age: "<< age<< endl;
+		}
+};
+int main()
+{
+	person person1("navneet",18);
+	person person2("niharika",18);
+	cout<< "Person1: ";
+	person1.printInfo();
+	cout<< "Person2: ";
+	person2.printInfo();
+	return 0;
+</pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>Person1: Name: navroop,Age: 18
+Person2: Name: nitin,Age: 18
+</pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code2">2..Write a C++ program to create a class called "Dog" with a name and breed attribute.<br> 
+Create two instances of the "Dog" class, set their attributes using the constructor and modify<br>
+ the attributes using the setter methods and print the updated values</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include &lt; iostream >
+#include &lt; string.h >
+
+using namespace std;
+
+class Dog{
+	private:
+		char name[50];
+		char breed[50];
+	public:
+		//constructor to initialize name and breed
+		Dog(const char* n,const char* b)
+		{
+			strcpy(name,n);
+			strcpy(breed,b);
+		}
+		//setter method to modify name and breed
+		void setName(const char* n)
+		{
+			strcpy(name,n);
+		}
+		void setBreed(const char* b)
+		{
+			strcpy(breed,b);
+		}
+		//getter method to retrieve name and breed
+		const char* getName()
+		{
+			return name;
+		}
+		const char* getBreed()
+		{
+			return breed;
+		}
+};
+int main()
+{
+	Dog dog1("buddy","Labrador");
+	Dog dog2("Max","German Shephered");
+	//print initial values
+	cout<< "Initial values : \n";
+	cout<< "Dog1 - Name: "<< dog1.getName() << ", Breed: " << dog1.getBreed() << endl;
+	cout<< "Dog2 - Name: "<< dog2.getName() << ", Breed: " << dog2.getBreed() << endl;
+	//Modify attributes using setter methods
+	dog1.setName("Rocky");
+	dog2.setBreed("Golden Retriever");
+
+	//print updated values
+	cout<< "\nupdated values:\n";
+	cout<< "Dog1-Name: "<< dog1.getName() << ",Breed: " << dog1.getBreed() << endl;
+	cout<< "Dog2-Name: "<< dog2.getName() << ",Breed: " << dog2.getBreed() << endl;
+	return 0;
+}
+</pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>Initial values :
+Dog1 - Name: buddy,Breed: Labrador
+Dog2 - Name: Max,Breed: German Shephered
+
+updated values:
+Dog1-Name: Rocky,Breed: Labrador
+Dog2-Name: Max,Breed: Golden Retriever
+</pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code3">3. Write a C++ program to create a class called "Rectangle" with width and height <br>
+attributes. Calculate the area and perimeter of the rectangle.</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include &lt; iostream >
+
+using namespace std;
+
+class Rectangle
+{
+	private:
+		float width;
+		float height;
+	public:
+		//constructor
+		Rectangle(float w,float h)
+		{
+			width =w;
+			height =h;
+		}
+		//method to calculate area
+		float calculateArea()
+		{
+			return width*height;
+		}
+		//method to calculate perimete'
+		float calculatePerimeter()
+		{
+			return 2*(width+height);
+		}
+};
+//main definition
+int main()
+{
+	float w,h;
+	cout<< "Enter width of the rectangle: ";
+	cin>> w;
+	cout<< "Enter height of the rectangle: ";
+	cin>> h;
+	//create a rectangle object
+	Rectangle rect(w,h);
+	//calculate and display area and perimeter
+	cout<< "Area of the rectangle: "<< rect.calculateArea() << endl;
+	cout<< "Perimeter of the rectangle: "<< rect.calculatePerimeter() << endl;
+	return 0;
+}
+</pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>Enter width of the rectangle: 2
+Enter height of the rectangle: 4
+Area of the rectangle: 8
+Perimeter of the rectangle: 12
+</pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code4">4.Write a C++ program to create a class called "Circle" with a radius attribute. <br>
+You can access and modify this attribute. Calculate the area and circumference of the circle.</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include &lt; iostream >
+using namespace std;
+class Circle {
+private:
+    float radius;
+
+public:
+    // Constructor
+    Circle(float r){
+    	radius=r;
+	}
+	// Accessor method for radius
+    float getRadius() const {
+        return radius;
+    }
+	// Mutator method for radius
+    void setRadius(float r) {
+        radius = r;
+    }
+	// Method to calculate area
+    float circleArea() const {
+        return 3.14 * radius * radius;
+    }
+
+    // Method to calculate circumference
+    float Circumference() const {
+        return 2 * 3.14 * radius;
+    }
+};
+
+int main() {
+    Circle c1(5.0);
+
+    // Display the radius, area, and circumference
+    cout << "Circle Radius: " << c1.getRadius() << endl;
+    cout << "Circle Area: " << c1.circleArea() << endl;
+    cout << "Circle Circumference: " << c1.Circumference() << endl;
+
+    // Modify the radius and display the updated area and circumference
+    c1.setRadius(7.0);
+    cout << "\nUpdated Circle Radius: " << c1.getRadius() << endl;
+    cout << "Updated Circle Area: " << c1.circleArea() << endl;
+    cout << "Updated Circle Circumference: " << c1.Circumference() << endl;
+    return 0;
+}
+</pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>Circle Radius: 5
+Circle Area: 78.5
+Circle Circumference: 31.4
+
+Updated Circle Radius: 7
+Updated Circle Area: 153.86
+Updated Circle Circumference: 43.96</pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code5">5. Write a C++ program to create a class called "Book" with attributes for title, author, and ISBN, and methods to add and remove books from a collection.
+
+        </h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+<pre>
+  #include &lt;iostream>
+  #include &lt;conio.h>
+  #include &lt;stdio.h>
+  #include &lt;stdlib.h>
+  #include &lt;string.h>
+  #include &lt;ctype.h>
+  
+  
+  #define MAX_BOOKS 100
+  using namespace std;
+  
+  class Book {
+  private:
+      char title[100];
+      char author[100];
+      char isbn[20];
+  
+  public:
+      Book(const char* _title, const char* _author, const char* _isbn) {
+          strcpy(title, _title);
+          strcpy(author, _author);
+          strcpy(isbn, _isbn);
+      }
+  
+      // Getters
+      char* getTitle() {
+          return title;
+      }
+  
+      char* getAuthor() {
+          return author;
+      }
+  
+      char* getISBN() {
+          return isbn;
+      }
+  };
+  
+  class BookCollection {
+  private:
+      Book books[MAX_BOOKS];
+      int numBooks;
+  
+  public:
+      BookCollection() {
+          numBooks = 0;
+      }
+  
+      // Method to add a book to the collection
+      void addBook(const Book& book) {
+          if (numBooks < MAX_BOOKS) {
+              books[numBooks++] = book;
+          } else {
+              cout << "Maximum capacity reached. Cannot add more books." << endl;
+          }
+      }
+  
+      // Method to remove a book from the collection by ISBN
+      void removeBook(const char* isbn) {
+          for (int i = 0; i < numBooks; ++i) {
+              if (strcmp(books[i].getISBN(), isbn) == 0) {
+                  for (int j = i; j < numBooks - 1; ++j) {
+                      books[j] = books[j + 1];
+                  }
+                  numBooks--;
+                  cout << "Book with ISBN " << isbn << " removed successfully." << endl;
+                  return;
+              }
+          }
+          cout << "Book with ISBN " << isbn << " not found in the collection." << endl;
+      }
+  
+      // Method to display all books in the collection
+      void displayBooks() {
+          if (numBooks == 0) {
+              cout << "The collection is empty." << endl;
+              return;
+          }
+  
+          cout << "Books in the collection:" << endl;
+          for (int i = 0; i < numBooks; ++i) {
+              cout << "Title: " << books[i].getTitle() << ", Author: " << books[i].getAuthor()
+                        << ", ISBN: " << books[i].getISBN() << endl;
+          }
+      }
+  };
+  
+  int main() {
+      BookCollection myCollection;
+  
+      // Adding some books to the collection
+      myCollection.addBook(Book("The Great Gatsby", "F. Scott Fitzgerald", "9780743273565"));
+      myCollection.addBook(Book("To Kill a Mockingbird", "Harper Lee", "9780061120084"));
+      myCollection.addBook(Book("1984", "George Orwell", "9780451524935"));
+  
+      // Displaying all books in the collection
+      myCollection.displayBooks();
+  
+      // Removing a book from the collection
+      myCollection.removeBook("9780743273565");
+  
+      // Displaying all books in the collection after removal
+      myCollection.displayBooks();
+  
+      return 0;
+  }
+  </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+<pre>Books in the collection:
+  Title: The Great Gatsby, Author: F. Scott Fitzgerald, ISBN: 9780743273565
+  Title: To Kill a Mockingbird, Author: Harper Lee, ISBN: 9780061120084
+  Title: 1984, Author: George Orwell, ISBN: 9780451524935
+  Book with ISBN 9780743273565 removed successfully.
+  Books in the collection:
+  Title: To Kill a Mockingbird, Author: Harper Lee, ISBN: 9780061120084
+  Title: 1984, Author: George Orwell, ISBN: 9780451524935
+  </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code6">6.Write a C++ program to create a class called "Employee" with a name, job title,<br>
+ and salary attributes, and methods to calculate and update salary.</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include &lt; iostream >
+#include &lt; string.h >
+
+using namespace std;
+
+class Employee {
+private:
+    char name[50];
+    char jobTitle[50];
+    double salary;
+
+public:
+    // Constructor
+    Employee(const char* empName, const char* empJobTitle, double empSalary) {
+        strcpy(name, empName);
+        strcpy(jobTitle, empJobTitle);
+        salary = empSalary;
+    }
+
+    // Method to calculate updated salary based on percentage increase
+    void updateSalary(double percentageIncrease) {
+        double increaseAmount = salary * (percentageIncrease / 100);
+        salary += increaseAmount;
+        cout << "Salary updated. New salary: $" << salary << endl;
+    }
+
+    // Method to calculate yearly salary
+    double calculateYearlySalary() {
+        return salary * 12;
+    }
+
+    // Getter methods
+    const char* getName() {
+        return name;
+    }
+
+    const char* getJobTitle() {
+        return jobTitle;
+    }
+
+    double getSalary() {
+        return salary;
+    }
+};
+
+int main() {
+    // Creating an employee object
+    Employee emp("navneet", "Software Engineer", 10000.0);
+
+    // Printing employee details
+    cout << "Employee Name: " << emp.getName() << endl;
+    cout << "Job Title: " << emp.getJobTitle() << endl;
+    cout << "Salary: rs" << emp.getSalary() << endl;
+
+    // Calculating and printing yearly salary
+    cout << "Yearly Salary: rs" << emp.calculateYearlySalary() << endl;
+
+    // Updating salary by 10%
+    emp.updateSalary(10);
+
+    return 0;
+}
+</pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>Employee Name: navroop
+Job Title: Software Engineer
+Salary: $10000
+Yearly Salary: rs120000
+Salary updated. New salary: rs11000</pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code7">7.Write a C++ program to create a class called "Bank" with a collection of accounts<br>
+ and methods to add and remove accounts, and to deposit and withdraw money. Also define a <br>
+class called "Account" to maintain account details of a particular customer</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include &lt; iostream >
+#include &lt; string.h >
+using namespace std;
+
+// Class representing an account
+class Account {
+private:
+    char accountNumber[20];
+    char accountHolderName[50];
+    double balance;
+
+public:
+    // Constructor
+    Account(const char* accNumber, const char* accHolderName, double initialBalance) {
+        strcpy(accountNumber, accNumber);
+        strcpy(accountHolderName, accHolderName);
+        balance = initialBalance;
+    }
+
+    // Method to deposit money
+    void deposit(double amount) {
+        balance += amount;
+        cout << "Deposit of $" << amount << " successful. New balance: $" << balance << endl;
+    }
+
+    // Method to withdraw money
+    void withdraw(double amount) {
+        if (balance >= amount) {
+            balance -= amount;
+            cout << "Withdrawal of $" << amount << " successful. New balance: $" << balance << endl;
+        } else {
+            cout << "Insufficient funds. Withdrawal failed." << endl;
+        }
+    }
+
+    // Getter method for account number
+    const char* getAccountNumber() {
+        return accountNumber;
+    }
+
+    // Getter method for account holder name
+    const char* getAccountHolderName() {
+        return accountHolderName;
+    }
+
+    // Getter method for balance
+    double getBalance() {
+        return balance;
+    }
+};
+
+// Class representing a bank
+class Bank {
+private:
+    static const int MAX_ACCOUNTS = 100; // Maximum number of accounts
+    Account* accounts[MAX_ACCOUNTS]; // Array to store pointers to accounts
+    int numAccounts; // Number of accounts in the bank
+
+public:
+    // Constructor
+    Bank() : numAccounts(0) {}
+
+    // Method to add an account
+    void addAccount(Account* account) {
+        if (numAccounts < MAX_ACCOUNTS) {
+            accounts[numAccounts++] = account;
+            cout << "Account added successfully." << endl;
+        } else {
+            cout << "Maximum number of accounts reached. Cannot add more accounts." << endl;
+        }
+    }
+
+    // Method to remove an account
+    void removeAccount(const char* accNumber) {
+        for (int i = 0; i < numAccounts; ++i) {
+            if (strcmp(accounts[i]->getAccountNumber(), accNumber) == 0) {
+                delete accounts[i]; // Free memory
+                // Move accounts after the removed one to fill the gap
+                for (int j = i; j < numAccounts - 1; ++j) {
+                    accounts[j] = accounts[j + 1];
+                }
+                numAccounts--;
+                cout << "Account removed successfully." << endl;
+                return;
+            }
+        }
+        cout << "Account not found. Removal failed." << endl;
+    }
+
+    // Method to deposit money into an account
+    void depositToAccount(const char* accNumber, double amount) {
+        for (int i = 0; i < numAccounts; ++i) {
+            if (strcmp(accounts[i]->getAccountNumber(), accNumber) == 0) {
+                accounts[i]->deposit(amount);
+                return;
+            }
+        }
+        cout << "Account not found. Deposit failed." << endl;
+    }
+
+    // Method to withdraw money from an account
+    void withdrawFromAccount(const char* accNumber, double amount) {
+        for (int i = 0; i < numAccounts; ++i) {
+            if (strcmp(accounts[i]->getAccountNumber(), accNumber) == 0) {
+                accounts[i]->withdraw(amount);
+                return;
+            }
+        }
+        cout << "Account not found. Withdrawal failed." << endl;
+    }
+};
+
+int main() {
+    // Creating a bank object
+    Bank bank;
+
+    // Adding some accounts to the bank
+    bank.addAccount(new Account("123456", "nav", 1000));
+    bank.addAccount(new Account("789012", "niharika", 2000));
+
+    // Depositing and withdrawing money from accounts
+    bank.depositToAccount("123456", 500);
+    bank.withdrawFromAccount("789012", 1000);
+
+    // Attempting to remove an account
+    bank.removeAccount("123456");
+
+    // Attempting to deposit to a non-existent account
+    bank.depositToAccount("111111", 500);
+
+    return 0;
+}
+</pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>Account added successfully.
+Account added successfully.
+Deposit of $500 successful. New balance: $1500
+Withdrawal of $1000 successful. New balance: $1000
+Account removed successfully.
+Account not found. Deposit failed.</pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code8">8..Write a C++ program to create a class called "TrafficLight" with attributes<br>
+ for color and duration, and methods to change the color and check for red or green.</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include &lt; iostream >
+#include &lt; string >
+
+using namespace std;
+
+class TrafficLight {
+private:
+    string color;
+    int duration; // Duration of each color state in seconds
+
+public:
+    // Constructor
+    TrafficLight(string initialColor, int initialDuration) {
+    	color=initialColor;
+		duration=initialDuration;
+	}
+
+    // Method to change the color of the traffic light
+    void changeColor(string newColor) {
+        color = newColor;
+    }
+
+    // Method to check if the traffic light is red
+    bool isRed() {
+        return color == "red";
+    }
+
+    // Method to check if the traffic light is green
+    bool isGreen() {
+        return color == "green";
+    }
+
+    // Getter method for color
+    string getColor() {
+        return color;
+    }
+
+    // Getter method for duration
+    int getDuration() {
+        return duration;
+    }
+};
+
+int main() {
+    // Creating a TrafficLight object with initial color and duration
+    TrafficLight trafficLight("red", 30);
+
+    // Checking the initial color
+    cout << "Initial color: " << trafficLight.getColor() << endl;
+
+    // Checking if it's red
+    if (trafficLight.isRed()) {
+        cout << "The traffic light is red." << endl;
+    } else {
+        cout << "The traffic light is not red." << endl;
+    }
+
+    // Checking if it's green
+    if (trafficLight.isGreen()) {
+        cout << "The traffic light is green." << endl;
+    } else {
+        cout << "The traffic light is not green." << endl;
+    }
+
+    // Changing the color of the traffic light
+    trafficLight.changeColor("green");
+
+    // Checking the new color
+    cout << "New color: " << trafficLight.getColor() << endl;
+
+    // Checking if it's red and green after the change
+    if (trafficLight.isRed()) {
+        cout << "The traffic light is red." << endl;
+    } else {
+        cout << "The traffic light is not red." << endl;
+    }
+
+    if (trafficLight.isGreen()) {
+        cout << "The traffic light is green." << endl;
+    } else {
+        cout << "The traffic light is not green." << endl;
+    }
+
+    return 0;
+}
+</pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>Initial color: red
+The traffic light is red.
+The traffic light is not green.
+New color: green
+The traffic light is not red.
+The traffic light is green.
+</pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code9">9. Write a C++ program to create a class called "Employee" with a name, salary,<br>
+ and hire date attributes, and a method to calculate years of service.</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include &lt; iostream >
+#include &lt; ctime >
+#include &lt; string.h >
+
+using namespace std;
+
+class Employee {
+private:
+    string name;
+    double salary;
+    time_t hireDate;
+
+public:
+    // Constructor
+    Employee(string empName, double empSalary, time_t empHireDate) {
+    	name=empName;
+		salary=empSalary;
+		hireDate=empHireDate;
+	} 
+
+    // Method to calculate years of service
+    int YearsOfService() {
+        time_t now = time(0); // Get current time
+
+        // Calculate difference in seconds
+        double difference = difftime(now, hireDate);
+
+        // Convert seconds to years (assuming 365 days per year)
+        int years = static_cast< int>(difference / (365 * 24 * 60 * 60));
+
+        return years;
+    }
+
+    // Getter methods
+    string getName() {
+        return name;
+    }
+
+    double getSalary() {
+        return salary;
+    }
+
+    time_t getHireDate() {
+        return hireDate;
+    }
+};
+//main definition
+int main() {
+    //current time
+    time_t currentTime = time(0);
+
+    // Create an employee object with hire date two years ago
+    time_t hireDate = currentTime - (2 * 365 * 24 * 60 * 60); // Two years ago
+    Employee emp("navneet", 10000.0, hireDate);
+
+    // Printing employee details
+    cout << "Employee Name: " << emp.getName() << endl;
+    cout << "Salary: $" << emp.getSalary() << endl;
+    cout << "Hire Date: " << asctime(localtime(&hireDate));
+    cout << "Years of Service: " << emp.YearsOfService() << endl;
+
+    return 0;
+}
+</pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>Employee Name: navneet
+Salary: $10000
+Hire Date: Sat Apr 02 01:01:09 2022
+Years of Service: 2
+</pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code10">10. Write a C++ program to create a class called "Student" with a name, grade, and courses attributes, and methods to add and remove courses.
+
+        </h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+<pre>   // Program to create a class called "Student" with
+  // a name, grade, and courses attributes, and methods to add and remove courses.
+#include &lt;iostream>
+#include &lt;string>
+
+using namespace std;
+
+class Student {
+public:
+   string name;
+   char grade;
+   string courses[10]; // Fixed array for simplicity
+   int courseCount;
+
+   // Initialize the course count to 0
+   Student() : courseCount(0) {}
+
+   // Method to add a course
+   void addCourse(const string& course) {
+       if (courseCount < 10) {
+           courses[courseCount] = course;
+           courseCount++;
+       } else {
+           cout << "Maximum number of courses reached." << endl;
+       }
+   }
+
+   // Method to remove a course
+   void removeCourse(const string& course) {
+       int index = -1;
+       for (int i = 0; i < courseCount; i++) {
+           if (courses[i] == course) {
+               index = i;
+               break;
+           }
+       }
+       if (index != -1) {
+           for (int i = index; i < courseCount - 1; i++) {
+               courses[i] = courses[i + 1];
+           }
+           courseCount--;
+       } else {
+           cout << "Course not found." << endl;
+       }
+   }
+};
+
+int main() {
+   Student student;
+   string course;
+   char option;
+
+   // Taking user input for student's name and grade
+   cout << "Enter the student's name: ";
+   getline(cin, student.name);
+   cout << "Enter the student's grade: ";
+   cin >> student.grade;
+   cin.ignore(); // To consume the newline character after entering grade
+
+   do {
+       cout << "Enter a course to add: ";
+       getline(cin, course);
+       student.addCourse(course);
+
+       cout << "Do you want to add another course? (y/n): ";
+       cin >> option;
+       cin.ignore(); // To consume the newline character after entering option
+   } while (option == 'y' || option == 'Y');
+
+   // Asking user if they want to remove a course
+   cout << "Do you want to remove a course? (y/n): ";
+   cin >> option;
+   cin.ignore();
+
+   while (option == 'y' || option == 'Y') {
+       cout << "Enter a course to remove: ";
+       getline(cin, course);
+       student.removeCourse(course);
+
+       cout << "Do you want to remove another course? (y/n): ";
+       cin >> option;
+       cin.ignore();
+   }
+
+   // Display the courses
+   cout << "Courses enrolled by " << student.name << ":" << endl;
+   for (int i = 0; i < student.courseCount; i++) {
+       cout << student.courses[i] << endl;
+   }
+
+   return 0;
+}
+
+</pre>
+      </div>
+      <div>
+        <h2>output</h2>
+<pre>Enter the student's name: Unknown
+  Enter the student's grade: 11
+  Enter a course to add: Do you want to add another course? (y/n): y
+  Enter a course to add: BCA
+  Do you want to add another course? (y/n): y
+  Enter a course to add: Bsc
+  Do you want to add another course? (y/n): y
+  Enter a course to add: BA
+  Do you want to add another course? (y/n): n
+  Do you want to remove a course? (y/n): y
+  Enter a course to remove: BA
+  Do you want to remove another course? (y/n): n
+  Courses enrolled by Unknown:
+  
+  BCA
+  Bsc
+  
+  --------------------------------
+  Process exited after 30.37 seconds with return value 0
+  Press any key to continue . . .</pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code11">11. Write a C++ program to create a class called "Library" with a collection of books and methods to add and remove books.
+
+        </h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+<pre>			// program to create a class called "Library" with a collection of 
+  // books and methods to add and remove books //
+
+#include &lt;iostream>
+#include &lt;string>
+
+using namespace std;
+
+class Library {
+private:
+static const int MAX_BOOKS = 100; // Maximum number of books the library can hold
+string books[MAX_BOOKS];
+int bookCount;
+
+public:
+Library() : bookCount(0) {} // Constructor initializes book count to 0
+
+void addBook(const string& book) {
+if (bookCount < MAX_BOOKS) {
+books[bookCount] = book;
+bookCount++;
+cout << book << " has been added to the library." << endl;
+} else {
+cout << "The library is full. Cannot add more books." << endl;
+}
+}
+
+void removeBook(const string& book) {
+int index = -1;
+for (int i = 0; i < bookCount; i++) {
+if (books[i] == book) {
+    index = i;
+    break;
+}
+}
+if (index != -1) {
+for (int i = index; i < bookCount - 1; i++) {
+    books[i] = books[i + 1];
+}
+bookCount--;
+cout << book << " has been removed from the library." << endl;
+} else {
+cout << "Book not found." << endl;
+}
+}
+
+void displayBooks() {
+if (bookCount == 0) {
+cout << "The library is empty." << endl;
+} else {
+cout << "Books in the library:" << endl;
+for (int i = 0; i < bookCount; i++) {
+    cout << i + 1 << ". " << books[i] << endl;
+}
+}
+}
+};
+
+int main() {
+Library library;
+string book;
+char choice;
+
+do {
+cout << "Enter 'A' to add a book, 'R' to remove a book, or 'D' to display books: ";
+cin >> choice;
+cin.ignore(); // To consume the newline character
+
+switch (choice) {
+case 'A':
+case 'a':
+    cout << "Enter the name of the book to add: ";
+    getline(cin, book);
+    library.addBook(book);
+    break;
+case 'R':
+case 'r':
+    cout << "Enter the name of the book to remove: ";
+    getline(cin, book);
+    library.removeBook(book);
+    break;
+case 'D':
+case 'd':
+    library.displayBooks();
+    break;
+default:
+    cout << "Invalid choice. Please try again." << endl;
+}
+
+cout << "Do you want to continue? (Y/N): ";
+cin >> choice;
+cin.ignore(); // To consume the newline character
+} while (choice == 'Y' || choice == 'y');
+
+return 0;
+}</pre>
+      </div>
+      <div>
+        <h2>output</h2>
+<pre>Enter 'A' to add a book, 'R' to remove a book, or 'D' to display books: a
+  Enter the name of the book to add: rich dad poor dad
+  rich dad poor dad has been added to the library.
+  Do you want to continue? (Y/N): y
+  Enter 'A' to add a book, 'R' to remove a book, or 'D' to display books: a
+  Enter the name of the book to add: wings of fire
+  wings of fire has been added to the library.
+  Do you want to continue? (Y/N): y
+  Enter 'A' to add a book, 'R' to remove a book, or 'D' to display books: a
+  Enter the name of the book to add: Abdul Kalam
+  Abdul Kalam  has been added to the library.
+  Do you want to continue? (Y/N): y
+  Enter 'A' to add a book, 'R' to remove a book, or 'D' to display books: r
+  Enter the name of the book to remove: Abdul Kalam
+  Book not found.
+  Do you want to continue? (Y/N): y
+  Enter 'A' to add a book, 'R' to remove a book, or 'D' to display books: r
+  Enter the name of the book to remove: wings of fire
+  wings of fire has been removed from the library.
+  Do you want to continue? (Y/N): y
+  Enter 'A' to add a book, 'R' to remove a book, or 'D' to display books: d
+  Books in the library:
+  1. rich dad poor dad
+  2. Abdul Kalam
+  Do you want to continue? (Y/N): n
+  
+  --------------------------------
+  Process exited after 69.36 seconds with return value 0
+  Press any key to continue . . .</pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code12">12. Write a C++ program to create a class called "Airplane" with a flight number, destination, and departure time attributes, and methods to check flight status and delay.
+
+        </h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+<pre>          // Program to create a class called "Airplane" with a flight number, 
+  //destination, and departure time attributes, and methods to check flight status and delay.
+
+#include &lt;iostream>
+#include &lt;string>
+
+using namespace std;
+
+class Airplane {
+private:
+string flightNumber;
+string destination;
+string departureTime;
+bool isDelayed;
+
+public:
+Airplane(string fn, string dest, string depTime)
+    : flightNumber(fn), destination(dest), departureTime(depTime), isDelayed(false) {}
+
+void setDelay(bool delayStatus) {
+    isDelayed = delayStatus;
+}
+
+void delayDepartureTime(int delayMinutes) {
+    // Assuming departureTime is in the format "HH:MM"
+    int hours = stoi(departureTime.substr(0, 2));
+    int minutes = stoi(departureTime.substr(3)) + delayMinutes;
+
+    hours += minutes / 60;
+    minutes %= 60;
+    hours %= 24; // Adjust in case of overflow
+
+    char buffer[6];
+    sprintf(buffer, "%02d:%02d", hours, minutes);
+    departureTime = string(buffer);
+
+    setDelay(true);
+}
+
+string getFlightStatus() const {
+    return isDelayed ? "Delayed" : "On Time";
+}
+
+void displayInfo() const {
+    cout << "Flight Number: " << flightNumber << endl;
+    cout << "Destination: " << destination << endl;
+    cout << "Departure Time: " << departureTime << endl;
+    cout << "Status: " << getFlightStatus() << endl;
+}
+};
+
+int main() {
+Airplane airplane("BA2490", "London", "15:30");
+
+// User input for delay
+int delayMinutes;
+cout << "Enter delay time in minutes (0 for no delay): ";
+cin >> delayMinutes;
+if (delayMinutes > 0) {
+    airplane.delayDepartureTime(delayMinutes);
+}
+
+// Display flight information
+airplane.displayInfo();
+
+return 0;
+}</pre>
+      </div>
+      <div>
+        <h2>output</h2>
+<pre>Enter delay time in minutes (0 for no delay): 20
+  Flight Number: BA2490
+  Destination: London
+  Departure Time: 15:50
+  Status: Delayed
+  
+  --------------------------------
+  Process exited after 10.23 seconds with return value 0
+  Press any key to continue . . .</pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code13">13. Write a C++ program to create a class called "Inventory" with a collection of products and methods to add and remove products, and to check for low inventory.
+
+        </h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+<pre>			 // Program to create a class called "Inventory" with a collection of products and methods 
+  // to add and remove products, and to check for low inventory.
+
+#include &lt;iostream>
+#include &lt;string>
+
+using namespace std;
+
+class Inventory {
+private:
+static const int MAX_PRODUCTS = 50; // Maximum number of products
+string products[MAX_PRODUCTS];
+int quantities[MAX_PRODUCTS];
+int productCount;
+
+public:
+Inventory() : productCount(0) {} // Constructor initializes product count to 0
+
+void addProduct(const string& product, int quantity) {
+for (int i = 0; i < productCount; ++i) {
+   if (products[i] == product) {
+       quantities[i] += quantity;
+       cout << "Added " << quantity << " more of " << product << " to the inventory." << endl;
+       return;
+   }
+}
+
+if (productCount < MAX_PRODUCTS) {
+   products[productCount] = product;
+   quantities[productCount] = quantity;
+   productCount++;
+   cout << "Product " << product << " added to the inventory with quantity " << quantity << "." << endl;
+} else {
+   cout << "Inventory is full. Cannot add more products." << endl;
+}
+}
+
+void removeProduct(const string& product) {
+int index = -1;
+for (int i = 0; i < productCount; i++) {
+   if (products[i] == product) {
+       index = i;
+       break;
+   }
+}
+if (index != -1) {
+   for (int i = index; i < productCount - 1; i++) {
+       products[i] = products[i + 1];
+       quantities[i] = quantities[i + 1];
+   }
+   productCount--;
+   cout << "Product " << product << " has been removed from the inventory." << endl;
+} else {
+   cout << "Product not found." << endl;
+}
+}
+
+void checkLowInventory(int threshold) {
+cout << "Products with low inventory (less than " << threshold << "):" << endl;
+for (int i = 0; i < productCount; i++) {
+   if (quantities[i] < threshold) {
+       cout << products[i] << " (Quantity: " << quantities[i] << ")" << endl;
+   }
+}
+}
+};
+
+int main() {
+Inventory inventory;
+string product;
+int quantity, threshold;
+
+// User input to add products
+cout << "Enter product name and quantity to add to the inventory (0 to stop):" << endl;
+do {
+cout << "Product name: ";
+getline(cin, product);
+if (product == "0") break;
+cout << "Quantity: ";
+cin >> quantity;
+cin.ignore(); // To consume the newline character
+inventory.addProduct(product, quantity);
+} while (true);
+
+// User input to remove a product
+cout << "Enter product name to remove from the inventory (0 to stop):" << endl;
+do {
+cout << "Product name: ";
+getline(cin, product);
+if (product == "0") break;
+inventory.removeProduct(product);
+} while (true);
+
+// User input to check for low inventory
+cout << "Enter the threshold quantity to check for low inventory: ";
+cin >> threshold;
+inventory.checkLowInventory(threshold);
+
+return 0;
+}</pre>
+      </div>
+      <div>
+        <h2>output</h2>
+<pre>Enter product name and quantity to add to the inventory (0 to stop):
+  Product name: Shampoo
+  Quantity: 20
+  Product Shampoo added to the inventory with quantity 20.
+  Product name: Soap
+  Quantity: 30
+  Product Soap added to the inventory with quantity 30.
+  Product name: Detergent
+  Quantity: 20
+  Product Detergent added to the inventory with quantity 20.
+  Product name: 0
+  Enter product name to remove from the inventory (0 to stop):
+  Product name: Detergent
+  Product Detergent has been removed from the inventory.
+  Product name: 0
+  Enter the threshold quantity to check for low inventory: 20
+  Products with low inventory (less than 20):
+  
+  --------------------------------
+  Process exited after 34.54 seconds with return value 0
+  Press any key to continue . . .</pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code14">14. Write a C++ program to create a class called "School" with attributes for students, teachers, and classes, and methods to add and remove students and teachers, and to create classes.
+
+        </h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+<pre> 			// Program to create a class called "School" with attributes for students, teachers, and classes, 
+  // and methods to add and remove students and teachers, and to create classes.
+
+#include &lt;iostream>
+#include &lt;string>
+
+using namespace std;
+
+class School {
+int studentCount;
+int teacherCount;
+int classCount;
+string students[100];
+string teachers[50];
+string classes[20];
+
+public:
+School() : studentCount(0), teacherCount(0), classCount(0) {}
+
+void addStudent(const string& studentName) {
+if (studentCount < 100) {
+  students[studentCount++] = studentName;
+  cout << studentName << " added as a student." << endl;
+} else {
+  cout << "Cannot add more students." << endl;
+}
+}
+
+void removeStudent(const string& studentName) {
+for (int i = 0; i < studentCount; i++) {
+  if (students[i] == studentName) {
+      for (int j = i; j < studentCount - 1; j++) {
+          students[j] = students[j + 1];
+      }
+      studentCount--;
+      cout << studentName << " removed from students." << endl;
+      return;
+  }
+}
+cout << "Student not found." << endl;
+}
+
+void addTeacher(const string& teacherName) {
+if (teacherCount < 50) {
+  teachers[teacherCount++] = teacherName;
+  cout << teacherName << " added as a teacher." << endl;
+} else {
+  cout << "Cannot add more teachers." << endl;
+}
+}
+
+void removeTeacher(const string& teacherName) {
+for (int i = 0; i < teacherCount; i++) {
+  if (teachers[i] == teacherName) {
+      for (int j = i; j < teacherCount - 1; j++) {
+          teachers[j] = teachers[j + 1];
+      }
+      teacherCount--;
+      cout << teacherName << " removed from teachers." << endl;
+      return;
+  }
+}
+cout << "Teacher not found." << endl;
+}
+
+void createClass(const string& className) {
+if (classCount < 20) {
+  classes[classCount++] = className;
+  cout << "Class " << className << " created." << endl;
+} else {
+  cout << "Cannot create more classes." << endl;
+}
+}
+};
+
+int main() {
+School mySchool;
+string name;
+char choice;
+
+do {
+cout << "Enter 'S' to add a student, 'T' to add a teacher, 'C' to create a class, 'X' to exit: ";
+cin >> choice;
+cin.ignore(); // To consume the newline character
+
+if (choice == 'S' || choice == 's') {
+  cout << "Enter student's name: ";
+  getline(cin, name);
+  mySchool.addStudent(name);
+} else if (choice == 'T' || choice == 't') {
+  cout << "Enter teacher's name: ";
+  getline(cin, name);
+  mySchool.addTeacher(name);
+} else if (choice == 'C' || choice == 'c') {
+  cout << "Enter class name: ";
+  getline(cin, name);
+  mySchool.createClass(name);
+}
+} while (choice != 'X' && choice != 'x');
+
+return 0;
+}</pre>
+      </div>
+      <div>
+        <h2>output</h2>
+<pre>Enter 'S' to add a student, 'T' to add a teacher, 'C' to create a class, 'X' to exit: s
+  Enter student's name: raam
+  raam added as a student.
+  Enter 'S' to add a student, 'T' to add a teacher, 'C' to create a class, 'X' to exit: s
+  Enter student's name: shaam
+  shaam added as a student.
+  Enter 'S' to add a student, 'T' to add a teacher, 'C' to create a class, 'X' to exit: t
+  Enter teacher's name: priyanka
+  priyanka added as a teacher.
+  Enter 'S' to add a student, 'T' to add a teacher, 'C' to create a class, 'X' to exit: t
+  Enter teacher's name: devender
+  devender added as a teacher.
+  Enter 'S' to add a student, 'T' to add a teacher, 'C' to create a class, 'X' to exit: c
+  Enter class name: X
+  Class X created.
+  Enter 'S' to add a student, 'T' to add a teacher, 'C' to create a class, 'X' to exit: x
+  
+  --------------------------------
+  Process exited after 49.36 seconds with return value 0
+  Press any key to continue . . .</pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code15">15. Write a C++ program to create a class called "MusicLibrary" with a collection of songs and methods to add and remove songs, and to play a random song.
+
+        </h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+<pre>
+
+  #include &lt;iostream>
+  #include &lt;string>
+  
+  using namespace std;
+  
+  class MusicLibrary {
+      string songs[100];
+      int songCount;
+  
+  public:
+      MusicLibrary() : songCount(0) {}
+  
+      void addSong(const string& song) {
+          if (songCount < 100) {
+              songs[songCount++] = song;
+              cout << "Song added: " << song << endl;
+          } else {
+              cout << "Library full. Cannot add more songs." << endl;
+          }
+      }
+  
+      void removeSong(const string& song) {
+          for (int i = 0; i < songCount; ++i) {
+              if (songs[i] == song) {
+                  for (int j = i; j < songCount - 1; ++j) {
+                      songs[j] = songs[j + 1];
+                  }
+                  songCount--;
+                  cout << "Song removed: " << song << endl;
+                  return;
+              }
+          }
+          cout << "Song not found." << endl;
+      }
+  
+      void playSong() {
+          if (songCount > 0) {
+              cout << "Now playing: " << songs[songCount - 1] << endl;
+          } else {
+              cout << "No songs in library to play." << endl;
+          }
+      }
+  };
+  
+  int main() {
+      MusicLibrary myLibrary;
+      string song;
+      char action;
+  
+      while (true) {
+          cout << "Enter 'A' to add a song, 'R' to remove a song, 'P' to play the last added song, or 'Q' to quit: ";
+          cin >> action;
+          cin.ignore(); // To consume the newline character
+  
+          if (action == 'Q' || action == 'q') {
+              break;
+          }
+  
+          switch (action) {
+              case 'A':
+              case 'a':
+                  cout << "Enter the name of the song to add: ";
+                  getline(cin, song);
+                  myLibrary.addSong(song);
+                  break;
+              case 'R':
+              case 'r':
+                  cout << "Enter the name of the song to remove: ";
+                  getline(cin, song);
+                  myLibrary.removeSong(song);
+                  break;
+              case 'P':
+              case 'p':
+                  myLibrary.playSong();
+                  break;
+              default:
+                  cout << "Invalid action. Please try again." << endl;
+          }
+      }
+  
+      return 0;
+  }</pre>
+      </div>
+      <div>
+        <h2>output</h2>
+<pre>Enter 'A' to add a song, 'R' to remove a song, 'P' to play the last added song, or 'Q' to quit: a
+  Enter the name of the song to add: Kali Kali zulfoon ke
+  Song added: Kali Kali zulfoon ke
+  Enter 'A' to add a song, 'R' to remove a song, 'P' to play the last added song, or 'Q' to quit: a
+  Enter the name of the song to add: julf
+  Song added: julf
+  Enter 'A' to add a song, 'R' to remove a song, 'P' to play the last added song, or 'Q' to quit: s
+  Invalid action. Please try again.
+  Enter 'A' to add a song, 'R' to remove a song, 'P' to play the last added song, or 'Q' to quit: a
+  Enter the name of the song to add: Saas
+  Song added: Saas
+  Enter 'A' to add a song, 'R' to remove a song, 'P' to play the last added song, or 'Q' to quit: r
+  Enter the name of the song to remove: julf
+  Song removed: julf
+  Enter 'A' to add a song, 'R' to remove a song, 'P' to play the last added song, or 'Q' to quit: p
+  Now playing: Saas
+  Enter 'A' to add a song, 'R' to remove a song, 'P' to play the last added song, or 'Q' to quit: q
+  
+  --------------------------------
+  Process exited after 59.48 seconds with return value 0
+  Press any key to continue . . .
+  </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code16">16. Write a C++ program to create a class called "Shape" with abstract methods for calculating area and perimeter, and subclasses for "Rectangle", "Circle", and "Triangle".
+
+        </h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+<pre>
+
+  #include &lt;iostream>
+  
+  using namespace std;
+  
+  class Shape {
+  public:
+      double getArea() {
+          return 0.0;
+      }
+  
+      double getPerimeter() {
+          return 0.0;
+      }
+  };
+  
+  class Rectangle : public Shape {
+      double width, height;
+  
+  public:
+      Rectangle(double w, double h) : width(w), height(h) {}
+  
+      double getArea() {
+          return width * height;
+      }
+  
+      double getPerimeter() {
+          return 2 * (width + height);
+      }
+  };
+  
+  class Circle : public Shape {
+      double radius;
+  
+  public:
+      Circle(double r) : radius(r) {}
+  
+      double getArea() {
+          return 3.14159 * radius * radius;
+      }
+  
+      double getPerimeter() {
+          return 2 * 3.14159 * radius;
+      }
+  };
+  
+  class Triangle : public Shape {
+      double base, height;
+  
+  public:
+      Triangle(double b, double h) : base(b), height(h) {}
+  
+      double getArea() {
+          return 0.5 * base * height;
+      }
+  
+      double getPerimeter() {
+          // Assuming an equilateral triangle for simplicity
+          return 3 * base;
+      }
+  };
+  
+  int main() {
+      double width, height, radius, base;
+  
+      // Rectangle input and output
+      cout << "Enter width and height for rectangle: ";
+      cin >> width >> height;
+      Rectangle rect(width, height);
+      cout << "Rectangle area: " << rect.getArea() << endl;
+      cout << "Rectangle perimeter: " << rect.getPerimeter() << endl;
+  
+      // Circle input and output
+      cout << "Enter radius for circle: ";
+      cin >> radius;
+      Circle circ(radius);
+      cout << "Circle area: " << circ.getArea() << endl;
+      cout << "Circle perimeter: " << circ.getPerimeter() << endl;
+  
+      // Triangle input and output
+      cout << "Enter base and height for triangle: ";
+      cin >> base >> height;
+      Triangle tri(base, height);
+      cout << "Triangle area: " << tri.getArea() << endl;
+      cout << "Triangle perimeter: " << tri.getPerimeter() << endl;
+  
+      return 0;
+  }</pre>
+      </div>
+      <div>
+        <h2>output</h2>
+<pre>Enter width and height for rectangle: 4 5
+  Rectangle area: 20
+  Rectangle perimeter: 18
+  Enter radius for circle: 3
+  Circle area: 28.2743
+  Circle perimeter: 18.8495
+  Enter base and height for triangle: 6 4
+  Triangle area: 12
+  Triangle perimeter: 18
+  </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code17">17.Write a C++ program to create a class called "Movie" with attributes for title, director, actors, and reviews, and methods for adding and retrieving reviews</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include&lt;iostream>
+using namespace std;
+class movie
+{
+	char title[20];
+	char director[20];
+	char actors[100];
+	char reviews[200];
+	public:
+		void add();
+		void retrieve();	
+};
+void movie::add()
+{
+	cout<<"Enter Title:";
+	cin>>title;
+	cout<<"Enter Director:";
+	cin>>director;
+	cout<<"Enter Actors Name:";
+	cin>>actors;
+	cout<<"Review (max char 200):";
+	cin>>reviews;
+	cout<<"Data added successfully!"<< endl;
+}
+void movie::retrieve()
+{
+	cout<< "\nTitle:"<< title<< endl;
+	cout<<"\nReview:"<< reviews<< endl;
+}
+int main()
+{
+	movie m1;
+	m1.add();
+	m1.retrieve();
+}
+iostream>
+using namespace std;
+class movie
+{
+	char title[20];
+	char director[20];
+	char actors[100];
+	char reviews[200];
+	public:
+		void add();
+		void retrieve();	
+};
+void movie::add()
+{
+	cout<<"Enter Title:";
+	cin>>title;
+	cout<<"Enter Director:";
+	cin>>director;
+	cout<<"Enter Actors Name:";
+	cin>>actors;
+	cout<<"Review (max char 200):";
+	cin>>reviews;
+	cout<<"Data added successfully!"<< endl;
+}
+void movie::retrieve()
+{
+	cout<<"\nTitle:"<< title<< endl;
+	cout<<"\nReview:"<< reviews<< endl;
+}
+int main()
+{
+	movie m1;
+	m1.add();
+	m1.retrieve();
+}
+</pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>Enter Title:Pirates_of_caribean
+Enter Director:Harsh
+Enter Actors Name:Tanisha_Lovish
+Review (max char 200):Good_movie_want_to_watch_it_again!
+Data added successfully!
+
+Title:Pirates_of_caribean
+
+Review:Good_movie_want_to_watch_it_again!
+</pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code18">18. Write a C++ program to create a class called "Restaurant" with attributes for menu items, prices, and ratings, and methods to add and remove items, and to calculate average rating.
+
+        </h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+<pre>#include &lt;iostream>
+  #include &lt;vector>
+  #include &lt;string>
+  
+  class MenuItem {
+  public:
+      MenuItem(const std::string& name, double price) : name(name), price(price) {}
+      
+      std::string getName() const { return name; }
+      double getPrice() const { return price; }
+      
+  private:
+      std::string name;
+      double price;
+  };
+  
+  class Restaurant {
+  public:
+      void addItem(const std::string& itemName, double price) {
+          menu.push_back(MenuItem(itemName, price));
+      }
+      
+      void removeItem(const std::string& itemName) {
+          for (auto it = menu.begin(); it != menu.end(); ++it) {
+              if (it->getName() == itemName) {
+                  menu.erase(it);
+                  break;
+              }
+          }
+      }
+      
+      double calculateAverageRating() const {
+          if (ratings.empty())
+              return 0.0;
+          
+          double sum = 0.0;
+          for (auto rating : ratings) {
+              sum += rating;
+          }
+          return sum / ratings.size();
+      }
+      
+      void addRating(double rating) {
+          ratings.push_back(rating);
+      }
+  
+  private:
+      std::vector<MenuItem> menu;
+      std::vector< double> ratings;
+  };
+  
+  int main() {
+      Restaurant myRestaurant;
+      
+      // Adding items to the menu
+      myRestaurant.addItem("Burger", 5.99);
+      myRestaurant.addItem("Pizza", 8.99);
+      myRestaurant.addItem("Pasta", 10.99);
+      
+      // Removing an item from the menu
+      myRestaurant.removeItem("Pizza");
+      
+      // Adding ratings
+      myRestaurant.addRating(4.5);
+      myRestaurant.addRating(3.8);
+      myRestaurant.addRating(5.0);
+      
+      // Calculating and printing average rating
+      std::cout << "Average rating: " << myRestaurant.calculateAverageRating() << std::endl;
+      
+      return 0;
+  }
+  </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+<pre>Average rating: 4.43
+</pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code19">19. Write a C++ program to create a class with methods to search for flights and hotels, and to book and cancel reservations.
+
+        </h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+<pre>#include &lt;iostream>
+  #include &lt;string>
+  #include &lt;vector>
+  
+  class ReservationSystem {
+  public:
+      void searchFlights(const std::string& origin, const std::string& destination) {
+          std::cout << "Searching for flights from " << origin << " to " << destination << std::endl;
+          // Your flight search implementation goes here
+      }
+      
+      void searchHotels(const std::string& destination, int checkInDate, int checkOutDate) {
+          std::cout << "Searching for hotels in " << destination << " from " << checkInDate << " to " << checkOutDate << std::endl;
+          // Your hotel search implementation goes here
+      }
+      
+      void bookFlight(const std::string& flightNumber, int numberOfTickets) {
+          std::cout << "Booking " << numberOfTickets << " tickets for flight " << flightNumber << std::endl;
+          // Your flight booking implementation goes here
+      }
+      
+      void bookHotel(const std::string& hotelName, int numberOfRooms) {
+          std::cout << "Booking " << numberOfRooms << " rooms at hotel " << hotelName << std::endl;
+          // Your hotel booking implementation goes here
+      }
+      
+      void cancelFlightBooking(const std::string& flightNumber) {
+          std::cout << "Canceling booking for flight " << flightNumber << std::endl;
+          // Your flight cancellation implementation goes here
+      }
+      
+      void cancelHotelBooking(const std::string& hotelName) {
+          std::cout << "Canceling booking at hotel " << hotelName << std::endl;
+          // Your hotel cancellation implementation goes here
+      }
+  };
+  
+  int main() {
+      ReservationSystem reservationSystem;
+      
+      // Example usage
+      reservationSystem.searchFlights("New York", "Los Angeles");
+      reservationSystem.searchHotels("Los Angeles", 20240405, 20240407);
+      reservationSystem.bookFlight("ABC123", 2);
+      reservationSystem.bookHotel("Hotel XYZ", 1);
+      reservationSystem.cancelFlightBooking("ABC123");
+      reservationSystem.cancelHotelBooking("Hotel XYZ");
+      
+      return 0;
+  }
+  </pre>
+      </div>
+      <div>
+        <h2>output</h2>        
+<pre>
+  Searching for flights from New York to Los Angeles
+  Searching for hotels in Los Angeles from 20240405 to 20240407
+  Booking 2 tickets for flight ABC123
+  Booking 1 room at hotel Hotel XYZ
+  Canceling booking for flight ABC123
+  Canceling booking at hotel Hotel XYZ
+  </pre>
+      </div>
+    </div>
+
+    <div class="code">
+      <div>
+        <h2 name="code120">20.Create a class showing an example of default constructor..</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include&lt;iostream>
+using namespace std;
+class c
+{
+	int x;
+	public:
+			c()//constructor definition
+			{
+				x=10;
+			}
+			void inc();
+};
+void c::inc()
+{
+	for(int i=0;i<=10;i++)
+	{
+		cout<<"x:"<< x << endl;
+		x++;
+	}
+}
+int main()
+{
+	c obj1;
+	obj1.inc();
+}
+iostream>
+using namespace std;
+class c
+{
+	int x;
+	public:
+			c()//constructor definition
+			{
+				x=10;
+			}
+			void inc();
+};
+void c::inc()
+{
+	for(int i=0;i<=10;i++)
+	{
+		cout<<"x:"<< x<< endl;
+		x++;
+	}
+}
+int main()
+{
+	c obj1;
+	obj1.inc();
+}
+</pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>x:10
+x:11
+x:12
+x:13
+x:14
+x:15
+x:16
+x:17
+x:18
+x:19
+x:20
+</pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code121">21.Create a class showing an example of parameterized constructor.</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include&lt;iostream>
+using namespace std;
+class c
+{
+	int x;
+	public:
+			c(int y)//constructor definition
+			{
+				x=y;
+			}
+			void inc();
+};
+void c::inc()
+{
+	for(int i=0;i<=10;i++)
+	{
+		cout<<"x:"<< x<< endl;
+		x++;
+	}
+}
+int main()
+{
+	c obj1(5);
+	obj1.inc();
+}
+</pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>x:5
+x:6
+x:7
+x:8
+x:9
+x:10
+x:11
+x:12
+x:13
+x:14
+x:15</pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code122">22.Create a class showing an example of copy constructor.</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include&lt;iostream>
+using namespace std;
+class c
+{
+	int x;
+	public:
+		c(int a)//parametrized constructor
+		{
+			x=a;
+		}
+		c(c &o1)
+		{
+			x=o1.x;
+		}
+		void inc()
+		{
+			for(int i=0;i< 6;i++)
+			{
+				cout<<"x:"<< x<< endl;
+				x++;
+			}
+		}
+};
+int main()
+{
+	c obj1(10);
+	c obj2(obj1);
+	obj2.inc();
+}
+</pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>x:10
+x:11
+x:12
+x:13
+x:14
+x:15</pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code23">23. Create a class entering the rollno, name and class of the student from user but rollno should be automatically generated as we enter the information of 10 students</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include&lt;iostream>
+using namespace std;
+class student
+{
+	char name[20];
+	char course[20];
+	public:
+		static int rollno;
+		student()
+		{
+			rollno=4100;	
+		}	
+		void get();
+		void set();
+};
+int student::rollno;
+void student::set()
+{
+	cout<<"Enter name:";
+	cin>>name;
+	cout<<"Enter course:";
+	cin>>course;
+}
+void student::get()
+{
+	cout<<"Name:"<< name<< endl;
+	cout<<"Roll no:"<< rollno<< endl;
+	cout<<"Course:"<< course<< endl;
+}
+int main()
+{
+	student obj[10];
+	int i;
+	cout<<"Input:-"<< endl;
+	for(i=0;i< 10;i++)
+	{
+		obj[i].set();
+		obj[i].rollno++;
+		obj[i].get();
+	}
+}
+
+</pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>Enter name:Chirag
+Enter age:20
+Enter country:India
+What do you want to do ?
+1.Modify 2.Display:1
+What do you want to modify?
+1.Name 2.Age 3.Country:2
+Enter age:18
+Modified :-
+Name:Chirag
+Age:18
+Country:India</pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code24">24. Create a class showing the area of circle and rectangle by method overloading.
+
+        </h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+<pre>#include &lt;iostream>
+
+  class AreaCalculator {
+  public:
+      // Calculate area of a circle
+      double calculateArea(double radius) {
+          return 3.14 * radius * radius;
+      }
+  
+      // Calculate area of a rectangle
+      double calculateArea(double length, double width) {
+          return length * width;
+      }
+  };
+  
+  int main() {
+      AreaCalculator calculator;
+      
+      double circleRadius = 5.0;
+      double rectangleLength = 4.0;
+      double rectangleWidth = 6.0;
+  
+      double circleArea = calculator.calculateArea(circleRadius);
+      double rectangleArea = calculator.calculateArea(rectangleLength, rectangleWidth);
+  
+      std::cout << "Area of the circle with radius " << circleRadius << ": " << circleArea << std::endl;
+      std::cout << "Area of the rectangle with length " << rectangleLength << " and width " << rectangleWidth << ": " << rectangleArea << std::endl;
+  
+      return 0;
+  }
+  </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+<pre>Area of the circle with radius 5: 78.5
+  Area of the rectangle with length 4 and width 6: 24
+  </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code25">25.Write a C++ program to create a class called Person with private instance variables name, age. and country. Provide public getter and setter methods to access and modify these variables.</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include&lt;iostream>
+using namespace std;
+class student
+{
+	char name[20];
+	char course[20];
+	public:
+		static int rollno;
+		student()
+		{
+			rollno=4100;	
+		}	
+		void get();
+		void set();
+};
+int student::rollno;
+void student::set()
+{
+	cout<<"Enter name:";
+	cin>>name;
+	cout<<"Enter course:";
+	cin>>course;
+}
+void student::get()
+{
+	cout<<"Name:"<< name<< endl;
+	cout<<"Roll no:"<< rollno<< endl;
+	cout<<"Course:"<< course<< endl;
+}
+int main()
+{
+	student obj[10];
+	int i;
+	cout<<"Input:-"<< endl;
+	for(i=0;i< 10;i++)
+	{
+		obj[i].set();
+		obj[i].rollno++;
+		obj[i].get();
+	}
+}
+
+</pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>Enter name:Chirag
+Enter age:20
+Enter country:India
+What do you want to do ?
+1.Modify 2.Display:1
+What do you want to modify?
+1.Name 2.Age 3.Country:2
+Enter age:18
+Modified :-
+Name:Chirag
+Age:18
+Country:India</pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code26">26.  Program to create a class called BankAccount with private instance variables accountNumber and balance 
+             Provide public getter and setter methods to access and modify these variables </h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include&lt;iostream>
+            #include&lt;string.h>
+            using namespace std;
+            
+            class BankAccount
+            {
+                       // Data Member declaration // 
+                char name[20];
+                int acc_num;
+                float balance;
+                float total_money;
+                float withdraw;
+                     // Member Function declaration // 
+                public: 
+                    char setName(char*);
+                    char *getName();
+                    int set_acc(int);
+                    int get_acc();
+                    int entered_money_info();
+                    int show_money_info();
+                    
+            };      
+                     // Member function definitions // 
+                          // Getter and Setter for name //
+            char BankAccount :: setName(char* n)
+            {
+                strcpy(name, n);
+            }            
+            char *BankAccount :: getName()
+            {
+                return name;
+            }
+                        // setting and getting account Number //
+            int BankAccount :: set_acc(int a)
+            {
+                acc_num = a;
+            }
+            int BankAccount :: get_acc()
+            {
+                return acc_num;
+            }
+                       // Entering Information for Money //
+            int BankAccount :: entered_money_info()
+            {
+                cout&lt;&lt;"Enter Total Money to deposit in Account: ";
+                cin>>total_money;
+                cout&lt;&lt;"Enter Money to be withdraw: ";
+                cin>>withdraw;
+                balance = total_money-withdraw;
+            }
+                        // Displaying the Information // 
+            int BankAccount :: show_money_info()
+            {
+                cout&lt;&lt;endl&lt;&lt;"Total Money: "&lt;&lt;total_money;
+                cout&lt;&lt;endl&lt;&lt;"Money Withdrawed : "&lt;&lt;withdraw;
+                cout&lt;&lt;endl&lt;&lt;"Balance: "&lt;&lt;balance;
+            }
+                               // Main function Definition // 
+            int main()
+            {
+                BankAccount person[3];
+                int acc;
+                char name[20];
+                int count = 1;
+                         // Using For Loop //
+                for(int i = 0; i&lt;3;i++)
+                {
+                     
+                          // Entering name //
+                    cout&lt;&lt;endl;
+                    cout&lt;&lt;"Enter Account Details For Person "&lt;&lt;count;
+                    cout&lt;&lt;endl&lt;&lt;endl&lt;&lt;"Enter Name: ";
+                    cin>>name;
+                    person[i].setName(name);
+                           // Entering Account Number //
+                    cout&lt;&lt;endl&lt;&lt;"Enter Account Number: ";
+                    cin>>acc;
+                    person[i].set_acc(acc);
+                          // Entering Money Information // 
+                    person[i].entered_money_info();
+                          // Displaying the contents //
+                    cout&lt;&lt;endl&lt;&lt;"Name: "&lt;&lt;person[i].getName();
+                    cout&lt;&lt;endl&lt;&lt;"Account Number: "&lt;&lt;person[i].get_acc()&lt;&lt;endl;
+                    person[i].show_money_info();
+                    count++;
+                    cout&lt;&lt;endl;
+                    
+                }
+                
+                return 0;
+            }</pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>Enter name:Chirag
+Enter age:20
+Enter country:India
+What do you want to do ?
+1.Modify 2.Display:1
+What do you want to modify?
+1.Name 2.Age 3.Country:2
+Enter age:18
+Modified :-
+Name:Chirag
+Age:18
+Country:India</pre>
+      </div>
+    </div>
+
+    <div class="code">
+      <div>
+        <h2 name="code27">27. Write a C++ program to create a class called Rectangle with private instance variables length and width. Provide public getter and setter methods to access and modify these variables.
+
+        </h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+<pre>       // Program to create a class called Rectangle with private instance variables length and width. 
+  // Provide public getter and setter methods to access and modify these variables.
+             // Header file inclusion  //
+#include&lt;iostream>	              
+using namespace std;
+
+class Rect
+{
+float length;
+float width;
+    // Member function Declaration //
+public:
+ void set_length(float);
+ float get_length();
+ void set_width(float);	
+ float get_width();
+};
+        // Member function definition //
+void Rect :: set_length(float l)
+{
+length = l;
+}
+float Rect :: get_length()
+{
+return length;
+}
+
+void Rect :: set_width(float w)
+{
+width = w;
+}
+float Rect :: get_width()
+{
+return width;
+}
+
+       // Main function Inclusion //
+int main()
+{
+Rect r;
+float length, width;	
+
+cout<<"Enter Length and Width of Rectangle: ";
+cin>>length>>width;
+r.set_length(length);
+r.set_width(width);
+
+cout<< endl<<"The Length is : "<< r.get_length();
+cout<< endl<<"The Width is: "<< r.get_width();
+}          </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre></pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code28">28.Write a C++ program to create a class called Employee with private instance variables employee_id, employee_name, and employee_salary. Provide public getter and setter methods to access and modify the id and name variables, but provide a getter method for the salary variable that returns a formatted string..</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>include&lt;iostream>
+#include&lt;string.h>
+using namespace std;
+                    // Creating a class // 
+class Employee
+{
+	int empid;
+	char empname[20];
+	int empSalary;	
+	       // Member function Deeclaration //
+	public: 
+	 	char setName(char*);
+	 	char *getName();
+	 	int setEmpid(int);
+	 	int getEmpid();
+	 	int setSal(int);
+	 	int getSal();
+	 	
+};
+               // Member function Defintion //
+char Employee :: setName(char* n)
+{
+	strcpy(empname, n);
+}
+char *Employee :: getName()
+{
+	return empname;
+}
+            // Empid //
+int Employee :: setEmpid(int id)
+{
+	empid = id;	
+}              
+int Employee :: getEmpid()
+{
+	return empid;
+} 
+          // Salary //
+int Employee :: setSal(int s)
+{
+	empSalary = s;
+}
+int Employee :: getSal()
+{
+	return empSalary;
+}
+
+         // Main Function Definition //
+int main()
+{
+	Employee e[3];
+	int empid, salary, count = 0;
+	char name[20];
+	
+	 // Using For Looop //
+	for(int i = 0; i< 3;i++)
+	{
+		++count;
+		cout<< endl<<"Enter Details for Employee: "<< count<<"!!";
+		cout<< endl<<"Enter Your Name: ";
+		cin>>name;
+		e[i].setName(name);
+		         // Salary //
+		cout<< endl<<"Enter Your Salary: ";
+		cin>>salary;
+		e[i].setSal(salary);
+		         // Employee ID // 
+		cout<< endl<<"Enter Your Employee Id: ";
+		cin>>empid;
+		e[i].setEmpid(empid);
+			
+	}
+	int count_1 = 1;
+	for(int i =0; i< 3;i++)
+	{
+		
+		cout<< endl<< endl<<"Information For Employee: "<< count_1<<"!!";
+		cout<< endl<<"Name: "<< e[i].getName();
+		cout<< endl<<"Employee ID: "<< e[i].getEmpid();
+		cout<< endl<<"Salary: "<< e[i].getSal();
+		cout<< endl;
+		count_1++;
+	}
+}
+</pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+Enter Details for Employee: 1!!
+Enter Your Name: Vinay
+
+Enter Your Salary: 50000
+
+Enter Your Employee Id: 2323
+
+Enter Details for Employee: 2!!
+Enter Your Name: Niharika
+
+Enter Your Salary: 80000
+
+Enter Your Employee Id: 4222
+
+Enter Details for Employee: 3!!
+Enter Your Name: Aniket
+
+Enter Your Salary: 60000
+
+Enter Your Employee Id: 3232
+
+
+Information For Employee: 1!!
+Name: Vinay
+Employee ID: 2323
+Salary: 50000
+
+
+Information For Employee: 2!!
+Name: Niharika
+Employee ID: 4222
+Salary: 80000
+
+
+Information For Employee: 3!!
+Name: Aniket
+Employee ID: 3232
+Salary: 60000
+
+--------------------------------
+Process exited after 40.27 seconds with return value 0
+Press any key to continue . . .</pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code29">29.Write a C++ program to create a class called Circle with a private instance variable radius. Provide public getter and setter methods to access and modify the radius variable. However, provide two methods called calculateArea() and calculatePerimeter() that return the calculated area and perimeter based on the current radius value</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include&lt;iostream>
+using namespace std;
+         // Defining value of PI //
+float pi = 3.145;
+          // Creating a class // 
+class Circle
+{
+	float radius;	
+	             // Member function declaration // 
+	public:
+		float setRadius(float);
+		float getRadius();
+		
+		      // To calculate area and Perimeter //
+		float area();
+		float perimeter();
+};
+           // Member function Definition // 
+float Circle :: setRadius(float r)
+{
+	radius = r;
+}
+float Circle :: getRadius()
+{
+	return radius;
+}
+             // Area and Perimeter // 
+float Circle :: area()
+{
+	return pi*radius*radius;
+}
+float Circle :: perimeter()
+{
+	return 2*pi*radius;
+}
+
+                 // Main Function Definition // 
+int main()
+{
+	Circle c; // Creating a object
+	         // Variable Declaration //
+	float radius;
+	int input;
+	           // Using if condition to get Area and Perimeter //
+	
+	for(;;)
+	{
+		cout<< endl<<"Enter The value of Radius: ";
+		cin>>radius;
+		c.setRadius(radius);
+		cout<< endl<<"Value of Radius is: "<< c.getRadius()<< endl;
+	                  // Giving options to user //
+		cout<< endl<<"Press 1 for Area!!";
+		cout<< endl<<"Press 2 For Perimeter!!";
+		cout<< endl<<"Press 3 to Find Area and Perimeter Both!!"<< endl;
+		cin>>input;
+		            // Using if Condition // 
+		if(input == 1)
+		{
+			cout<< endl<<"Area of Circle is: "<< c.area();
+		}
+		else if(input==2)
+		{
+			cout<< endl<<"Perimeter is: "<< c.perimeter();
+		}
+		else if(input==3)
+		{
+			cout<<"Area is: "<< c.area()<< endl<<"Perimeter is: "<< c.perimeter();
+		}
+		else
+		{
+			cout<< endl<<"!!Invalid Input!!";
+		}
+		      // Using if to Continue or Break the Loop //
+		cout<< endl<< endl<<"!!Press 0 to Break!!";
+		cout<< endl<<"!!Press 5 to Continue!!"<< endl;
+		cin>>input;
+		if(input==0)
+		{
+			break;
+		}
+		else if(input==5)
+		{
+			continue;
+		}
+		else
+		{
+			break;
+		}
+	}
+}
+</pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+Enter The value of Radius: 6
+
+Value of Radius is: 6
+
+Press 1 for Area!!
+Press 2 For Perimeter!!
+Press 3 to Find Area and Perimeter Both!!
+2
+
+Perimeter is: 37.74
+
+!!Press 0 to Break!!
+!!Press 5 to Continue!!
+5
+
+Enter The value of Radius: 4
+
+Value of Radius is: 4
+
+Press 1 for Area!!
+Press 2 For Perimeter!!
+Press 3 to Find Area and Perimeter Both!!
+3
+Area is: 50.32
+Perimeter is: 25.16
+
+!!Press 0 to Break!!
+!!Press 5 to Continue!!
+0
+
+--------------------------------
+Process exited after 13.87 seconds with return value 0
+Press any key to continue . . .</pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code30">30. Write a C++ program to create a class called Car with private instance variables company_name, model_name, year, and mileage. Provide public getter and setter methods to access and modify the company_name, model_name, and year variables. However, only provide a getter method for the mileage variable.
+
+        </h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+<pre>// Write a C++ program to create a class called Car with private instance variables company_name, model_name, year, and mileage. 
+  //Provide public getter and setter methods to access and modify the company_name, model_name, and year variables. However, only provide a getter method for the mileage variable.
+                      // Header file inclusion // 
+  #include&lt;iostream>
+  #include&lt;string>
+  using namespace std;
+  // Creating a class //
+  class Car
+  {
+    string company_name;
+    string model_name;
+    int year;
+    float mileage;
+           // Member function declaration //
+    public:
+      void set_company_name(string&);
+      string get_company_name();
+      
+      void set_model_name(string&);
+      string get_model_name();
+      
+      void set_year(int);
+      int get_year();
+           // Milege // 
+       void  set_mileage(float);
+       float get_mileage();		
+  };
+  
+                   // Member function Definition // 
+  void Car :: set_company_name(string& c_name)
+  {
+    company_name = c_name;
+  }
+  string Car :: get_company_name()
+  {
+    return company_name;
+  }
+          // Getting and setting model name //
+  void Car :: set_model_name(string& m_name)
+  {
+    model_name = m_name;
+  }
+  string Car :: get_model_name()
+  {
+    return model_name;
+  }
+            // Getting and setting Year //
+  void Car :: set_year(int y)
+  {
+    year = y;
+  }
+  int Car :: get_year()
+  {
+    return year;
+  }
+           // Getting and Setting Mileage //
+  void Car :: set_mileage(float m)
+  {
+    mileage = m;
+  }
+  float Car :: get_mileage()
+  {
+    return mileage;
+  }
+  
+  int take_input()
+  {
+    int input;
+    cout<< endl<< endl;
+    cout<<"Press 0 to Stop!! Here";
+    cout<< endl<<"Press 1 to Enter More Details!!";
+    cin>>input;
+    return input;
+  }
+  
+  int main()
+  {
+    Car c;
+            // Variable declaration // 
+    string c_name, model_name;
+    int year, count = 0, input;
+    float mileage;
+          // Using For Loop // 
+    for(;;)
+    {
+      count++;
+           // Setting Information //
+      cout<<"Enter Information for Car "<< count<<"!!";
+      cout<< endl<< endl<<"Enter Your Company name: ";
+      cin>>c_name;
+  c.set_company_name(c_name);
+      
+           // Model Name //
+      cout<< endl<<"Enter Your Car's Model Name: ";
+      cin>>model_name;
+      c.set_model_name(model_name);
+      
+          // Setting Year //
+      cout<< endl<<"Enter Year of Car: ";
+      cin>>year;
+      c.set_year(year);
+      
+           // Setting mileage //
+      cout<<"Enter Your Car's Mileage: ";
+      cin>>mileage;
+      c.set_mileage(mileage);
+      int flag = 0;
+      do 
+      {
+        input = take_input();
+        if(input==0) {
+          flag = 1;
+          break;	// from do while
+        }
+        else if(input==1) {
+          
+          continue;
+        }
+            
+      }
+      while(input< 0 || input>1);
+      
+      if(flag ==1)
+      {
+        break;		// from for
+      }
+      
+  //		// If condition to stop the loop //
+  //		input = take_input();
+  // 		// using for loop again //
+  //		if(input==0)
+  //		{
+  //			break;
+  //		}
+  //		else if(input==1)
+  //		{
+  //			continue;
+  //		}
+  //		else
+  //		{
+  //			for(;;)
+  //			{	
+  //				cout<< endl<< endl<<"Invalid Ouput!! Give a Valid Output!!";
+  //				cout<< endl<<"Press 0 to Stop Here!!";
+  //				cout<< endl<<"Press 1 to Enter More Details!!"<< endl;
+  //cin>>input;
+  //				
+  //				if(input==0)
+  //				{
+  //					break;
+  //				}
+  //				else if(input==1)
+  //				{
+  //					continue;
+  //				}	
+  //			}
+  //		
+  //		}
+      
+      
+    }
+    
+  }</pre>
+      </div>
+      <div>
+        <h2>output</h2>
+<pre>Enter Information for Car 1!!
+
+  Enter Your Company name: Tata
+  
+  Enter Your Car's Model Name: Nano
+  
+  Enter Year of Car: 2010
+  Enter Your Car's Mileage: 30
+  
+  
+  Press 0 to Stop!! Here
+  Press 1 to Enter More Details!!1
+  Enter Information for Car 2!!
+  
+  Enter Your Company name: Maruti
+  
+  Enter Your Car's Model Name: Maruti800
+  
+  Enter Year of Car: 2005
+  Enter Your Car's Mileage: 25
+  
+  
+  Press 0 to Stop!! Here
+  Press 1 to Enter More Details!!0
+  
+  --------------------------------
+  Process exited after 45.61 seconds with return value 0
+  Press any key to continue . . .</pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code31">31.Write a C++ program to create a class called Student with private instance variables student_id, student_name, and grades. Provide public getter and setter methods to access and modify the student_id and student_name variables. However, provide a method called addGrade() that allows adding a grade to the grades variable while performing additional validation.</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>#include&lt;iostream>
+#include&lt;string>
+using namespace std;
+                 // Creating a class //
+class Student
+{
+	    // Data Members Inclusion //
+	int student_id;
+	string student_name;
+	string grades;
+	      // Member function Declarations // 
+	public:
+		void set_student_id(int);
+		int get_student_id();
+		      // functions for student name //
+		void set_student_name(string&);
+		string get_student_name();
+		     // function for grades // 
+		void set_grades(string&);
+		string get_grades();
+};
+           // Member function Definition // 
+void Student :: set_student_id(int id)
+{
+	student_id = id;
+}
+int Student :: get_student_id()
+{
+	return student_id;
+}
+           // Student name //
+void Student :: set_student_name(string& s_name)
+{
+	student_name = s_name;
+}
+string Student :: get_student_name()
+{
+	return student_name;
+}
+             // Adding Grades // 
+void Student :: set_grades(string& g)
+{
+	grades = g;
+}             
+string Student :: get_grades()
+{
+	return grades;
+}
+
+        // Main function Definition //
+int main()
+{
+	Student s[3];
+	int student_id, count=1;
+	string s_name;
+	string grades;
+	
+	for(int i = 0; i< 3;i++)
+	{
+		cout<< endl<<"Enter Details for Student "<< count<<"!!";
+		cout<< endl<< endl<<"Enter Student Name: ";
+		cin>>s_name;
+		s[i].set_student_name(s_name);
+		        // Setting student id //
+		cout<< endl<<"Enter Student Id: ";
+		cin>>student_id;
+		s[i].set_student_id(student_id);
+		        // Setting Grade // 
+		cout<< endl<<"Enter Student Grade: ";
+		cin>>grades;
+		s[i].set_grades(grades);
+		
+		count++;
+	}
+	
+	int count_1 = 1;    // count for output screen // 
+	        // Using loop for printing the output // 
+	for(int i = 0; i< 3;i++)
+	{
+		cout<< endl<< endl<<"Details of Student "<< count_1<<"!!"<< endl;
+		cout<<"Name: "<< s[i].get_student_name();
+		cout<< endl<<"Student Id: "<< s[i].get_student_id();
+		cout<< endl<<"Student Grade: "<< s[i].get_grades();
+		count_1++;
+		
+	}
+	
+}</pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>Enter Details for Student 1!!
+
+Enter Student Name: Vinay
+
+Enter Student Id: 4455
+
+Enter Student Grade: A
+
+Enter Details for Student 2!!
+
+Enter Student Name: Aniket
+
+Enter Student Id: 3445
+
+Enter Student Grade: A+
+
+Enter Details for Student 3!!
+
+Enter Student Name: Vasu
+
+Enter Student Id: 2311
+
+Enter Student Grade: B+
+
+
+Details of Student 1!!
+Name: Vinay
+Student Id: 4455
+Student Grade: A
+
+Details of Student 2!!
+Name: Aniket
+Student Id: 3445
+Student Grade: A+
+
+Details of Student 3!!
+Name: Vasu
+Student Id: 2311
+Student Grade: B+
+--------------------------------
+Process exited after 31.73 seconds with return value 0
+Press any key to continue </pre>
+      </div>
+    </div>
+  </body>
+</html>

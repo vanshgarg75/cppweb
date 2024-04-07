@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Overloading</title>
+    <style>
+    h1{
+        text-align: center;
+        text-decoration: underline;
+    }
+    pre{
+        font:bold;
+        font-size: large;
+    }
+    </style>
+</head>
+<body>
+    <h1>Opeartor Overloading</h1>
+    <div class="code">
+        <div>
+          <h2 name="code1">1. Define a class Complex to represent complex numbers. 
+            Overload the + operator to add two complex numbers.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+#include&lt;iostream>
+using namespace std;
+class complex{
+  int imag;
+  int real;
+  public:
+  complex(int i,int r){
+    real=r;
+    imag=i;
+  }
+  complex(){
+    real=0;
+    imag=0;
+  }
+  complex operator +(complex &c){
+     complex temp;
+     temp.real=real+c.real;
+     temp.imag=imag+c.imag;
+  }
+  void display(){
+    cout&lt;&lt; real&lt;&lt;"+"&lt;&lt; imag&lt;&lt;"i"&lt;&lt; endl;
+  }
+};
+int main(){
+   complex c1(10,3),c2(5,4),c3;
+   cout&lt;&lt;"Complex numbers : "&lt;&lt; endl;
+   c1.display();
+   c2.display();
+   c3=c1+c2;
+   cout&lt;&lt;"Sum of complex numbers by overloading '+' operator : ";
+   c3.display();
+   return 0;
+}
+
+</pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>
+
+Complex numbers : 
+3+10i
+4+5i
+Sum of complex numbers by overloading '+' operator : 0+15i
+</pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code2">2. Create a class Fraction to represent fractions. Overload the + operator to add two fractions.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include&lt;iostream>
+            using namespace std;
+            class fraction{
+              int num;
+              int den;
+              public:
+              fraction(int i,int r){
+                num=r;
+                den=i;
+              }
+              fraction(){
+                num=0;
+                den=0;
+              }
+              fraction operator +(fraction &c){
+                 fraction temp;
+                 temp.num=num*c.den+c.num*den;
+                 temp.den=den*c.den;
+                 return temp;
+              }
+              void display(){
+                cout&lt;&lt; num&lt;&lt;"/"&lt;&lt; den&lt;&lt; endl;
+              }
+            };
+            int main(){
+               fraction f1(2,3),f2(5,4),f3;
+               cout&lt;&lt;"Fractions : "&lt;&lt; endl;
+               f1.display();
+               f2.display();
+               f3=f1+f2;
+               cout&lt;&lt;"Sum of fractions  by overloading '+' operator : ";
+               f3.display();
+               return 0;
+            }
+            
+           </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre> 
+            Fractions : 
+            3/2
+            4/5
+            Sum of fractions  by overloading '+' operator : 23/10
+           </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code3">3. Implement a class String to represent strings.
+             Overload the + operator to concatenate two strings.
+
+          </h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include&lt;iostream>
+            using namespace std;
+            class matrix{
+              int mat[10][10];
+              int row;
+              int col;
+              public:
+              matrix operator *(matrix &c){
+                 matrix temp;
+                 temp.row=row;
+                 temp.col=c.col;
+                 for(int i=0;i< row;i++){
+                  for(int j=0;j< c.col;j++){
+                    temp.mat[i][j]=0;
+                    for(int k=0;k< col;k++){
+                        temp.mat[i][j]=temp.mat[i][j]+(mat[i][k]*c.mat[k][j]);
+                    }
+                  }
+                 }
+                 return temp;
+              }
+              void get(){
+                cout&lt;&lt;"Enter rows and columns for matrix : ";
+                cin>>row>>col;
+                cout&lt;&lt;"Enter the elements of matrix : "&lt;&lt; endl;
+                for(int i=0;i< row;i++){
+                  for(int j=0;j< col;j++){
+                    cin>>mat[i][j];
+                  }
+              }
+              }
+              void display(){
+                for(int i=0;i< row;i++){
+                  for(int j=0;j< col;j++){
+                    cout&lt;&lt; mat[i][j]&lt;&lt;"  ";
+                  }
+                  cout&lt;&lt; endl;
+                }
+              }
+            };
+            int main(){
+              matrix m1,m2,m3;
+              m1.get();
+              m2.get();
+              m3=m1*m2;
+              cout&lt;&lt;"Multiplication of matrices by overloading '*' operator : "&lt;&lt; endl;
+              m3.display();
+              return 0;}
+            
+               </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre> Enter rows and columns for matrix : 3 3
+            Enter the elements of matrix : 
+            3 3 3
+            3 3 3
+            3 3 3
+            Enter rows and columns for matrix : 3 3
+            Enter the elements of matrix : 
+            4 4 4
+            4 4 4
+            4 4 4
+            Multiplication of matrices by overloading '*' operator : 
+            36  36  36  
+            36  36  36  
+            36  36  36  </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code4">4. Implement a class String to represent strings.
+             Overload the + operator to concatenate two strings.
+
+          </h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include&lt;iostream>
+            using namespace std;
+            class String{
+              char s[100];
+              public:
+              String(char ch[]){
+                 int i=0;
+                 while(ch[i]!='\0'){
+                    s[i]=ch[i];
+                    i++;
+                 }
+                 s[i]='\0';
+              }
+              String(){
+                s[0]='\0';
+              }
+              String operator +(String &st){
+                String temp;
+                int i=0;
+                 while(s[i]!='\0'){
+                    temp.s[i]=s[i];
+                    i++;
+                 }
+                 int j=0;
+                 while(st.s[j]!='\0'){
+                    temp.s[i]=st.s[j];
+                    i++;
+                    j++;
+                 }
+                 temp.s[i]='\0';
+                 return temp;
+              }
+              void display(){
+                cout&lt;&lt; s&lt;&lt; endl;
+              }
+            };
+            int main(){
+              String s1("HII"),s2("HELLO"),s3;
+              s3=s1+s2;
+              cout&lt;&lt;"Strings : "&lt;&lt;endl;
+              s1.display();
+              s2.display();
+              s3=s1+s2;
+              cout&lt;&lt;"Concatenate of two strings by overloading '+' operator : ";
+              s3.display();
+              return 0;}
+            
+             </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>  Strings : 
+            HII
+            HELLO
+            Concatenate of two strings by overloading '+' operator : HIIHELLO</pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code5">5. Define a class Date to represent dates. Overload the < operator to compare two dates.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include&lt;iostream>
+            using namespace std;
+            class Date{
+              int month;
+              int day;
+              int year;
+              public:
+              Date(int a,int b,int c){
+                day=a;
+                month=b;
+                year=c;
+                simp();
+              }
+              int operator <(Date &d){
+                 if(year< d.year){
+                   return true;
+                 }
+                 else{
+                  return false;
+                 }
+                 if(month< d.month){
+                    return true;
+                 }
+                 else{
+                  return false;
+                 }
+                 if(day< d.day){
+                  return true;
+                 }
+                 else{
+                  return false;
+                 }
+              }
+              void display(){
+                cout&lt;&lt;day&lt;&lt;"/"&lt;&lt;month&lt;&lt;"/"&lt;&lt;year&lt;&lt;endl;
+              }
+              void simp(){
+                day=day%31;
+                month=month+(day/12);
+                year=year+(month/12);
+                month=month%12;
+              }
+            };
+            int main(){
+              Date d1(12,24,2014),d2(52,5,2020);
+              cout&lt;&lt;"Dates : "&lt;&lt;endl;
+              d1.display();
+              d2.display();
+              cout&lt;&lt;"Comparison of dates by overloading '<' operator (1:True 0:False) :"&lt;&lt;(d1< d2);
+              return 0;}
+            
+             </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre> Dates : 
+            12/1/2016
+            21/6/2020
+            Comparison of dates by overloading '<' operator (1:True 0:False) :1
+            </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code6">6. Implement a class Money to represent money.
+             Overload the + operator to add two amounts of money.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include&lt;iostream>
+            using namespace std;
+            class money{
+              int rup;
+              int paise;
+              public:
+              money(int a,int b){
+                rup=a;
+                paise=b;
+                simp();
+              }
+              money(){
+                rup=0;
+                paise=0;
+              }
+              money operator +(money &m){
+                money temp;
+                temp.rup=rup+m.rup;
+                temp.paise=paise+m.paise;
+                temp.simp();
+                return temp;
+              }
+              void display(){
+                cout&lt;&lt;rup&lt;&lt;"."&lt;&lt;paise&lt;&lt;endl;
+              }
+              void simp(){
+                rup=rup+(paise/100);
+                paise=paise%100;
+              }
+            };
+            int main(){
+              money m1(20,678),m2(230,32),m3;
+              cout&lt;&lt;"Money : "&lt;&lt;endl;
+              m1.display();
+              m2.display();
+              m3=m1+m2;
+              cout&lt;&lt;"Addition of money by overloading '+' operator : ";
+              m3.display();
+              return 0;}
+           </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Money : 
+            26.78
+            230.32
+            Addition of money by overloading '+' operator : 257.10
+            </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code7">7. Create a class Rectangle to represent rectangles.
+             Overload the == operator to check if two rectangles are equal.
+
+          </h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include&lt;iostream>
+            using namespace std;
+            class Rectangle{
+              int length;
+              int width;
+              public:
+              Rectangle(int a,int b){
+                length=a;
+                width=b;
+              }
+              int operator ==(Rectangle &r){
+                 if(length==r.length && width==r.width){
+                   return true;
+                 }
+                 else{
+                  return false;
+                 }
+              }
+              void display(){
+                cout&lt;&lt;"Width : "&lt;&lt;width&lt;&lt;" Length : "&lt;&lt;length&lt;&lt;endl;
+              }
+            };
+            int main(){
+              Rectangle r1(10,7),r2(10,5);
+              cout&lt;&lt;"Rectangles  : "&lt;&lt;endl;
+              r1.display();
+              r2.display(); 
+              cout&lt;&lt;"Comparison of rectangles by overloading '==' operator (1:True 0:False) : "&lt;&lt;(r1==r2);
+              return 0;}
+            
+              </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre> Rectangles  : 
+            Width : 7 Length : 10
+            Width : 5 Length : 10
+            Comparison of rectangles by overloading '==' operator (1:True 0:False) : 0
+            </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code8">8.Define a class Time to represent time.
+             Overload the << operator to display the time in HH:MM format.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include&lt;iostream>
+            using namespace std;
+            class Time{
+              int hour;
+              int min;
+              public:
+              Time(int a,int b){
+                 hour=a;
+                 min=b;
+                 simp();
+              }
+              friend ostream& operator &lt;&lt;(ostream &o,Time &t);
+              void simp(){
+                hour=hour+(min/60);
+                min=min%60;
+              }
+            };
+            ostream& operator &lt;&lt;(ostream &o,Time &t){
+               o&lt;&lt;t.hour&lt;&lt;":"&lt;&lt;t.min&lt;&lt;endl;
+            }
+            int main(){
+              Time t1(10,90);
+              cout&lt;&lt;"Displaying Time in HH:MM format by overloading '&lt;&lt;' : "&lt;&lt;t1;
+              return 0;}
+           </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre> Displaying Time in HH:MM format by overloading '&lt;&lt;' : 11:30</pre>
+        </div>
+      </div>     
+</body>
+</html>

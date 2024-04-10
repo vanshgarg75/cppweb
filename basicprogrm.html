@@ -3698,13 +3698,33 @@ Fibonacci series of 4 terms :
         </div>
         <div>
 	<h2>source code</h2>
-          <pre>
+          <pre>#include<iostream>
+using namespace std;
+        // Main function Definition //
+int main()
+{
+	int N , s=0;
+	cout << "Enter the number of Terms:" << endl;
+	cin >> N;
+	for (int i=1; i<= N ; i++ )
+	{ 
+	   s=s+i; 
+	}
+	cout << "The sum of first " <<  N << " terms: " << s << endl;
+	return 0;
+}
 
 </pre>
 </div>
 <div style="background:black; color:white">
 	<h2>output</h2>
-	<pre>
+	<pre>Enter the number of Terms:
+10
+The sum of first 10 terms: 55
+
+--------------------------------
+Process exited after 1.918 seconds with return value 0
+Press any key to continue . . .
 
 </pre>
 </div>
